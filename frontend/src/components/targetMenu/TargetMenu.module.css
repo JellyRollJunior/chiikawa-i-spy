@@ -16,13 +16,19 @@
 }
 
 .optionWrapper {
+  position: absolute;
+  top: calc(var(--target-radius) / -2);
+  left: calc(var(--target-radius) / 2);
   border: 2px solid gray;
 }
 
 .menuOption {
   display: block;
+  width: 100%;
   border: none;
   border-radius: 0;
+  white-space: nowrap;
+  text-align: left;
 }
 
 .menuOption:hover {

@@ -12,7 +12,7 @@ const TargetMenu = ({ isVisible, x, y }) => {
       <div className={styles.menu} style={style}>
         <div className={styles.targetBox}></div>
         <div className={styles.optionWrapper}>
-          <button className={styles.menuOption}>I am a target option</button>
+          <button className={styles.menuOption}>I am a taasdfsadrget option</button>
           <button className={styles.menuOption}>I am a target option</button>
           <button className={styles.menuOption}>I am a target option</button>
         </div>
