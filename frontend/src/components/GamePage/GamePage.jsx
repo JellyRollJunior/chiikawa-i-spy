@@ -1,22 +1,17 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import chiikawaWoSagase from '../../assets/chiikawa-wo-sagase.jpg';
 import styles from './GamePage.module.css';
+import { TargetMenu } from '../targetMenu/TargetMenu';
 
 const GamePage = () => {
-  const menuRef = useRef(null);
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
   const [menuXY, setMenuXY] = useState([0, 0]);
 
   const toggleMenu = (event) => {
-    if (showMenu) {
-      menuRef.current.style.display = 'block';
-      const imageXY = event.currentTarget.offsetParent.getBoundingClientRect();
-      const x = event.clientX - imageXY.x;
-      const y = event.clientY - imageXY.y;
-      setMenuXY([x, y]);
-    } else {
-      menuRef.current.style.display = 'none';
-    }
+    const imageXY = event.currentTarget.offsetParent.getBoundingClientRect();
+    const x = event.clientX - imageXY.x;
+    const y = event.clientY - imageXY.y;
+    setMenuXY([x, y]);
     setShowMenu(!showMenu);
   };
 
@@ -27,16 +22,10 @@ const GamePage = () => {
         <div className={styles.imageWrapper}>
           <img
             src={chiikawaWoSagase}
-            alt=""
+            alt="Chiikawa Village"
             onClick={(event) => toggleMenu(event)}
           />
-          <div
-            className={styles.menu}
-            style={{ left: menuXY[0], top: menuXY[1] }}
-            ref={menuRef}
-          >
-            I am a menu
-          </div>
+          <TargetMenu isVisible={showMenu} x={menuXY[0]} y={menuXY[1]} />
         </div>
       </main>
     </>
