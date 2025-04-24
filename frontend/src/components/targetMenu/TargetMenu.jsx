@@ -10,9 +10,12 @@ const TargetMenu = ({ isVisible, x, y }) => {
   return (
     <>
       <div className={styles.menu} style={style}>
-        <button className={styles.menuOption}>I am a target option</button>
-        <button className={styles.menuOption}>I am a target option</button>
-        <button className={styles.menuOption}>I am a target option</button>
+        <div className={styles.targetBox}></div>
+        <div className={styles.optionWrapper}>
+          <button className={styles.menuOption}>I am a target option</button>
+          <button className={styles.menuOption}>I am a target option</button>
+          <button className={styles.menuOption}>I am a target option</button>
+        </div>
       </div>
     </>
   );

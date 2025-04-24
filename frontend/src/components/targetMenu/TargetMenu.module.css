@@ -1,6 +1,21 @@
 .menu {
+  --target-radius: 60px;
   display: none;
   position: absolute;
+}
+
+.targetBox {
+  position: absolute;
+  top: calc(var(--target-radius)/-2);
+  left: calc(var(--target-radius)/-2);
+  height: var(--target-radius);
+  width: var(--target-radius);
+  border: 3px dashed black;
+  border-radius: 50%;
+  background-color: rgb(86, 83, 83, 0.3);
+}
+
+.optionWrapper {
   border: 2px solid gray;
 }
 
