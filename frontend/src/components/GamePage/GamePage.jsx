@@ -4,7 +4,7 @@ import styles from './GamePage.module.css';
 
 const GamePage = () => {
   const menuRef = useRef(null);
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(true);
   const [menuXY, setMenuXY] = useState([0, 0]);
 
   const toggleMenu = (event) => {
