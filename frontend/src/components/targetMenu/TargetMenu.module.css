@@ -3,3 +3,13 @@
   position: absolute;
   border: 2px solid black;
 }
+
+.menuOption {
+  display: block;
+  border: none;
+  border-radius: 0;
+}
+
+.menuOption:hover {
+  background-color: lightgray;
+}
