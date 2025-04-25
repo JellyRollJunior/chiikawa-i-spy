@@ -1,10 +1,16 @@
 const player = (gameId, targets) => {
+    const gameId = gameId;
     const startTime = new Date().toISOString();
     const targetsNotFound = targets.map((target) => {
         return target.id;
     });
     const targetsFound = [];
 
+    const getGameId = () => gameId;
+    const getStartTime = () => startTime;
+    const getTargetsNotFound = () => targetsNotFound;
+    const getTargetsFound = () => targetsFound;
+    
     const addFoundTarget = (target) => {
         // remove target from not found
         targetsNotFound = targetsNotFound.filter(
@@ -14,7 +20,7 @@ const player = (gameId, targets) => {
         targetsFound.push(target);
     };
 
-    return { gameId, targetsNotFound, targetsFound, startTime, addFoundTarget };
+    return { getGameId, getStartTime, getTargetsNotFound, getTargetsFound, addFoundTarget };
 };
 
 export { player };
