@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 const getGames = async () => {
     const games = await prisma.game.findMany();
     return games;
-}
+};
 
 const getGame = async (id) => {
     const game = await prisma.game.findFirst({
@@ -17,12 +17,12 @@ const getGame = async (id) => {
                 select: {
                     id: true,
                     name: true,
-                }
-            }
-        }
-    })
+                },
+            },
+        },
+    });
     return game;
-}
+};
 
 const insertGame = async (name, url) => {
     const game = await prisma.game.create({

@@ -40,9 +40,10 @@ npm run dev
 
 ### Endpoints
 
-| METHOD | URI | Function | Inputs | Notes |
-| ------ | --- | -------- | ------ | ----- |
-|        |     |          |        |       |
+| METHOD | URI    | Function      | Inputs | Notes                         |
+| ------ | ------ | ------------- | ------ | ----------------------------- |
+| GET    | /games | Returns games |        | Returns id, name, & image URL |
+|        |        |               |        |                               |
 
 ### Learning Outcomes
 
@@ -67,6 +68,11 @@ npm run dev
 -   store images on supabase
 
 -   coordinate normalizing? percentage of image?
+
+todo-backed:
+
+-   add game image URL
+-   add hint image URL
 
 ### Reminder!
 
