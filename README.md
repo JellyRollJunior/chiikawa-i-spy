@@ -53,3 +53,22 @@ npm run dev
 | Usage | Source                                                                                              |
 | ----- | --------------------------------------------------------------------------------------------------- |
 | Specs | [The Odin Project](https://www.theodinproject.com/lessons/nodejs-where-s-waldo-a-photo-tagging-app) |
+
+### TODOS
+
+-   create menu
+    -   display menu options based on targets in response (map)
+    -   create menu base options
+    -   style menu
+    -   menu display side
+-   style game page
+    -   display target hints based on response
+-   style start page
+-   store images on supabase
+
+-   coordinate normalizing? percentage of image?
+
+### Reminder!
+
+-   remember to do tests!
+-   prop types?
