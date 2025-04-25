@@ -4,10 +4,15 @@ import { gamesRouter } from './routes/gamesRouter.js';
 const app = express();
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.send('Hello world!');
-});
 app.use('/games', gamesRouter);
+
+app.use((err, req, res, next) => {
+    const error = {
+        status: err.status ? err.status : 500,
+        message: err.message,
+    }
+    res.status(error.status).json(error);
+})
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));

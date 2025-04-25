@@ -73,6 +73,8 @@ todo-backed:
 
 -   add game image URL
 -   add hint image URL
+-   error handling
+-   input validation
 
 ### Reminder!
 
