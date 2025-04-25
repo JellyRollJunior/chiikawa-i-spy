@@ -40,10 +40,10 @@ npm run dev
 
 ### Endpoints
 
-| METHOD | URI    | Function      | Inputs | Notes                         |
-| ------ | ------ | ------------- | ------ | ----------------------------- |
-| GET    | /games | Returns games |        | Returns id, name, & image URL |
-|        |        |               |        |                               |
+| METHOD | URI            | Function                      | Body | Notes                              |
+| ------ | -------------- | ----------------------------- | ---- | ---------------------------------- |
+| GET    | /games         | Returns games                 |      | Returns { id, name, image URL }    |
+| GET    | /games/:gameId | Returns game and game targets |      | Returns { game data, targets data} |
 
 ### Learning Outcomes
 

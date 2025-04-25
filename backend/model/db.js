@@ -10,7 +10,7 @@ const getGames = async () => {
 const getGame = async (id) => {
     const game = await prisma.game.findFirst({
         where: {
-            id,
+            id: Number(id),
         },
         include: {
             targets: {
