@@ -12,7 +12,7 @@ model Game {
   id      Int      @id @default(autoincrement())
   name    String
   url     String
-  Targets Target[]
+  targets Target[]
 }
 
 model Target {

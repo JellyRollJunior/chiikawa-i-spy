@@ -7,6 +7,23 @@ const getGames = async () => {
     return games;
 }
 
+const getGame = async (id) => {
+    const game = await prisma.game.findFirst({
+        where: {
+            id,
+        },
+        include: {
+            targets: {
+                select: {
+                    id: true,
+                    name: true,
+                }
+            }
+        }
+    })
+    return game;
+}
+
 const insertGame = async (name, url) => {
     const game = await prisma.game.create({
         data: {
@@ -29,4 +46,4 @@ const insertTarget = async (gameId, name, positionX, positionY) => {
     return target;
 };
 
-export { getGames, insertGame, insertTarget };
+export { getGames, getGame, insertGame, insertTarget };
