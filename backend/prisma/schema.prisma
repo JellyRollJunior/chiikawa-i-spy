@@ -7,3 +7,25 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Game {
+  id      Int      @id @default(autoincrement())
+  name    String
+  url     String
+  Targets Target[]
+}
+
+model Target {
+  id        Int    @id @default(autoincrement())
+  name      String
+  positionX Int
+  positionY Int
+  games     Game   @relation(fields: [gameId], references: [id])
+  gameId    Int
+}
+
+model Winner {
+  id   Int    @id @default(autoincrement())
+  name String
+  time String
+}
