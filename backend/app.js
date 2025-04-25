@@ -3,6 +3,7 @@ import { gamesRouter } from './routes/gamesRouter.js';
 
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/games', gamesRouter);
 

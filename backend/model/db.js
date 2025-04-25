@@ -47,6 +47,19 @@ const insertGame = async (name, url) => {
     }
 };
 
+const getTarget = async (targetId) => {
+    try {
+        const target = await prisma.target.findFirst({
+            where: {
+                id: Number(targetId),
+            },
+        });
+        return target;
+    } catch (error) {
+        throw new DatabaseError('Error retrieving target', 500);
+    }
+};
+
 const insertTarget = async (gameId, name, positionX, positionY) => {
     try {
         const target = await prisma.target.create({
@@ -63,4 +76,4 @@ const insertTarget = async (gameId, name, positionX, positionY) => {
     }
 };
 
-export { getGames, getGame, insertGame, insertTarget };
+export { getGames, getGame, insertGame, getTarget, insertTarget };
