@@ -1,3 +1,4 @@
+import { validationResult } from 'express-validator';
 import * as db from '../model/db.js';
 
 const getGames = async (req, res, next) => {
@@ -10,6 +11,8 @@ const getGames = async (req, res, next) => {
 };
 
 const getGame = async (req, res, next) => {
+    const errors = validationResult(req);
+    console.log(errors);
     try {
         const id = req.params.gameId;
         const game = await db.getGame(id);
