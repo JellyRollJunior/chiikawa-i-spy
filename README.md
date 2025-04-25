@@ -13,6 +13,10 @@
 cd backend
 npm install
 node app.js
+
+# Run tests
+cd backend
+node --experimental-vm-modules node_modules/jest/bin/jest.js
 ```
 
 ```bash
