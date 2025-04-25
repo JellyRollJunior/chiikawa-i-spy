@@ -74,6 +74,7 @@ todo-backed:
 
 -   add game image URL
 -   add hint image URL
+- target validaiton
 
 ### Reminder!
 

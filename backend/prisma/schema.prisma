@@ -18,8 +18,8 @@ model Game {
 model Target {
   id        Int    @id @default(autoincrement())
   name      String
-  positionX Int
-  positionY Int
+  x Int
+  y Int
   games     Game   @relation(fields: [gameId], references: [id])
   gameId    Int
 }
