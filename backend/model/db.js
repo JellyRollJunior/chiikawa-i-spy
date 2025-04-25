@@ -12,4 +12,16 @@ const insertGame = async (name, url) => {
     return game;
 };
 
-export { insertGame };
+const insertTarget = async (gameId, name, positionX, positionY) => {
+    const target = await prisma.target.create({
+        data: {
+            name,
+            positionX,
+            positionY,
+            gameId,
+        },
+    });
+    return target;
+};
+
+export { insertGame, insertTarget };
