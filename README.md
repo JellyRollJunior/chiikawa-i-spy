@@ -44,6 +44,7 @@ npm run dev
 | ------ | -------------- | ----------------------------- | ---- | ---------------------------------- |
 | GET    | /games         | Returns games                 |      | Returns { id, name, image URL }    |
 | GET    | /games/:gameId | Returns game and game targets |      | Returns { game data, targets data} |
+| POST    | /games/:gameId/targets/:targetId | Validates target coordinates |  { x: x% of image, y: y% of image }   | Returns isTargetFound  |
 
 ### Learning Outcomes
 
@@ -73,8 +74,6 @@ todo-backed:
 
 -   add game image URL
 -   add hint image URL
--   error handling
--   input validation
 
 ### Reminder!
 
