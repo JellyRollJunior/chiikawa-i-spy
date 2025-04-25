@@ -2,6 +2,11 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
+const getGames = async () => {
+    const games = await prisma.game.findMany();
+    return games;
+}
+
 const insertGame = async (name, url) => {
     const game = await prisma.game.create({
         data: {
@@ -24,4 +29,4 @@ const insertTarget = async (gameId, name, positionX, positionY) => {
     return target;
 };
 
-export { insertGame, insertTarget };
+export { getGames, insertGame, insertTarget };
