@@ -63,10 +63,16 @@ npm run dev
 ### Backend TODOS
 
 -   ~~create player object to store player session data~~
--   pass jsonwebtoken with player object to user on POST /games/:gameId
+-   ~~pass jsonwebtoken with player object to user on POST /games/:gameId~~
     -   ~~create POST /players route~~
-    -   Implement jsonwebtoken decryption + encryption methods
     -   ~~pass new token with new player data to user through token~~
+-   Return updated token to user on POST /targets/:targetId on successful guess
+    -   Implement jsonwebtoken decryption + encryption methods
+        -   ~~retrieveToken~~
+        -   verifyToken
+    - on successful guess
+        -   add target found to player token data
+        -   sign token and pass new token to client
 
 ### Reminder!
 
