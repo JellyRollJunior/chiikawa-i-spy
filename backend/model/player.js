@@ -14,11 +14,13 @@ const createPlayer = (gameId, targets) => {
 };
 
 const addFoundTarget = (player, targetId, targetName, targetX, targetY) => {
-    // remove target from targetsNotFound, add target data to targetsFound
+    // remove target from targetsNotFound
     const targetsNotFound = player.targetsNotFound.filter(
         (id) => id != targetId
     );
-    const targetsFound = player.targetsFound.push({
+    // add target data to targetsFound
+    const targetsFound = [...player.targetsFound];
+    targetsFound.push({
         id: targetId,
         name: targetName,
         x: targetX,

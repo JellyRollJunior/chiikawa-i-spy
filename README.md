@@ -44,11 +44,11 @@ npm run dev
 
 ### Endpoints
 
-| METHOD | URI            | Function                      | Body | Notes                              |
-| ------ | -------------- | ----------------------------- | ---- | ---------------------------------- |
-| GET    | /games         | Returns games                 |      | Returns { id, name, image URL }    |
-| GET    | /games/:gameId | Returns game and game targets |      | Returns { game data, targets data} |
-| POST    | /games/:gameId/targets/:targetId | Validates target coordinates |  { x: x% of image, y: y% of image }   | Returns isTargetFound  |
+| METHOD | URI                              | Function                      | Body                               | Notes                              |
+| ------ | -------------------------------- | ----------------------------- | ---------------------------------- | ---------------------------------- |
+| GET    | /games                           | Returns games                 |                                    | Returns { id, name, image URL }    |
+| GET    | /games/:gameId                   | Returns game and game targets |                                    | Returns { game data, targets data} |
+| POST   | /targets/:targetId | Verify target coordinates  | { x: x% of image, y: y% of image } | Returns isTargetFound              |
 
 ### Learning Outcomes
 
@@ -62,25 +62,15 @@ npm run dev
 
 ### TODOS
 
--   create menu
-    -   display menu options based on targets in response (map)
-    -   create menu base options
-    -   style menu
-    -   menu display side
--   style game page
-    -   display target hints based on response
--   style start page
--   store images on supabase
-
--   coordinate normalizing? percentage of image?
-
-todo-backed:
-
--   add game image URL
--   add hint image URL
-- target validaiton
+backend:
+    - ~~create player object to store player session data~~
+    - pass jsonwebtoken with player object to user on POST /games/:gameId
 
 ### Reminder!
 
 -   remember to do tests!
 -   prop types?
+
+### Final plans
+
+-   image storage on supabase
