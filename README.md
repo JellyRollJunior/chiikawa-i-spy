@@ -67,9 +67,9 @@ npm run dev
     -   ~~create POST /players route~~
     -   ~~pass new token with new player data to user through token~~
 -   Return updated token to user on POST /targets/:targetId on successful guess
-    -   Implement jsonwebtoken decryption + encryption methods
+    -   ~~Implement jsonwebtoken decryption + encryption methods~~
         -   ~~retrieveToken~~
-        -   verifyToken
+        -   ~~verifyToken~~
     - on successful guess
         -   add target found to player token data
         -   sign token and pass new token to client

@@ -1,3 +1,7 @@
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+dotenv.config();
+
 const retrieveToken = (req, res, next) => {
     const bearerHeader = req.headers['authorization'];
     if (bearerHeader) {
@@ -12,4 +16,16 @@ const retrieveToken = (req, res, next) => {
     }
 };
 
-export { retrieveToken };
+const verifyToken = (req, res, next) => {
+    try {
+        const data = jwt.verify(req.token, process.env.TOKEN_SECRET);
+        req.player = data;
+        next();
+    } catch (err) {
+        const error = new Error('Invalid token.');
+        error.status = 400;
+        next(error);
+    }
+}
+
+export { retrieveToken, verifyToken };
