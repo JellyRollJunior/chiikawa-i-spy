@@ -44,11 +44,11 @@ npm run dev
 
 ### Endpoints
 
-| METHOD | URI                              | Function                      | Body                               | Notes                              |
-| ------ | -------------------------------- | ----------------------------- | ---------------------------------- | ---------------------------------- |
-| GET    | /games                           | Returns games                 |                                    | Returns { id, name, image URL }    |
-| GET    | /games/:gameId                   | Returns game and game targets |                                    | Returns { game data, targets data} |
-| POST   | /targets/:targetId | Verify target coordinates  | { x: x% of image, y: y% of image } | Returns isTargetFound              |
+| METHOD | URI                | Function                      | Body                               | Notes                              |
+| ------ | ------------------ | ----------------------------- | ---------------------------------- | ---------------------------------- |
+| GET    | /games             | Returns games                 |                                    | Returns { id, name, image URL }    |
+| GET    | /games/:gameId     | Returns game and game targets |                                    | Returns { game data, targets data} |
+| POST   | /targets/:targetId | Verify target coordinates     | { x: x% of image, y: y% of image } | Returns isTargetFound              |
 
 ### Learning Outcomes
 
@@ -60,11 +60,13 @@ npm run dev
 | ----- | --------------------------------------------------------------------------------------------------- |
 | Specs | [The Odin Project](https://www.theodinproject.com/lessons/nodejs-where-s-waldo-a-photo-tagging-app) |
 
-### TODOS
+### Backend TODOS
 
-backend:
-    - ~~create player object to store player session data~~
-    - pass jsonwebtoken with player object to user on POST /games/:gameId
+-   ~~create player object to store player session data~~
+-   pass jsonwebtoken with player object to user on POST /games/:gameId
+    -   create POST /players route
+    -   Implement jsonwebtoken decryption + encryption methods
+    -   pass new token with new player data to user through token
 
 ### Reminder!
 
