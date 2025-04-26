@@ -64,9 +64,9 @@ npm run dev
 
 -   ~~create player object to store player session data~~
 -   pass jsonwebtoken with player object to user on POST /games/:gameId
-    -   create POST /players route
+    -   ~~create POST /players route~~
     -   Implement jsonwebtoken decryption + encryption methods
-    -   pass new token with new player data to user through token
+    -   ~~pass new token with new player data to user through token~~
 
 ### Reminder!
 
