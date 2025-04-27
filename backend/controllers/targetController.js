@@ -1,4 +1,4 @@
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 import * as db from '../model/db.js';
 import * as player from '../model/player.js';
@@ -14,19 +14,21 @@ const verifyTargetFound = async (req, res, next) => {
         // if user guess is within margin of error, return true
         const differenceX = Math.abs(userGuessX - target.x);
         const differenceY = Math.abs(userGuessY - target.y);
-        const returnData = {};
+        const returnData = { allFound: req.player.targetsFound };
         if (differenceX <= ERROR_MARGIN && differenceY <= ERROR_MARGIN) {
-            returnData.isTargetFound = true;            
-            returnData.target = target;
+            returnData.found = target;
             // update token
-            const updatedPlayer = player.addFoundTarget(req.player, targetId, target.name, target.x, target.y);
-            const options = {
-                expiresIn: 60 * 60 * 2, // 2 hours
-            };
-            const token = jwt.sign(updatedPlayer, process.env.TOKEN_SECRET, options);
+            const updatedPlayer = player.addFoundTarget(
+                req.player,
+                target.id,
+                target.name,
+                target.x,
+                target.y
+            );
+            const token = jwt.sign(updatedPlayer, process.env.TOKEN_SECRET, { expiresIn: 60 * 60 * 2 });
             returnData.token = token;
         } else {
-            returnData.isTargetFound = false;
+            returnData.found = false;
         }
         res.json(returnData);
     } catch (error) {
