@@ -44,11 +44,12 @@ npm run dev
 
 ### Endpoints
 
-| METHOD | URI                | Function                      | Body                               | Notes                              |
-| ------ | ------------------ | ----------------------------- | ---------------------------------- | ---------------------------------- |
-| GET    | /games             | Returns games                 |                                    | Returns { id, name, image URL }    |
-| GET    | /games/:gameId     | Returns game and game targets |                                    | Returns { game data, targets data} |
-| POST   | /targets/:targetId | Verify target coordinates     | { x: x% of image, y: y% of image } | Returns isTargetFound              |
+| METHOD | URI                | Function                      | Body                               | Notes                                      |
+| ------ | ------------------ | ----------------------------- | ---------------------------------- | ------------------------------------------ |
+| GET    | /games             | Returns games                 |                                    | Returns { id, name, image URL }            |
+| GET    | /games/:gameId     | Returns game and game targets |                                    | Returns { game data, targets data}         |
+| POST   | /players/:gameId   | Get token to start game       |                                    | { startTime, targetsFound, etc. } in token |
+| POST   | /targets/:targetId | Verify target coordinates     | { x: x% of image, y: y% of image } | Returns isTargetFound                      |
 
 ### Learning Outcomes
 
@@ -70,9 +71,12 @@ npm run dev
     -   ~~Implement jsonwebtoken decryption + encryption methods~~
         -   ~~retrieveToken~~
         -   ~~verifyToken~~
-    - on successful guess
+    -   on successful guess
         -   add target found to player token data
         -   sign token and pass new token to client
+-   new paths for gameplay
+-   extract sign jwt token to middleware
+-   bug: repeated targets found! -> do not add same target!
 
 ### Reminder!
 
