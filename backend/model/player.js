@@ -14,6 +14,10 @@ const createPlayer = (gameId, targets) => {
 };
 
 const addFoundTarget = (player, targetId, targetName, targetX, targetY) => {
+    // if target already found, return player
+    if (player.targetsFound.find((target) => target.id == targetId)) {
+        return player;
+    }
     // remove target from targetsNotFound
     const targetsNotFound = player.targetsNotFound.filter(
         (id) => id != targetId

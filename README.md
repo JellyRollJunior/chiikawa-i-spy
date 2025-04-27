@@ -71,12 +71,10 @@ npm run dev
     -   ~~Implement jsonwebtoken decryption + encryption methods~~
         -   ~~retrieveToken~~
         -   ~~verifyToken~~
-    -   on successful guess
+    -   ~~on successful guess~~
         -   ~~add target found to player token data~~
         -   ~~sign token and pass new token to client~~
 -   new paths for gameplay
--   extract sign jwt token to middleware
--   bug: repeated targets found! -> do not add same target!
 
 ### Reminder!
 
