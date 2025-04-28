@@ -76,4 +76,13 @@ const insertTarget = async (gameId, name, positionX, positionY) => {
     }
 };
 
+const getWinners = async () => {
+    try {
+        const winners = await prisma.winner.findMany();
+        return winners;
+    } catch (error) {
+        throw new DatabaseError('Error retrieving winners', 500);
+    }
+}
+
 export { getGames, getGame, insertGame, getTarget, insertTarget };
