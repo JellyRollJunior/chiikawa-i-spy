@@ -9,4 +9,8 @@ const getWinners = async (req, res, next) => {
     }
 };
 
-export { getWinners };
+const postWinners = async (req, res, next) => {
+
+}
+
+export { getWinners, postWinners };

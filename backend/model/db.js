@@ -85,4 +85,18 @@ const getWinners = async () => {
     }
 }
 
-export { getGames, getGame, insertGame, getTarget, insertTarget, getWinners };
+const insertWinner = async (name, time) => {
+    try {
+        const winner = await prisma.winner.create({
+            data: {
+                name,
+                time,
+            }
+        });
+        return winner;
+    } catch (error) {
+        throw new DatabaseError('Error inserting winner', 500);
+    }
+}
+
+export { getGames, getGame, insertGame, getTarget, insertTarget, getWinners, insertWinner };
