@@ -1,6 +1,7 @@
 import express from 'express';
 import { gamesRouter } from './routes/gamesRouter.js';
 import { winnersRouter } from './routes/winnersRouter.js';
+import { ValidationError } from './errors/ValidationError.js';
 
 const app = express();
 app.use(express.json());
@@ -15,6 +16,9 @@ app.use((err, req, res, next) => {
         status: err.status ? err.status : 500,
         message: err.message,
     };
+    if (err instanceof ValidationError) {
+        error.validationErrors = err.validationErrors;
+    }
     res.status(error.status).json(error);
 });
 

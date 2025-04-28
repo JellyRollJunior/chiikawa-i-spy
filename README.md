@@ -63,16 +63,10 @@ npm run dev
 
 ### Backend TODOS
 
--   create winner route!
-    -   ~~create route~~
-    -   ~~client pass the token to winner route~~
-    -   ~~confirm win on token data~~
-        -   ~~no targets left in targetsNotFound~~
-        -   ~~confirm all targets found match targets need to be found on DB~~
-    -   winner validations
-    -   ~~create winner object in DB!!!!~~
 -   404 response error
 -   bug: throw error if user posts guess for an unknown target or target not from game ID
+-   target validations?
+
 
 ### Reminder!
 

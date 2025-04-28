@@ -1,4 +1,6 @@
+import { validationResult } from 'express-validator';
 import * as db from '../model/db.js';
+import { ValidationError } from '../errors/ValidationError.js';
 
 const getWinners = async (req, res, next) => {
     try {
@@ -10,9 +12,13 @@ const getWinners = async (req, res, next) => {
 };
 
 const postWinners = async (req, res, next) => {
+    const endTime = new Date();
     try {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            throw new ValidationError('Error validating winner name', errors.array());
+        }
         // confirm win
-        const endTime = new Date();
         const player = req.player;
         if (player.targetsNotFound.length != 0) {
             const error = new Error('Player has not found all targets.');
