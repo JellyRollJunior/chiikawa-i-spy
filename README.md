@@ -44,12 +44,12 @@ npm run dev
 
 ### Endpoints
 
-| METHOD | URI                | Function                      | Body                               | Notes                                      |
-| ------ | ------------------ | ----------------------------- | ---------------------------------- | ------------------------------------------ |
-| GET    | /games             | Returns games                 |                                    | Returns { id, name, image URL }            |
-| GET    | /games/:gameId     | Returns game and game targets |                                    | Returns { game data, targets data}         |
-| POST   | /players/:gameId   | Get token to start game       |                                    | { startTime, targetsFound, etc. } in token |
-| POST   | /targets/:targetId | Verify target coordinates     | { x: x% of image, y: y% of image } | Returns isTargetFound                      |
+| METHOD | URI                   | Function                        | Body                               | Notes                                      |
+| ------ | --------------------- | ------------------------------- | ---------------------------------- | ------------------------------------------ |
+| GET    | /games                | Returns games                   |                                    | Returns { id, name, image URL }            |
+| GET    | /games/:gameId/assets | Returns game assets and targets |                                    | Returns { ...game data, targets data }     |
+| GET   | /games/:gameId/startTokens      | Get token to start game         |                                    | { startTime, targetsFound, etc. } in token |
+| POST   | /games/:gameId    | Verify target coordinates       | { x: x% of image, y: y% of image } | Returns isTargetFound                      |
 
 ### Learning Outcomes
 
@@ -63,19 +63,8 @@ npm run dev
 
 ### Backend TODOS
 
--   ~~create player object to store player session data~~
--   ~~pass jsonwebtoken with player object to user on POST /games/:gameId~~
-    -   ~~create POST /players route~~
-    -   ~~pass new token with new player data to user through token~~
--   Return updated token to user on POST /targets/:targetId on successful guess
-    -   ~~Implement jsonwebtoken decryption + encryption methods~~
-        -   ~~retrieveToken~~
-        -   ~~verifyToken~~
-    -   ~~on successful guess~~
-        -   ~~add target found to player token data~~
-        -   ~~sign token and pass new token to client~~
--   new paths for gameplay
--   ~~CHANGE VARIABLE NAMES THEY ARE SO CONFUSING~~
+- create winner route!
+- 404 response error
 
 ### Reminder!
 
