@@ -16,16 +16,17 @@ model Game {
 }
 
 model Target {
-  id        Int    @id @default(autoincrement())
-  name      String
-  x Int
-  y Int
-  games     Game   @relation(fields: [gameId], references: [id])
-  gameId    Int
+  id     Int    @id @default(autoincrement())
+  name   String
+  x      Int
+  y      Int
+  games  Game   @relation(fields: [gameId], references: [id])
+  gameId Int
 }
 
 model Winner {
-  id   Int    @id @default(autoincrement())
-  name String
-  time String
+  id        Int      @id @default(autoincrement())
+  name      String
+  startTime DateTime
+  endTime   DateTime
 }
