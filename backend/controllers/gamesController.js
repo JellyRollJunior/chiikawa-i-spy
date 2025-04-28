@@ -55,10 +55,15 @@ const ERROR_MARGIN = 3;
 const verifyUserGuess = async (req, res, next) => {
     try {
         const targetId = req.params.targetId;
+        const target = await db.getTarget(targetId);
+        if (target == null) {
+            const error = new Error('Target does not exist');
+            error.status = 400;
+            throw error;
+        }
+        // if user guess is within margin of error, return true
         const userGuessX = Number(req.body.x);
         const userGuessY = Number(req.body.y);
-        const target = await db.getTarget(targetId);
-        // if user guess is within margin of error, return true
         const differenceX = Math.abs(userGuessX - target.x);
         const differenceY = Math.abs(userGuessY - target.y);
         const returnData = {};

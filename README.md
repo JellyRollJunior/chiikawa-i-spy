@@ -64,7 +64,6 @@ npm run dev
 ### Backend TODOS
 
 -   404 response error
--   bug: throw error if user posts guess for an unknown target or target not from game ID
 -   target validations?
 
 
