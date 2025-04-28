@@ -85,4 +85,4 @@ const getWinners = async () => {
     }
 }
 
-export { getGames, getGame, insertGame, getTarget, insertTarget };
+export { getGames, getGame, insertGame, getTarget, insertTarget, getWinners };

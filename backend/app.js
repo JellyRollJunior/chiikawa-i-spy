@@ -1,11 +1,13 @@
 import express from 'express';
 import { gamesRouter } from './routes/gamesRouter.js';
+import { winnersRouter } from './routes/winnersRouter.js';
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/games', gamesRouter);
+app.use('/winners', winnersRouter);
 
 app.use((err, req, res, next) => {
     const error = {
