@@ -75,6 +75,7 @@ npm run dev
         -   ~~add target found to player token data~~
         -   ~~sign token and pass new token to client~~
 -   new paths for gameplay
+-   ~~CHANGE VARIABLE NAMES THEY ARE SO CONFUSING~~
 
 ### Reminder!
 

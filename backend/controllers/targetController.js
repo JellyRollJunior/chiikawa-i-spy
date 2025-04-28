@@ -14,11 +14,10 @@ const verifyTargetFound = async (req, res, next) => {
         // if user guess is within margin of error, return true
         const differenceX = Math.abs(userGuessX - target.x);
         const differenceY = Math.abs(userGuessY - target.y);
-        const returnData = { allFound: req.player.targetsFound };
+        const returnData = {};
         if (differenceX <= ERROR_MARGIN && differenceY <= ERROR_MARGIN) {
-            returnData.found = target;
-            // update token
-            const updatedPlayer = player.addFoundTarget(
+            // target found, update token
+            let { exp, iat, ...updatedPlayer} = player.addFoundTarget(
                 req.player,
                 target.id,
                 target.name,
@@ -26,9 +25,12 @@ const verifyTargetFound = async (req, res, next) => {
                 target.y
             );
             const token = jwt.sign(updatedPlayer, process.env.TOKEN_SECRET, { expiresIn: 60 * 60 * 2 });
+            // return data to client
+            returnData.guessSuccess = true;
+            returnData.targetsFound = updatedPlayer.targetsFound;
             returnData.token = token;
         } else {
-            returnData.found = false;
+            returnData.guessSuccess = false;
         }
         res.json(returnData);
     } catch (error) {
