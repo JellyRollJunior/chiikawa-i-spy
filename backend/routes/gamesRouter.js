@@ -17,7 +17,7 @@ gamesRouter.get(
     gamesController.getGameStartToken
 );
 gamesRouter.post(
-    '/:targetId',
+    '/:targetId/guesses',
     retrieveToken,
     verifyToken,
     gamesController.verifyUserGuess

@@ -44,12 +44,12 @@ npm run dev
 
 ### Endpoints
 
-| METHOD | URI                   | Function                        | Body                               | Notes                                      |
-| ------ | --------------------- | ------------------------------- | ---------------------------------- | ------------------------------------------ |
-| GET    | /games                | Returns games                   |                                    | Returns { id, name, image URL }            |
-| GET    | /games/:gameId/assets | Returns game assets and targets |                                    | Returns { ...game data, targets data }     |
-| GET   | /games/:gameId/startTokens      | Get token to start game         |                                    | { startTime, targetsFound, etc. } in token |
-| POST   | /games/:gameId    | Verify target coordinates       | { x: x% of image, y: y% of image } | Returns isTargetFound                      |
+| METHOD | URI                        | Function                        | Body                               | Notes                                                       |
+| ------ | -------------------------- | ------------------------------- | ---------------------------------- | ----------------------------------------------------------- |
+| GET    | /games                     | Returns games                   |                                    | Returns available games                                     |
+| GET    | /games/:gameId/assets      | Returns game assets and targets |                                    | Returns game & target data for /:gameId                     |
+| GET    | /games/:gameId/startTokens | Get token to start game         |                                    | Returns token with startTime, targetsFound, targetsNotFound |
+| POST   | /games/:gameId/guesses     | Verify target coordinates       | { x: x% of image, y: y% of image } | Returns guessSucess, targetsFound, targetsNotFound          |
 
 ### Learning Outcomes
 
@@ -63,8 +63,14 @@ npm run dev
 
 ### Backend TODOS
 
-- create winner route!
-- 404 response error
+-   create winner route!
+    -   create route
+    -   client pass the token to winner route
+    -   confirm win on token data
+        -   no targets left in targetsNotFound
+        -   confirm all targets found match targets need to be found on DB
+    -   create winner object in DB!!!!
+-   404 response error
 
 ### Reminder!
 
