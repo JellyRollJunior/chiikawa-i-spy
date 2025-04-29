@@ -10,6 +10,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/games', gamesRouter);
 app.use('/winners', winnersRouter);
 
+// 404 handler
+app.use(/(.*)/, (req, res, next) => {
+    const error = new Error('404 page not found');
+    error.status = 404;
+    next(error);
+});
+// error handler
 app.use((err, req, res, next) => {
     const error = {
         name: err.name,

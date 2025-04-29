@@ -63,8 +63,6 @@ npm run dev
 
 ### Backend TODOS
 
--   404 response error
-
 
 ### Reminder!
 
