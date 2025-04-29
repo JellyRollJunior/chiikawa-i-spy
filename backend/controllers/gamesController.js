@@ -23,7 +23,7 @@ const getGameAssets = async (req, res, next) => {
         }
         const id = req.params.gameId;
         const game = await db.getGame(id);
-        res.json(game);
+        res.json( game );
     } catch (error) {
         next(error);
     }

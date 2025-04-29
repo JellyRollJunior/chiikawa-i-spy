@@ -70,8 +70,8 @@ npm run dev
 
 -   testing
     -   games
-        -   get games
-        -   get games/:gameId/assets
+        -   ~~get games~~
+        -   ~~get games/:gameId/assets~~
         -   get games/:gameId/startTokens
         -   post games/:gameId/guesses/:targetId   
 - return objects not arrays!
