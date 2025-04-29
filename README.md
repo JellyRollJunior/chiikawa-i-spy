@@ -53,7 +53,12 @@ npm run dev
 
 ### Learning Outcomes
 
+- Normalizing image coordinates
+- Practicing Jest and Test Driven Development
+
 ### Retrospective aka yapping
+
+- I learned I prefer working on backend then frontend. I get really confused about what product I'm designing for doing frontend then backend.
 
 ### Acknowledgements
 
@@ -63,6 +68,12 @@ npm run dev
 
 ### Backend TODOS
 
+- testing
+    - setup
+        - connect to test database
+        - add mock data to test database
+        - write tests for mock database
+    - winners
 
 ### Reminder!
 
