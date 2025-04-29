@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import request from 'supertest';
 import jwt from 'jsonwebtoken';
-import { winnersRouter } from '../winnersRouter';
+import { winnersRouter } from '../../routes/winnersRouter.js'
 dotenv.config();
 
 const app = express();

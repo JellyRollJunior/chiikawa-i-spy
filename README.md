@@ -69,12 +69,11 @@ npm run dev
 ### Backend TODOS
 
 -   testing
-    -   setup
-        -   ~~connect to test database~~
-        -   ~~add mock data to test database~~
-        -   ~~write tests for mock database~~
-    -   ~~winners~~
-- ~~add gameId to winners...~~
+    -   games
+        -   get games
+        -   get games/:gameId/assets
+        -   get games/:gameId/startTokens
+        -   post games/:gameId/guesses/:targetId   
 - return objects not arrays!
 - bug: errors return content-type: 'text/html'
 

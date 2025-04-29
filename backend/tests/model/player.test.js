@@ -1,4 +1,4 @@
-import * as player from '../player';
+import * as player from '../../model/player.js';
 
 describe('The player object', () => {
     test('Verify player object contains gameId, startTime, and targetsNotFound', () => {
