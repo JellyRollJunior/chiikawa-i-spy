@@ -54,7 +54,12 @@ const getGameStartToken = async (req, res, next) => {
 const ERROR_MARGIN = 3;
 const verifyUserGuess = async (req, res, next) => {
     try {
-        const targetId = req.params.targetId;
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            throw new ValidationError('Error validating coordinates', errors.array());
+        }
+        const targetId = req.body.targetId;
+        // if target does not exist, throw error
         const target = await db.getTarget(targetId);
         if (target == null) {
             const error = new Error('Target does not exist');
