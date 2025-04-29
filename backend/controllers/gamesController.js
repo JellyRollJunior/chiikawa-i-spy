@@ -9,7 +9,7 @@ dotenv.config();
 const getGames = async (req, res, next) => {
     try {
         const games = await db.getGames();
-        res.json(games);
+        res.json({ games });
     } catch (error) {
         next(error);
     }

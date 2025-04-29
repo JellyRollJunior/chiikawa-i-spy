@@ -11,3 +11,16 @@ app.use(express.json());
 
 app.use('/games', gamesRouter);
 
+describe('GET /games', () => {
+    it('Responds with json', async () => {
+        const response = await request(app).get('/games');
+        expect(response.headers['content-type']).toMatch(/json/);
+        expect(response.status).toEqual(200);
+    });
+
+    it('Responds with expected game names', async () => {
+        const response = await request(app).get('/games');
+        expect(response.body.games[0].name).toStrictEqual('chiikawa-village');
+        expect(response.body.games[1].name).toStrictEqual('tama-town');
+    })
+});
