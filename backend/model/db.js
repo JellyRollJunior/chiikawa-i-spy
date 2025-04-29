@@ -4,10 +4,9 @@ import { DatabaseError } from '../errors/DatabaseError.js';
 dotenv.config();
 
 const databaseUrl =
-    // process.env.NODE_ENV === 'test'
-    //     ? 
-    process.env.TEST_DATABASE_URL
-        // : process.env.DATABASE_URL;
+    process.env.NODE_ENV === 'test'
+        ? process.env.TEST_DATABASE_URL
+        : process.env.DATABASE_URL;
 const prisma = new PrismaClient({
     datasources: {
         db: {
@@ -101,13 +100,14 @@ const getWinners = async () => {
     }
 };
 
-const insertWinner = async (name, startTime, endTime) => {
+const insertWinner = async (name, startTime, endTime, gameId) => {
     try {
         const winner = await prisma.winner.create({
             data: {
                 name,
                 startTime,
                 endTime,
+                gameId: Number(gameId),
             },
         });
         return winner;

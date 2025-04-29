@@ -72,9 +72,11 @@ npm run dev
     -   setup
         -   ~~connect to test database~~
         -   ~~add mock data to test database~~
-        -   write tests for mock database
-    -   winners
+        -   ~~write tests for mock database~~
+    -   ~~winners~~
 - ~~add gameId to winners...~~
+- return objects not arrays!
+- bug: errors return content-type: 'text/html'
 
 ### Reminder!
 

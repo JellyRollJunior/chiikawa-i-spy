@@ -5,7 +5,7 @@ import { ValidationError } from '../errors/ValidationError.js';
 const getWinners = async (req, res, next) => {
     try {
         const winners = await db.getWinners();
-        res.json(winners);
+        res.json({ winners });
     } catch (error) {
         next(error);
     }
@@ -27,8 +27,8 @@ const postWinners = async (req, res, next) => {
         }
         // insert winner
         const name = req.body.name;
-        const winner = await db.insertWinner(name, player.startTime, endTime);
-        res.json(winner);
+        const winner = await db.insertWinner(name, player.startTime, endTime, player.gameId);
+        res.json({ winner });
     } catch (error) {
         next(error);
     }
