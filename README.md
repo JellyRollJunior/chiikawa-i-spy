@@ -72,8 +72,9 @@ npm run dev
     -   games
         -   ~~get games~~
         -   ~~get games/:gameId/assets~~
-        -   get games/:gameId/startTokens
+        -   ~~get games/:gameId/startTokens~~
         -   post games/:gameId/guesses/:targetId   
+- refactor: only one call per describe test
 - return objects not arrays!
 - bug: errors return content-type: 'text/html'
 
