@@ -49,7 +49,7 @@ npm run dev
 | GET    | /games                     | Returns games                   |                                    | Returns available games                                     |
 | GET    | /games/:gameId/assets      | Returns game assets and targets |                                    | Returns game & target data for /:gameId                     |
 | GET    | /games/:gameId/startTokens | Get token to start game         |                                    | Returns token with startTime, targetsFound, targetsNotFound |
-| POST   | /games/:gameId/guesses     | Verify target coordinates       | { x: x% of image, y: y% of image } | Returns guessSucess, targetsFound, targetsNotFound          |
+| POST   | /games/:gameId/guesses     | Verify target coordinates       | { targetId, x: x% of image, y: y% of image } | Returns guessSucess, targetsFound, targetsNotFound          |
 
 ### Learning Outcomes
 

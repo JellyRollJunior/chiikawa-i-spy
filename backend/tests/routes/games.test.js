@@ -3,7 +3,6 @@ import express from 'express';
 import request from 'supertest';
 import jwt from 'jsonwebtoken';
 import { gamesRouter } from '../../routes/gamesRouter';
-import * as player from '../../model/player.js';
 dotenv.config();
 
 const app = express();
@@ -70,3 +69,46 @@ describe('GET /games/:gameId/startTokens', () => {
         expect(data.targetsNotFound).toHaveLength(2);
     });
 });
+
+describe('POST /games/:gameId/guesses', () => {
+    let gameId;
+    let token;
+    let targetId;
+    beforeAll(async () => {
+        gameId = await getGameId();
+        const tokenResponse = await request(app).get(`/games/${gameId}/startTokens`);
+        const assetsResponse = await request(app).get(`/games/${gameId}/assets`)
+        token = tokenResponse.body.token;
+        targetId = assetsResponse.body.targets.find((target) => target.name == 'usagi').id;
+    })
+
+    it('Responds with json', async () => {
+        const response = await request(app)
+            .post(`/games/${gameId}/guesses`)
+            .set('Accept', 'application/json')
+            .set('Authorization', `bearer ${token}`)
+            .type('json')
+            .send({ targetId, x: 53, y: 7 });
+        expect(response.headers['content-type']).toMatch(/json/);
+        expect(response.status).toEqual(200);
+    })
+
+    it('Responds with guessSuccess, targetsFound, and updated token on successful guess', async () => {
+        const response = await request(app)
+            .post(`/games/${gameId}/guesses`)
+            .set('Accept', 'application/json')
+            .set('Authorization', `bearer ${token}`)
+            .type('json')
+            .send({ targetId, x: 53, y: 7 });
+        // verify response data
+        expect(response.body.guessSuccess).toEqual(true);
+        expect(response.body.targetsFound[0].id).toStrictEqual(targetId);
+        expect(response.body.targetsFound[0].name).toStrictEqual('usagi');
+        // verify token data
+        const player = jwt.verify(response.body.token, process.env.TOKEN_SECRET);
+        expect(player.targetsNotFound.filter(id => id == targetId)).toEqual([]);
+        expect(player.targetsFound.filter(target => target.id == targetId)[0].name).toStrictEqual('usagi');
+    })
+
+    // returns false on wrong guess
+})
