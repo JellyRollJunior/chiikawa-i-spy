@@ -69,8 +69,6 @@ npm run dev
 
 ### Backend TODOS
 
-  
-- bug: errors return content-type: 'text/html'
 
 ### Reminder!
 
