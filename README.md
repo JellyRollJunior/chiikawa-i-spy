@@ -44,12 +44,14 @@ npm run dev
 
 ### Endpoints
 
-| METHOD | URI                        | Function                        | Body                               | Notes                                                       |
-| ------ | -------------------------- | ------------------------------- | ---------------------------------- | ----------------------------------------------------------- |
-| GET    | /games                     | Returns games                   |                                    | Returns available games                                     |
-| GET    | /games/:gameId/assets      | Returns game assets and targets |                                    | Returns game & target data for /:gameId                     |
-| GET    | /games/:gameId/startTokens | Get token to start game         |                                    | Returns token with startTime, targetsFound, targetsNotFound |
-| POST   | /games/:gameId/guesses     | Verify target coordinates       | { targetId, x: x% of image, y: y% of image } | Returns guessSucess, targetsFound, targetsNotFound          |
+| METHOD | URI                        | Function                        | Body                                                | Notes                                                       |
+| ------ | -------------------------- | ------------------------------- | --------------------------------------------------- | ----------------------------------------------------------- |
+| GET    | /games                     | Returns games                   |                                                     | Returns games' id, name, urls                               |
+| GET    | /games/:gameId/assets      | Returns game assets and targets |                                                     | Returns game & target data for /:gameId                     |
+| GET    | /games/:gameId/startTokens | Get token to start game         |                                                     | Returns token with startTime, targetsFound, targetsNotFound |
+| POST   | /games/:gameId/guesses     | Verify target coordinates       | { targetId, x: x% of image, y: y% of image }, token | Returns guessSucess, targetsFound, targetsNotFound          |
+| GET    | /winners                   | Returns winners                 |                                                     | Returns list of winners' name, time, gameId                 |
+| POST   | /winners                   | Create winner                   | { name }, token with confirmed win data             | Returns winner data if win verified, else 403               |
 
 ### Learning Outcomes
 
@@ -69,7 +71,6 @@ npm run dev
 
 ### Backend TODOS
 
-
 ### Reminder!
 
 -   remember to do tests!
@@ -78,4 +79,3 @@ npm run dev
 ### Final plans
 
 -   image storage on supabase
-
