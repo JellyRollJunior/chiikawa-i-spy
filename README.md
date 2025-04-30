@@ -54,6 +54,7 @@ npm run dev
 ### Learning Outcomes
 
 -   Normalizing image coordinates
+-   First time using SuperTest to test route responses
 -   Practicing Jest and Test Driven Development
 
 ### Retrospective aka yapping
@@ -68,14 +69,7 @@ npm run dev
 
 ### Backend TODOS
 
--   testing
-    -   games
-        -   ~~get games~~
-        -   ~~get games/:gameId/assets~~
-        -   ~~get games/:gameId/startTokens~~
-        -   post games/:gameId/guesses/:targetId   
-- refactor: only one call per describe test
-- return objects not arrays!
+  
 - bug: errors return content-type: 'text/html'
 
 ### Reminder!

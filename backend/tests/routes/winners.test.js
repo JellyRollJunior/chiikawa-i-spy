@@ -11,14 +11,17 @@ app.use(express.json());
 app.use('/winners', winnersRouter);
 
 describe('GET /winners', () => {
+    let response;
+    beforeAll(async () => {
+        response = await request(app).get('/winners');
+    })
+
     it('responds with json', async () => {
-        const response = await request(app).get('/winners');
         expect(response.headers['content-type']).toMatch(/json/);
         expect(response.status).toEqual(200);
     });
 
     it('responds with mock winner', async () => {
-        const response = await request(app).get('/winners');
         expect(response.body.winners[0].name).toStrictEqual('hachiware');
     });
 });
