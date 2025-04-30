@@ -110,5 +110,13 @@ describe('POST /games/:gameId/guesses', () => {
         expect(player.targetsFound.filter(target => target.id == targetId)[0].name).toStrictEqual('usagi');
     })
 
-    // returns false on wrong guess
+    it('Responds with false guessSuccess on incorrect guess', async () => {
+        const response = await request(app)
+            .post(`/games/${gameId}/guesses`)
+            .set('Accept', 'application/json')
+            .set('Authorization', `bearer ${token}`)
+            .type('json')
+            .send({ targetId, x: 0, y: 0 });
+        expect(response.body.guessSuccess).toEqual(false);
+    })
 })
