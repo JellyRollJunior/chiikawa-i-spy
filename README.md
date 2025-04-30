@@ -73,6 +73,7 @@ npm run dev
 
 ### Retrospective aka yapping
 
+-   I really put my all into make this a project I can showcase on my portfolio. Hope you like it!
 -   I learned I prefer working on backend then frontend (else I get confused!)
 -   Designed API and API workflow myself (proud!)
 -   Though of storing player session info in jsonwebtoken myself (proud!!)
