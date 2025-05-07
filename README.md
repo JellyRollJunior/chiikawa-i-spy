@@ -91,9 +91,9 @@ npm run dev
 
 ## Frontend TODOS
 
--   return X percentage and Y percentage on image click
 -   prop types?
 -   tests
+-   menu disappear on click anywhere?
 
 ### Final plans
 

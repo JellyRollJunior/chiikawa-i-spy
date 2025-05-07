@@ -6,13 +6,18 @@ import { TargetMenu } from '../targetMenu/TargetMenu';
 const GamePage = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [menuXY, setMenuXY] = useState([0, 0]);
+  const [guess, setGuess] = useState([0, 0]);
 
   const toggleMenu = (event) => {
     const imageXY = event.currentTarget.offsetParent.getBoundingClientRect();
     const x = event.clientX - imageXY.x;
     const y = event.clientY - imageXY.y;
+    setGuess([
+      (x / event.currentTarget.width) * 100,
+      (y / event.currentTarget.height) * 100,
+    ]);
     console.log([x, y]);
-    console.log([(x / event.currentTarget.width) * 100, (y / event.currentTarget.height) * 100]);
+    console.log(guess);
     setMenuXY([x, y]);
     setShowMenu(!showMenu);
   };
