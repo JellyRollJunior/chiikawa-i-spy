@@ -86,12 +86,14 @@ npm run dev
 
 ### Backend TODOS
 
-- insert DB target data for chiikawa-village
+-   insert DB target data for chiikawa-village
+-   query params
 
-### Reminder!
+## Frontend TODOS
 
--   remember to do tests!
+-   return X percentage and Y percentage on image click
 -   prop types?
+-   tests
 
 ### Final plans
 

@@ -11,7 +11,8 @@ const GamePage = () => {
     const imageXY = event.currentTarget.offsetParent.getBoundingClientRect();
     const x = event.clientX - imageXY.x;
     const y = event.clientY - imageXY.y;
-    console.log([x, y])
+    console.log([x, y]);
+    console.log([(x / event.currentTarget.width) * 100, (y / event.currentTarget.height) * 100]);
     setMenuXY([x, y]);
     setShowMenu(!showMenu);
   };
