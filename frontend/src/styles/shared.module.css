@@ -11,3 +11,18 @@
   border: 2px solid var(--green);
   border-radius: 16px;
 }
+
+/* Button styles */
+.primaryButton {
+  font-weight: bold;
+  padding: 2px 12px;
+  background-color: var(--pink);
+  color: var(--dark-pink);
+  border: 2px solid var(--dark-pink);
+  border-radius: 8px;
+}
+
+.primaryButton:hover {
+  background-color: var(--dark-pink);
+  color: var(--pink);
+}

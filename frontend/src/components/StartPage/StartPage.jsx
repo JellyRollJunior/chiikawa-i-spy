@@ -19,7 +19,7 @@ const StartPage = () => {
               <Link to={`/games/${game.id}`} className={styles.gameLinkContent}>
                 <img src={chiikawaWoSagase} alt="" />
                 <h3>{game.name}</h3>
-                <button>Start Game!</button>
+                <button className={shared.primaryButton}>Start Game!</button>
               </Link>
             </li>
           ))}
