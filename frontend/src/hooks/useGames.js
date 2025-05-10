@@ -11,10 +11,10 @@ const useGames = () => {
                 const response = await fetch(getURL('/games'), {
                     mode: 'cors',
                 });
-                if (!response.ok) {
-                    // handle errors
-                }
                 const json = await response.json();
+                if (!response.ok) {
+                    //handle errors
+                }
                 setGames(json.games);
             } catch (error) {
                 // handle error;
