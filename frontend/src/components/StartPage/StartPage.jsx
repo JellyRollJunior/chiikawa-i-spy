@@ -17,7 +17,8 @@ const StartPage = () => {
             <li key={game.id} className={styles.gameItem}>
               <Link to={`/games/${game.id}`}>
                 <img src={chiikawaWoSagase} alt="" />
-                <button>{game.name}</button>
+                <h3>{game.name}</h3>
+                <button>Start Game!</button>
               </Link>
             </li>
           ))}
