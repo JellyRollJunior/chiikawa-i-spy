@@ -77,8 +77,8 @@ const insertTarget = async (gameId, name, positionX, positionY) => {
         const target = await prisma.target.create({
             data: {
                 name,
-                x: positionX,
-                y: positionY,
+                x: Number(positionX),
+                y: Number(positionY),
                 gameId,
             },
         });
