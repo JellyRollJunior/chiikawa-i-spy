@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useGames } from '../../hooks/useGames';
 
 const StartPage = () => {
-  const games = useGames();
+  const {games, loading, error} = useGames();
 
   return (
     <>

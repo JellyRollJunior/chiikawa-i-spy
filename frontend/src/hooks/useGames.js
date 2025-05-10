@@ -3,6 +3,8 @@ import { getURL } from '../utils/serverRequest.js';
 
 const useGames = () => {
     const [games, setGames] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const controller = new AbortController();
@@ -10,15 +12,19 @@ const useGames = () => {
             try {
                 const response = await fetch(getURL('/games'), {
                     mode: 'cors',
+                    signal: controller.signal,
                 });
                 const json = await response.json();
                 if (!response.ok) {
-                    //handle errors
+                    throw new Error(json.name);
                 }
                 setGames(json.games);
+                setError(null);
             } catch (error) {
-                // handle error;
                 console.log(error);
+                setError('Unable to retrieve games.');
+            } finally {
+                setLoading(false);
             }
         };
 
@@ -27,7 +33,7 @@ const useGames = () => {
         return () => controller.abort();
     }, []);
 
-    return games;
+    return { games, loading, error};
 };
 
 export { useGames };
