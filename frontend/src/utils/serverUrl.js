@@ -1,7 +1,7 @@
 const SERVER_URL = 'http://localhost:3000';
 
-const getURL = (endpoint) => {
+const getUrl = (endpoint) => {
     return `${SERVER_URL}${endpoint}`;
 };
 
-export { getURL };
+export { getUrl };

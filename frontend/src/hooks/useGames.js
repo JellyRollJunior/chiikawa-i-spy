@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getURL } from '../utils/serverRequest.js';
+import { getUrl } from '../utils/serverUrl.js';
+import { getRequest } from '../utils/requests.js';
 
 const useGames = () => {
     const [games, setGames] = useState(null);
@@ -10,15 +11,11 @@ const useGames = () => {
         const controller = new AbortController();
         const fetchGames = async () => {
             try {
-                const response = await fetch(getURL('/games'), {
+                const data = await getRequest(getUrl('/games'), {
                     mode: 'cors',
                     signal: controller.signal,
                 });
-                const json = await response.json();
-                if (!response.ok) {
-                    throw new Error(json.name);
-                }
-                setGames(json.games);
+                setGames(data.games);
                 setError(null);
             } catch (error) {
                 console.log(error);
@@ -33,7 +30,7 @@ const useGames = () => {
         return () => controller.abort();
     }, []);
 
-    return { games, loading, error};
+    return { games, loading, error };
 };
 
 export { useGames };
