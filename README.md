@@ -86,10 +86,17 @@ npm run dev
 
 ### Backend TODOS
 
--   insert DB target data for chiikawa-village
 -   query params
 
 ## Frontend TODOS
+
+-   Show games on start page
+    -   GET REQUEST UTIL
+    -   custom hook pull games from db
+        -   Retrieve games
+        -   Handle errors
+    -   display games 
+        -   redirect to link with game ID
 
 -   prop types?
 -   tests
