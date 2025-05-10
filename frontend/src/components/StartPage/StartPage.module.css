@@ -3,12 +3,17 @@
   width: 300px;
 }
 
-.gameLink a {
-  text-decoration: none;
+.gameLink h3 {
   color: var(--dark-green);
+  font-size: 1.35rem;
+  margin-top: 3px;
+}
+
+.gameLink button {
+  margin-top: 5px;
 }
 
 .gameLinkContent {
   display: block;
-  padding: 8px;
+  padding: 8px 8px 10px 8px;
 }

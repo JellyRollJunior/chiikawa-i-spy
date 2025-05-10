@@ -87,28 +87,16 @@ npm run dev
 ### Backend TODOS
 
 -   query params
+-   games orderby id
 
 ## Frontend TODOS
 
 -   Show games on start page
-
-    -   ~~GET REQUEST UTIL~~
-    -   ~~custom hook pull games from db~~
-
-        -   ~~Retrieve games~~
-        -   ~~Handle errors~~
-
-    -   ~~display games~~
-        -   ~~show loading~~
-        -   ~~show error~~
-        -   ~~redirect to link with game ID~~
-            - ~~modify route to include gameID~~
-
-    - Style game link button
-        - ~~add card design~~
-        - ~~add image~~
-        - ~~add title~~
-        - style
+    -   Style game link button
+        -   ~~add card design~~
+        -   ~~add image~~
+        -   ~~add title~~
+        -   style
 
 -   prop types?
 -   tests
