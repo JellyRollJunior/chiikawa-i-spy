@@ -98,16 +98,17 @@ npm run dev
         -   ~~Retrieve games~~
         -   ~~Handle errors~~
 
-    -   display games
+    -   ~~display games~~
         -   ~~show loading~~
         -   ~~show error~~
         -   ~~redirect to link with game ID~~
             - ~~modify route to include gameID~~
 
     - Style game link button
-        - add card design
-        - add image
-        - add title
+        - ~~add card design~~
+        - ~~add image~~
+        - ~~add title~~
+        - style
 
 -   prop types?
 -   tests

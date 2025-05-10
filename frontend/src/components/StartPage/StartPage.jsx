@@ -15,13 +15,11 @@ const StartPage = () => {
       {games && !error && (
         <ul className={shared.horizontalWrapper}>
           {games.map((game) => (
-            <li key={game.id} className={`${styles.gameItem} ${shared.card}`}>
-              <Link to={`/games/${game.id}`}>
+            <li key={game.id} className={`${shared.card} ${styles.gameLink}`}>
+              <Link to={`/games/${game.id}`} className={styles.gameLinkContent}>
                 <img src={chiikawaWoSagase} alt="" />
-                <div>
-                  <h3>{game.name}</h3>
-                  <button>Start Game!</button>
-                </div>
+                <h3>{game.name}</h3>
+                <button>Start Game!</button>
               </Link>
             </li>
           ))}
