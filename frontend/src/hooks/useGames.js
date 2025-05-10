@@ -11,6 +11,7 @@ const useGames = () => {
         const controller = new AbortController();
         const fetchGames = async () => {
             try {
+                setLoading(true);
                 const data = await getRequest(getUrl('/games'), {
                     mode: 'cors',
                     signal: controller.signal,
@@ -19,7 +20,7 @@ const useGames = () => {
                 setError(null);
             } catch (error) {
                 console.log(error);
-                setError('Unable to retrieve games.');
+                setError('Unable to retrieve games. Please try again.');
             } finally {
                 setLoading(false);
             }

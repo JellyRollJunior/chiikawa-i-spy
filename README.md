@@ -91,11 +91,16 @@ npm run dev
 ## Frontend TODOS
 
 -   Show games on start page
-    -   GET REQUEST UTIL
-    -   custom hook pull games from db
-        -   Retrieve games
-        -   Handle errors
-    -   display games 
+
+    -   ~~GET REQUEST UTIL~~
+    -   ~~custom hook pull games from db~~
+
+        -   ~~Retrieve games~~
+        -   ~~Handle errors~~
+
+    -   display games
+        -   ~~show loading~~
+        -   ~~show error~~
         -   redirect to link with game ID
 
 -   prop types?
