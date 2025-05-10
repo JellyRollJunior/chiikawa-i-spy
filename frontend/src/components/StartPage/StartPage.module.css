@@ -1,0 +1,10 @@
+.horiWrapper {
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+}
+
+.gameItem {
+  height: 200px;
+  width: 250px;
+}

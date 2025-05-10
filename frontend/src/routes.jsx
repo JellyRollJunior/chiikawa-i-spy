@@ -7,7 +7,7 @@ const routes = [
     element: <StartPage />,
   },
   {
-    path: '/game',
+    path: '/games/:gameId',
     element: <GamePage />,
   },
 ];

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useGames } from '../../hooks/useGames';
+import chiikawaWoSagase from '../../assets/chiikawa-wo-sagase.jpg';
+import styles from './StartPage.module.css';
 
 const StartPage = () => {
   const { games, loading, error } = useGames();
@@ -10,13 +12,14 @@ const StartPage = () => {
       {loading && <h3>Loading games</h3>}
       {error && <h3>{error}</h3>}
       {games && !error && (
-        <ul>
+        <ul className={styles.horiWrapper}>
           {games.map((game) => (
-            <Link to="/game" key={game.id}>
-              <button>
-                {game.id} {game.name}
-              </button>
-            </Link>
+            <li key={game.id} className={styles.gameItem}>
+              <Link to={`/games/${game.id}`}>
+                <img src={chiikawaWoSagase} alt="" />
+                <button>{game.name}</button>
+              </Link>
+            </li>
           ))}
         </ul>
       )}
