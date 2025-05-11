@@ -71,6 +71,9 @@ npm run dev
     -   Practicing Jest and Test Driven Development
     -   Normalizing image coordinates
 
+-   Frontend
+    -   Relearning vitest (mocking hooks/components, user events, dynamic mocks, snapshot tests)
+
 ### Retrospective aka yapping
 
 -   I really put my all into make this a project I can showcase on my portfolio. Hope you like it!
@@ -91,11 +94,12 @@ npm run dev
 
 ## Frontend TODOS
 
-- startpage tests
-    - ~~snapshot test~~
-    - renders loading
-    - renders error
-    - redirects to /games/:gameId on game card click
+-   startpage tests
+
+    -   ~~snapshot test~~
+    -   ~~renders loading~~
+    -   renders error
+    -   redirects to /games/:gameId on game card click
 
 -   prop types?
 -   menu disappear on click anywhere?

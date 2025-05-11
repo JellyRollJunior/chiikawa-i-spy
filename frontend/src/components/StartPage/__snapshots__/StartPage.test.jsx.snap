@@ -1,5 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Start page > rendering loading text when loading 1`] = `
+<div>
+  <h1>
+    I Spy Chiikawa!
+  </h1>
+  <h3>
+    Loading games
+  </h3>
+</div>
+`;
+
 exports[`Start page > renders title and games 1`] = `
 <div>
   <h1>

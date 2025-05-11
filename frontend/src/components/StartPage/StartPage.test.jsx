@@ -1,6 +1,6 @@
 import { vi, describe, it, expect } from 'vitest';
-import { render } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom'
+import { screen, render } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 import { StartPage } from './StartPage.jsx';
 
 const GAME_DATA = [
@@ -16,18 +16,21 @@ const GAME_DATA = [
   },
 ];
 
+const mocks = vi.hoisted(() => {
+  return {
+    data: {},
+  };
+});
+
+// Mock fetch data
+vi.mock('../../hooks/useGames.js', () => ({
+  useGames: () => mocks.data,
+}));
+
 describe('Start page', () => {
   it('renders title and games', () => {
-    // Mock game data
-    vi.mock('../../hooks/useGames.js', () => ({
-      useGames: () => {
-        return {
-          games: GAME_DATA,
-          loading: false,
-          error: null,
-        };
-      },
-    }));
+    // mock game data
+    mocks.data = { games: GAME_DATA, loading: false, error: null };
     const { container } = render(
       <BrowserRouter>
         <StartPage />
@@ -35,5 +38,17 @@ describe('Start page', () => {
     );
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('renders loading text when fetching data', () => {
+    // mock loading state
+    mocks.data = { games: null, loading: true, error: null };
+    render(
+      <BrowserRouter>
+        <StartPage />
+      </BrowserRouter>
+    );
+
+    expect(screen.getByText('Loading games')).toBeInTheDocument();
   });
 });
