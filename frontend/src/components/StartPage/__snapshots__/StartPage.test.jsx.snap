@@ -1,0 +1,57 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Start page > renders title and games 1`] = `
+<div>
+  <h1>
+    I Spy Chiikawa!
+  </h1>
+  <ul
+    class="_horizontalWrapper_5890fc"
+  >
+    <li
+      class="_card_5890fc _gameLink_eb2496"
+    >
+      <a
+        class="_gameLinkContent_eb2496"
+        data-discover="true"
+        href="/games/1"
+      >
+        <img
+          alt=""
+          src="/src/assets/chiikawa-wo-sagase.jpg"
+        />
+        <h3>
+          Chiikawa Village
+        </h3>
+        <button
+          class="_primaryButton_5890fc"
+        >
+          Start Game!
+        </button>
+      </a>
+    </li>
+    <li
+      class="_card_5890fc _gameLink_eb2496"
+    >
+      <a
+        class="_gameLinkContent_eb2496"
+        data-discover="true"
+        href="/games/3"
+      >
+        <img
+          alt=""
+          src="/src/assets/chiikawa-wo-sagase.jpg"
+        />
+        <h3>
+          Chiikawa Village - Hard
+        </h3>
+        <button
+          class="_primaryButton_5890fc"
+        >
+          Start Game!
+        </button>
+      </a>
+    </li>
+  </ul>
+</div>
+`;

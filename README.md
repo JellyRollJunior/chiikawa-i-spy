@@ -91,16 +91,15 @@ npm run dev
 
 ## Frontend TODOS
 
--   Show games on start page
-    -   Style game link button
-        -   ~~add card design~~
-        -   ~~add image~~
-        -   ~~add title~~
-        -   style
+- startpage tests
+    - ~~snapshot test~~
+    - renders loading
+    - renders error
+    - redirects to /games/:gameId on game card click
 
 -   prop types?
--   tests
 -   menu disappear on click anywhere?
+-   style errors
 
 ### Final plans
 
