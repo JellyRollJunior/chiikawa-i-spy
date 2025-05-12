@@ -51,4 +51,17 @@ describe('Start page', () => {
 
     expect(screen.getByText('Loading games')).toBeInTheDocument();
   });
+
+  it('renders error message when unable to fetch data', () => {
+    // mock error state
+    const errorMessage = 'Unable to retrieve games';
+    mocks.data = { games: null, loading: true, error: errorMessage };
+    render(
+      <BrowserRouter>
+        <StartPage />
+      </BrowserRouter>
+    );
+
+    expect(screen.getByText(errorMessage)).toBeInTheDocument();
+  });
 });

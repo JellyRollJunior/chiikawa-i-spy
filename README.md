@@ -94,13 +94,6 @@ npm run dev
 
 ## Frontend TODOS
 
--   startpage tests
-
-    -   ~~snapshot test~~
-    -   ~~renders loading~~
-    -   renders error
-    -   redirects to /games/:gameId on game card click
-
 -   prop types?
 -   menu disappear on click anywhere?
 -   style errors
