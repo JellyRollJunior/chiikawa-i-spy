@@ -2,11 +2,14 @@
 
 exports[`Start page > renders title and games 1`] = `
 <div>
-  <h1>
-    I Spy Chiikawa!
-  </h1>
+  <header />
+  <h2
+    class="_gamesTitle_eb2496 _marginTopMedium_5890fc"
+  >
+    Games
+  </h2>
   <ul
-    class="_horizontalWrapper_5890fc"
+    class="_horizontalWrapper_5890fc _marginTopSmall_5890fc"
   >
     <li
       class="_card_5890fc _gameLink_eb2496"

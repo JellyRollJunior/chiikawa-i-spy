@@ -27,6 +27,11 @@ vi.mock('../../hooks/useGames.js', () => ({
   useGames: () => mocks.data,
 }));
 
+// mock components
+vi.mock('../Header/Header.jsx', () => ({
+  Header: ({ children }) => <header>{children}</header>
+}));
+
 describe('Start page', () => {
   it('renders title and games', () => {
     // mock game data
