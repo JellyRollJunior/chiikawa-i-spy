@@ -1,5 +1,5 @@
-import { IconWrapper } from '../IconWrapper/IconWrapper';
 import { Link } from 'react-router';
+import { IconWrapper } from '../IconWrapper/IconWrapper.jsx';
 import styles from './Header.module.css';
 import shared from '../../styles/shared.module.css';
 

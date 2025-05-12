@@ -17,13 +17,13 @@ const IconWrapper = ({ size, children, leftIcon = 0, rightIcon = 1 }) => {
       <img
         src={icons[leftIcon]}
         style={{ height: size, width: size }}
-        alt="Chiikawa icon"
+        alt="Chiikawa character icon"
       />
       {children}
       <img
         src={icons[rightIcon]}
         style={{ height: size, width: size }}
-        alt="Hachiware icon"
+        alt="Chiikawa character icon"
       />
     </div>
   );
