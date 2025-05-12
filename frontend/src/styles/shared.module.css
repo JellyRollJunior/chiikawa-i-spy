@@ -1,5 +1,9 @@
 /* margins */
-.marginTopMed {
+.marginTopSmall {
+  margin-top: 16px;
+}
+
+.marginTopMedium {
   margin-top: 32px;
 }
 
@@ -18,13 +22,18 @@
 }
 
 /* Button styles */
-.primaryButton {
+.button {
   font-weight: bold;
   padding: 2px 12px;
+  border-radius: 8px;
+  transition: background-color 0.25s ease-out;
+}
+
+.primaryButton {
+  composes: button;
   background-color: var(--pink);
   color: var(--dark-pink);
   border: 2px solid var(--dark-pink);
-  border-radius: 8px;
 }
 
 .primaryButton:hover {

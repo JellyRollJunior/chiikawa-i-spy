@@ -1,10 +1,14 @@
+.gamesTitle {
+  color: var(--dark-green);
+}
+
 .gameLink {
   min-height: 200px;
   width: 300px;
 }
 
 .gameLink h3 {
-  color: var(--dark-green);
+  color: var(--dark-pink);
   font-size: 1.35rem;
   margin-top: 3px;
 }

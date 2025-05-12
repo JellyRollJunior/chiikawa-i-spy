@@ -14,17 +14,20 @@ const StartPage = () => {
       {loading && <h3>Loading games</h3>}
       {error && <h3>{error}</h3>}
       {games && !error && (
-        <ul className={`${shared.horizontalWrapper} ${shared.marginTopMed}`}>
-          {games.map((game) => (
-            <li key={game.id} className={`${shared.card} ${styles.gameLink}`}>
-              <Link to={`/games/${game.id}`} className={styles.gameLinkContent}>
-                <img src={chiikawaWoSagase} alt="" />
-                <h3>{game.name}</h3>
-                <button className={shared.primaryButton}>Start Game!</button>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <>
+          <h2 className={`${styles.gamesTitle} ${shared.marginTopMedium}`}>Games</h2>
+          <ul className={`${shared.horizontalWrapper} ${shared.marginTopSmall}`}>
+            {games.map((game) => (
+              <li key={game.id} className={`${shared.card} ${styles.gameLink}`}>
+                <Link to={`/games/${game.id}`} className={styles.gameLinkContent}>
+                  <img src={chiikawaWoSagase} alt="" />
+                  <h3>{game.name}</h3>
+                  <button className={shared.primaryButton}>Start Game!</button>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          </>
       )}
     </>
   );

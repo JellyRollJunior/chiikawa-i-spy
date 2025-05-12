@@ -66,6 +66,7 @@ npm run dev
 ### Learning Outcomes
 
 -   Backend
+
     -   Practice designing API and API workflow to play game
     -   First time using SuperTest to test route responses
     -   Practicing Jest and Test Driven Development
@@ -94,20 +95,20 @@ npm run dev
 
 ## Frontend TODOS
 
-- Header
-    - create header title
-    - create header buttons
-    - header buttons accept children
-    - style header
+-   Header
+    -   test
+-   position loading message
+-   position error message
+-   position title
 
-- position loading message
-- position error message
-- position title 
-- button transition time
+-   icon wrapper -> wrap children in chiikawa icons left and right
+
+    -   specify size and characters
 
 -   prop types
 -   menu disappear on click anywhere?
 -   style errors
+-   startpageleaderboard button
 
 ### Final plans
 

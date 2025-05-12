@@ -21,5 +21,8 @@
   color: var(--dark-green);
   background-color: inherit;
   border: none;
-  border-radius: 8px;
+}
+
+.headerButton:hover {
+  background-color: var(--light-green);
 }
