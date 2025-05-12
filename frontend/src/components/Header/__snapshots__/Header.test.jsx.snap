@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header component > renders title, header element, and children elements 1`] = `
+<div>
+  <header
+    class="_header_63c2ea"
+  >
+    <a
+      data-discover="true"
+      href="/"
+    >
+      <button
+        class="_headerButton_63c2ea _button_5890fc"
+      >
+        <h1
+          class="_title_63c2ea"
+        >
+          I Spy Chiikawa!
+        </h1>
+      </button>
+    </a>
+    <nav>
+      <button>
+        I am a child!
+      </button>
+    </nav>
+  </header>
+</div>
+`;
