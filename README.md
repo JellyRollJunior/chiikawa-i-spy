@@ -94,7 +94,18 @@ npm run dev
 
 ## Frontend TODOS
 
--   prop types?
+- Header
+    - create header title
+    - create header buttons
+    - header buttons accept children
+    - style header
+
+- position loading message
+- position error message
+- position title 
+- button transition time
+
+-   prop types
 -   menu disappear on click anywhere?
 -   style errors
 

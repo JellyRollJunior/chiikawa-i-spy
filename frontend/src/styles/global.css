@@ -1,7 +1,8 @@
 :root {
   --yellow: #fefacc;
+  --light-green: #c8daa6;
   --green: #82a94f;
-  --dark-green: #526b31;
+  --dark-green: #455b28;
   --pink: #fbdee9;
   --dark-pink: #e980a8;
   font-size: 16px;
@@ -9,6 +10,7 @@
 
 body {
   min-height: 100vh;
+  background-color: var(--light-green);
 }
 
 #root {

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useGames } from '../../hooks/useGames';
+import { useGames } from '../../hooks/useGames.js';
+import { Header } from '../Header/Header.jsx';
 import chiikawaWoSagase from '../../assets/chiikawa-wo-sagase.jpg';
 import styles from './StartPage.module.css';
 import shared from '../../styles/shared.module.css';
@@ -9,11 +10,11 @@ const StartPage = () => {
 
   return (
     <>
-      <h1>I Spy Chiikawa!</h1>
+      <Header />
       {loading && <h3>Loading games</h3>}
       {error && <h3>{error}</h3>}
       {games && !error && (
-        <ul className={shared.horizontalWrapper}>
+        <ul className={`${shared.horizontalWrapper} ${shared.marginTopMed}`}>
           {games.map((game) => (
             <li key={game.id} className={`${shared.card} ${styles.gameLink}`}>
               <Link to={`/games/${game.id}`} className={styles.gameLinkContent}>

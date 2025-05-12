@@ -1,3 +1,8 @@
+/* margins */
+.marginTopMed {
+  margin-top: 32px;
+}
+
 /* wrappers */
 .horizontalWrapper {
   display: flex;
