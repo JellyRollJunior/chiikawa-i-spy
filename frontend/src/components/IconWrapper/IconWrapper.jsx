@@ -1,12 +1,21 @@
+import styles from './IconWrapper.module.css';
 import chiikawa from '../../assets/characterIcons/chiikawa-icon.png';
 import hachiware from '../../assets/characterIcons/hachiware-icon.png';
 
-const IconWrapper = ({ children }) => {
+const IconWrapper = ({ size, children }) => {
   return (
-    <div>
-      <img src={chiikawa} alt="Chiikawa icon" />
+    <div className={styles.iconWrapper}>
+      <img
+        src={chiikawa}
+        style={{ height: size, width: size }}
+        alt="Chiikawa icon"
+      />
       {children}
-      <img src={hachiware} alt="Hachiware icon" />
+      <img
+        src={hachiware}
+        style={{ height: size, width: size }}
+        alt="Hachiware icon"
+      />
     </div>
   );
 };
