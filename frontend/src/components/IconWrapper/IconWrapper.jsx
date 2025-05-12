@@ -9,6 +9,9 @@ import usagi from '../../assets/characterIcons/usagi-icon.png';
 const icons = [chiikawa, hachiware, kurimanju, momonga, rakko, usagi];
 
 const IconWrapper = ({ size, children, leftIcon = 0, rightIcon = 1 }) => {
+  if (leftIcon < 0 || leftIcon >= icons.length) leftIcon = 0;
+  if (rightIcon < 0 || rightIcon >= icons.length) rightIcon = 0;
+  
   return (
     <div className={styles.iconWrapper}>
       <img
