@@ -95,8 +95,6 @@ npm run dev
 
 ## Frontend TODOS
 
--   Header
-    -   test
 -   position loading message
 -   position error message
 -   position title ( put title in a card?)

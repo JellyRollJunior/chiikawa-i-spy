@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`IconWrapper component > Renders icons to left and right of child element 1`] = `
+exports[`IconWrapper component > renders icons to left and right of child element 1`] = `
 <div>
   <div
     class="_iconWrapper_5d4a96"
