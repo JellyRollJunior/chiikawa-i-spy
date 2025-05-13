@@ -101,10 +101,6 @@ npm run dev
 -   position error message
 -   position title
 
--   icon wrapper -> wrap children in chiikawa icons left and right
-
-    -   specify size and characters
-
 -   prop types
 -   menu disappear on click anywhere?
 -   style errors
