@@ -99,12 +99,11 @@ npm run dev
     -   test
 -   position loading message
 -   position error message
--   position title
+-   position title ( put title in a card?)
 
--   prop types
 -   menu disappear on click anywhere?
 -   style errors
--   startpageleaderboard button
+-   startpage leaderboard button
 
 ### Final plans
 

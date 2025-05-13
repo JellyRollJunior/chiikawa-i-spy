@@ -5,20 +5,34 @@ exports[`Header component > renders title, header element, and children elements
   <header
     class="_header_63c2ea"
   >
-    <a
-      data-discover="true"
-      href="/"
+    <div
+      class="_iconWrapper_5d4a96"
     >
-      <button
-        class="_headerButton_63c2ea _button_5890fc"
+      <img
+        alt="Chiikawa character icon"
+        src="/src/assets/characterIcons/kurimanju-icon.png"
+        style="height: 38px; width: 38px; margin-right: 3px;"
+      />
+      <a
+        data-discover="true"
+        href="/"
       >
-        <h1
-          class="_title_63c2ea"
+        <button
+          class="_headerButton_63c2ea _button_5890fc"
         >
-          I Spy Chiikawa!
-        </h1>
-      </button>
-    </a>
+          <h1
+            class="_title_63c2ea"
+          >
+            I Spy Chiikawa!
+          </h1>
+        </button>
+      </a>
+      <img
+        alt="Chiikawa character icon"
+        src="/src/assets/characterIcons/momonga-icon.png"
+        style="height: 38px; width: 38px; margin-left: 3px;"
+      />
+    </div>
     <nav>
       <button>
         I am a child!

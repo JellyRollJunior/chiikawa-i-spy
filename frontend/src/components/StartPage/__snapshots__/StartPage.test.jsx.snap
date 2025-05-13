@@ -3,11 +3,29 @@
 exports[`Start page > renders title and games 1`] = `
 <div>
   <header />
-  <h2
-    class="_gamesTitle_eb2496 _marginTopMedium_5890fc"
+  <div
+    class="_marginTopMedium_5890fc"
   >
-    Games
-  </h2>
+    <div
+      class="_iconWrapper_5d4a96"
+    >
+      <img
+        alt="Chiikawa character icon"
+        src="/src/assets/characterIcons/chiikawa-icon.png"
+        style="height: 38px; width: 38px; margin-right: 66px;"
+      />
+      <h2
+        class="_gamesTitle_eb2496"
+      >
+        Games
+      </h2>
+      <img
+        alt="Chiikawa character icon"
+        src="/src/assets/characterIcons/hachiware-icon.png"
+        style="height: 38px; width: 38px; margin-left: 66px;"
+      />
+    </div>
+  </div>
   <ul
     class="_horizontalWrapper_5890fc _marginTopSmall_5890fc"
   >
