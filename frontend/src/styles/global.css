@@ -1,5 +1,6 @@
 :root {
   --yellow: #fefacc;
+  --pale-green: #f0fada;
   --light-green: #c8daa6;
   --green: #82a94f;
   --dark-green: #455b28;
@@ -10,7 +11,13 @@
 
 body {
   min-height: 100vh;
-  background-color: var(--light-green);
+  background: repeating-linear-gradient(
+    45deg,
+    var(--light-green),
+    var(--light-green) 50px,
+    var(--pale-green) 50px,
+    var(--pale-green) 100px
+  );
 }
 
 #root {
