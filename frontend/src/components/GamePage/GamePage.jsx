@@ -35,8 +35,8 @@ const GamePage = () => {
     <>
       <Header></Header>
       <main>
-        {loading && <h3>Loading</h3>}
-        {error && <h3>{error}</h3>}
+        {loading && <h3 className={shared.messages}>Loading</h3>}
+        {error && <h3 className={shared.messages}>{error}</h3>}
         {session && !error && (
           <>
             <section className={`${shared.card} ${styles.gameContentWrapper} ${shared.marginTopMedium}`}>

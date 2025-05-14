@@ -13,8 +13,8 @@ const StartPage = () => {
     <>
       <Header />
       <main>
-        {loading && <h3>Loading games</h3>}
-        {error && <h3>{error}</h3>}
+        {loading && <h3 className={shared.messages}>Loading games</h3>}
+        {error && <h3 className={shared.messages}>{error}</h3>}
         {games && !error && (
           <>
             <div className={`${shared.marginTopMedium}`}>

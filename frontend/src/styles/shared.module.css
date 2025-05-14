@@ -47,3 +47,11 @@
   background-color: var(--dark-pink);
   color: var(--pink);
 }
+
+/* messages */
+.messages {
+  composes: card;
+  composes: marginTopMedium;
+  composes: title;
+  padding: 2px 12px;
+}
