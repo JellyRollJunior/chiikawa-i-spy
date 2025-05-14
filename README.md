@@ -97,7 +97,6 @@ npm run dev
 
 -   gamepage
     -   tests
-    -   static page width for game page based on image
     -   menu
         -   menu disappear on click anywhere?
         -   menu show targets

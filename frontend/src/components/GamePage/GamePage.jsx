@@ -43,13 +43,11 @@ const GamePage = () => {
         {loading && <h3 className={shared.messages}>Loading</h3>}
         {error && <h3 className={shared.messages}>{error}</h3>}
         {session && !error && (
-          <div className={`${shared.card} ${styles.gameContentWrapper} ${shared.marginTopMedium}`}>
-            <section>
+          <div className={`${styles.wrapper} ${shared.marginTopMedium}`}>
+            <section className={`${shared.card} ${styles.gameContent}`}>
               <IconWrapper size={46} margin={12} leftIcon={0} rightIcon={5}>
                 <h2 className={shared.title}>{session.name}</h2>
               </IconWrapper>
-            </section>
-            <section>
               <div className={styles.imageWrapper}>
                 <img
                   src={chiikawaWoSagase}
