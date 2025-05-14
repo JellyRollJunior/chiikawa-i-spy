@@ -108,8 +108,8 @@ npm run dev
     -   game intro + explanation
 
 -   general
-    -   static padding on LR for game page
     -   extract game image to its own component?
+    -   shrink targets on smaller windows size
 
 ### Final plans
 

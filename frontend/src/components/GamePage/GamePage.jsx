@@ -43,35 +43,33 @@ const GamePage = () => {
         {loading && <h3 className={shared.messages}>Loading</h3>}
         {error && <h3 className={shared.messages}>{error}</h3>}
         {session && !error && (
-          <>
-            <div className={`${shared.card} ${styles.gameContentWrapper} ${shared.marginTopMedium}`}>
-              <section>
-                <IconWrapper size={46} margin={12} leftIcon={0} rightIcon={5}>
-                  <h2 className={shared.title}>{session.name}</h2>
-                </IconWrapper>
-              </section>
-              <section>
-                <div className={styles.imageWrapper}>
-                  <img
-                    src={chiikawaWoSagase}
-                    alt="Chiikawa Village"
-                    onClick={(event) => toggleMenu(event)}
-                  />
-                  <TargetMenu isVisible={showMenu} x={menuXY[0]} y={menuXY[1]} />
-                </div>
-              </section>
-              <section className={styles.targetSection}>
-                <ul className={shared.horizontalWrapper}>
-                  {session.targets.map((target, index) => (
-                    <li className={styles.target}>
-                      <img src={tempImages[index]} alt="" className={styles.targetImage} />
-                      <h4>{target.name}</h4>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            </div>
-          </>
+          <div className={`${shared.card} ${styles.gameContentWrapper} ${shared.marginTopMedium}`}>
+            <section>
+              <IconWrapper size={46} margin={12} leftIcon={0} rightIcon={5}>
+                <h2 className={shared.title}>{session.name}</h2>
+              </IconWrapper>
+            </section>
+            <section>
+              <div className={styles.imageWrapper}>
+                <img
+                  src={chiikawaWoSagase}
+                  alt="Chiikawa Village"
+                  onClick={(event) => toggleMenu(event)}
+                />
+                <TargetMenu isVisible={showMenu} x={menuXY[0]} y={menuXY[1]} />
+              </div>
+            </section>
+            <section className={styles.targetSection}>
+              <ul className={shared.horizontalWrapper}>
+                {session.targets.map((target, index) => (
+                  <li className={styles.target}>
+                    <img src={tempImages[index]} alt="" className={styles.targetImage} />
+                    <h4>{target.name}</h4>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
         )}
       </main>
     </>
