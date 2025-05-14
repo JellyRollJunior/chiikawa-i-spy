@@ -1,9 +1,3 @@
-.gamesTitle {
-  color: var(--dark-green);
-  font-size: 1.8rem;
-  padding: 2px 32px;
-}
-
 .gameLink {
   min-height: 200px;
   width: 300px;

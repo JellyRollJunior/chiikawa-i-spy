@@ -94,9 +94,6 @@ npm run dev
 -   games orderby id
 
 ## Frontend TODOS
--  game page
-    -   loading message
-    -   error message
 -   gamepage tests
 
 -   position loading message
@@ -106,6 +103,9 @@ npm run dev
 -   menu disappear on click anywhere?
 -   style errors
 -   startpage leaderboard button
+
+- static page width for game page based on image
+- static padding on LR for game page
 
 ### Final plans
 

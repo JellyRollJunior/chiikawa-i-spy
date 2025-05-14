@@ -7,6 +7,13 @@
   margin-top: 32px;
 }
 
+/* titles */
+.title {
+  color: var(--dark-green);
+  font-size: 1.8rem;
+  padding: 2px 32px;
+}
+
 /* wrappers */
 .horizontalWrapper {
   display: flex;

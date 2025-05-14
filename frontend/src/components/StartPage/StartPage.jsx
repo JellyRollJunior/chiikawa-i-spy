@@ -19,7 +19,7 @@ const StartPage = () => {
           <>
             <div className={`${shared.marginTopMedium}`}>
               <IconWrapper size={46} margin={12}>
-                <h2 className={`${shared.card} ${styles.gamesTitle}`}>Games</h2>
+                <h2 className={`${shared.card} ${shared.title}`}>Games</h2>
               </IconWrapper>
             </div>
             <ul className={`${shared.horizontalWrapper} ${shared.marginTopSmall}`}>
