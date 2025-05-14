@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { getRequest } from '../utils/requests.js';
 import { getUrl } from '../utils/serverUrl.js';
 
-const useGameAssets = (gameId) => {
-    const [assets, setAssets] = useState(null);
+const useGameSession = (gameId) => {
+    const [session, setSession] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -12,16 +12,21 @@ const useGameAssets = (gameId) => {
         const fetchGameAssets = async () => {
             try {
                 setLoading(true);
-                const data = await getRequest(getUrl(`/games/${gameId}/assets`), {
+                const assetsPromise = getRequest(getUrl(`/games/${gameId}/assets`), {
                     mode: 'cors',
                     signal: controller.signal,
                 });
-                console.log(data);
-                setAssets(data);
+                const tokenPromise = getRequest(getUrl(`/games/${gameId}/startTokens`), {
+                    mode: 'cors',
+                    signal: controller.signal
+                })
+                const [assets, token] = await Promise.all([assetsPromise, tokenPromise]);
+                console.log({ ...assets, ...token });
+                setSession({ ...assets, ...token });
                 setError(null);
             } catch (error) {
                 console.log(error);
-                setError('Unable to retrieve game assets. Please try again.');
+                setError('Unable to retrieve game session data. Please try again.');
             } finally {
                 setLoading(false);
             }
@@ -32,7 +37,7 @@ const useGameAssets = (gameId) => {
         return () => controller.abort();
     }, [gameId]);
 
-    return { assets, error, loading };
+    return { session, error, loading };
 };
 
-export { useGameAssets };
+export { useGameSession };

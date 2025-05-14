@@ -95,10 +95,9 @@ npm run dev
 
 ## Frontend TODOS
 
--   custom hook to fetch game assets
-    -   implement fetch game assetsui
     -   loading message
     -   error message
+-   gamepage tests
 
 -   position loading message
 -   position error message

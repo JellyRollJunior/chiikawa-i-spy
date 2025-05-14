@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { TargetMenu } from '../targetMenu/TargetMenu';
-import { useGameAssets } from '../../hooks/useGameAssets';
+import { useGameSession } from '../../hooks/useGameSession.js';
 import chiikawaWoSagase from '../../assets/chiikawa-wo-sagase.jpg';
 import styles from './GamePage.module.css';
 
@@ -25,7 +25,7 @@ const GamePage = () => {
   };
 
   const gameId = useParams().gameId;
-  const { assets, error, loading } = useGameAssets(gameId);
+  const { session, error, loading } = useGameSession(gameId);
 
   return (
     <>
