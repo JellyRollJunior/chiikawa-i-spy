@@ -97,7 +97,6 @@ npm run dev
 
 -   gamepage
     -   tests
-    -   BUG FIX: save token to local storage!
     -   static page width for game page based on image
     -   menu
         -   menu disappear on click anywhere?

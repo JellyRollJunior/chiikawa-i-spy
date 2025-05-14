@@ -22,7 +22,8 @@ const useGameSession = (gameId) => {
                 })
                 const [assets, token] = await Promise.all([assetsPromise, tokenPromise]);
                 console.log({ ...assets, ...token });
-                setSession({ ...assets, ...token });
+                localStorage.setItem('token', token.token);
+                setSession(assets);
                 setError(null);
             } catch (error) {
                 console.log(error);
