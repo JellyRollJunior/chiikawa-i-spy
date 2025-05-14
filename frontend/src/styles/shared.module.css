@@ -17,6 +17,7 @@
 /* wrappers */
 .horizontalWrapper {
   display: flex;
+  justify-content: space-evenly;
   gap: 1rem;
   text-align: center;
 }

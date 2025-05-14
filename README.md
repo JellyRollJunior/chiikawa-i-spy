@@ -103,10 +103,6 @@ npm run dev
         -   menu disappear on click anywhere?
         -   menu show targets
         -   menu call verify position
-    -   targets
-        -   show targets name
-        -   show target images
-        -   style targets
 
 -   Start Page
     -   startpage leaderboard button
@@ -114,6 +110,7 @@ npm run dev
 
 -   general
     -   static padding on LR for game page
+    -   extract game image to its own component?
 
 ### Final plans
 

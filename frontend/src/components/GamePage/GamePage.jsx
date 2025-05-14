@@ -7,6 +7,12 @@ import { useGameSession } from '../../hooks/useGameSession.js';
 import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './GamePage.module.css';
 import shared from '../../styles/shared.module.css';
+import usagi from '../../assets/temp/usagi.jpg';
+import shisa from '../../assets/temp/shisa.jpg';
+import hachiware from '../../assets/temp/hachiware.jpg';
+import chiikawa from '../../assets/temp/chiikawa.jpg';
+
+const tempImages = [ usagi, chiikawa, hachiware, shisa ];
 
 const GamePage = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -54,10 +60,13 @@ const GamePage = () => {
                   <TargetMenu isVisible={showMenu} x={menuXY[0]} y={menuXY[1]} />
                 </div>
               </section>
-              <section>
+              <section className={styles.targetSection}>
                 <ul className={shared.horizontalWrapper}>
-                  {session.targets.map((target) => (
-                    <div>{target.name}</div>
+                  {session.targets.map((target, index) => (
+                    <li className={styles.target}>
+                      <img src={tempImages[index]} alt="" className={styles.targetImage} />
+                      <h4>{target.name}</h4>
+                    </li>
                   ))}
                 </ul>
               </section>
