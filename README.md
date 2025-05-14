@@ -95,6 +95,11 @@ npm run dev
 
 ## Frontend TODOS
 
+-   custom hook to fetch game assets
+    -   implement fetch game assetsui
+    -   loading message
+    -   error message
+
 -   position loading message
 -   position error message
 -   position title ( put title in a card?)
