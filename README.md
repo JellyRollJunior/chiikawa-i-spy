@@ -94,7 +94,7 @@ npm run dev
 -   games orderby id
 
 ## Frontend TODOS
-
+-  game page
     -   loading message
     -   error message
 -   gamepage tests

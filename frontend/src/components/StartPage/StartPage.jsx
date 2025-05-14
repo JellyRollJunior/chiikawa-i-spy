@@ -12,28 +12,30 @@ const StartPage = () => {
   return (
     <>
       <Header />
-      {loading && <h3>Loading games</h3>}
-      {error && <h3>{error}</h3>}
-      {games && !error && (
-        <>
-          <div className={`${shared.marginTopMedium}`}>
-            <IconWrapper size={46} margin={12}>
-              <h2 className={`${shared.card} ${styles.gamesTitle}`}>Games</h2>
-            </IconWrapper>
-          </div>
-          <ul className={`${shared.horizontalWrapper} ${shared.marginTopSmall}`}>
-            {games.map((game) => (
-              <li key={game.id} className={`${shared.card} ${styles.gameLink}`}>
-                <Link to={`/games/${game.id}`} className={styles.gameLinkContent}>
-                  <img src={chiikawaWoSagase} alt="" />
-                  <h3>{game.name}</h3>
-                  <button className={shared.primaryButton}>Start Game!</button>
-                </Link>
-              </li>
-            ))}
-          </ul>
+      <main>
+        {loading && <h3>Loading games</h3>}
+        {error && <h3>{error}</h3>}
+        {games && !error && (
+          <>
+            <div className={`${shared.marginTopMedium}`}>
+              <IconWrapper size={46} margin={12}>
+                <h2 className={`${shared.card} ${styles.gamesTitle}`}>Games</h2>
+              </IconWrapper>
+            </div>
+            <ul className={`${shared.horizontalWrapper} ${shared.marginTopSmall}`}>
+              {games.map((game) => (
+                <li key={game.id} className={`${shared.card} ${styles.gameLink}`}>
+                  <Link to={`/games/${game.id}`} className={styles.gameLinkContent}>
+                    <img src={chiikawaWoSagase} alt="" />
+                    <h3>{game.name}</h3>
+                    <button className={shared.primaryButton}>Start Game!</button>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </>
-      )}
+        )}
+      </main>
     </>
   );
 };

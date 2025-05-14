@@ -1,3 +1,7 @@
+.cardWrapper {
+  padding: 6px 8px;
+}
+
 .imageWrapper {
   position: relative;
 }
