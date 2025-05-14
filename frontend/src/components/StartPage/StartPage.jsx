@@ -16,9 +16,9 @@ const StartPage = () => {
       {error && <h3>{error}</h3>}
       {games && !error && (
         <>
-          <div className={shared.marginTopMedium}>
-            <IconWrapper size={38} margin={66}>
-              <h2 className={styles.gamesTitle}>Games</h2>
+          <div className={`${shared.marginTopMedium}`}>
+            <IconWrapper size={46} margin={12}>
+              <h2 className={`${shared.card} ${styles.gamesTitle}`}>Games</h2>
             </IconWrapper>
           </div>
           <ul className={`${shared.horizontalWrapper} ${shared.marginTopSmall}`}>
