@@ -94,18 +94,26 @@ npm run dev
 -   games orderby id
 
 ## Frontend TODOS
--   gamepage tests
 
--   position loading message
--   position error message
--   position title ( put title in a card?)
+-   gamepage
+    -   tests
+    -   BUG FIX: save token to local storage!
+    -   static page width for game page based on image
+    -   menu
+        -   menu disappear on click anywhere?
+        -   menu show targets
+        -   menu call verify position
+    -   targets
+        -   show targets name
+        -   show target images
+        -   style targets
 
--   menu disappear on click anywhere?
--   style errors
--   startpage leaderboard button
+-   Start Page
+    -   startpage leaderboard button
+    -   game intro + explanation
 
-- static page width for game page based on image
-- static padding on LR for game page
+-   general
+    -   static padding on LR for game page
 
 ### Final plans
 

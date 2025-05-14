@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Header } from '../Header/Header.jsx';
+import { IconWrapper } from '../IconWrapper/IconWrapper.jsx';
 import { TargetMenu } from '../targetMenu/TargetMenu.jsx';
 import { useGameSession } from '../../hooks/useGameSession.js';
-
-import { IconWrapper } from '../IconWrapper/IconWrapper.jsx';
-import chiikawaWoSagase from '../../assets/chiikawa-wo-sagase.jpg';
+import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './GamePage.module.css';
 import shared from '../../styles/shared.module.css';
 
@@ -39,19 +38,30 @@ const GamePage = () => {
         {error && <h3 className={shared.messages}>{error}</h3>}
         {session && !error && (
           <>
-            <section className={`${shared.card} ${styles.gameContentWrapper} ${shared.marginTopMedium}`}>
-              <IconWrapper size={46} margin={12} leftIcon={0} rightIcon={5}>
-                <h2 className={shared.title}>{session.name}</h2>
-              </IconWrapper>
-              <div className={styles.imageWrapper}>
-                <img
-                  src={chiikawaWoSagase}
-                  alt="Chiikawa Village"
-                  onClick={(event) => toggleMenu(event)}
-                />
-                <TargetMenu isVisible={showMenu} x={menuXY[0]} y={menuXY[1]} />
-              </div>
-            </section>
+            <div className={`${shared.card} ${styles.gameContentWrapper} ${shared.marginTopMedium}`}>
+              <section>
+                <IconWrapper size={46} margin={12} leftIcon={0} rightIcon={5}>
+                  <h2 className={shared.title}>{session.name}</h2>
+                </IconWrapper>
+              </section>
+              <section>
+                <div className={styles.imageWrapper}>
+                  <img
+                    src={chiikawaWoSagase}
+                    alt="Chiikawa Village"
+                    onClick={(event) => toggleMenu(event)}
+                  />
+                  <TargetMenu isVisible={showMenu} x={menuXY[0]} y={menuXY[1]} />
+                </div>
+              </section>
+              <section>
+                <ul className={shared.horizontalWrapper}>
+                  {session.targets.map((target) => (
+                    <div>{target.name}</div>
+                  ))}
+                </ul>
+              </section>
+            </div>
           </>
         )}
       </main>

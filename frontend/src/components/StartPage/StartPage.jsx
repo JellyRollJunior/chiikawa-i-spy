@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useGames } from '../../hooks/useGames.js';
 import { Header } from '../Header/Header.jsx';
 import { IconWrapper } from '../IconWrapper/IconWrapper.jsx';
-import chiikawaWoSagase from '../../assets/chiikawa-wo-sagase.jpg';
+import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './StartPage.module.css';
 import shared from '../../styles/shared.module.css';
 
