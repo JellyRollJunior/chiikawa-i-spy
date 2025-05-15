@@ -12,11 +12,6 @@ gamesRouter.get(
     gameIdValidation,
     gamesController.getGameAssets
 );
-gamesRouter.get(
-    '/:gameId/startTokens',
-    gameIdValidation,
-    gamesController.getGameStartToken
-);
 gamesRouter.post(
     '/:gameId/guesses',
     retrieveToken,

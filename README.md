@@ -46,22 +46,21 @@ npm run dev
 
 ### Endpoints
 
-| METHOD | URI                        | Function                        | Body                                                | Notes                                                              |
-| ------ | -------------------------- | ------------------------------- | --------------------------------------------------- | ------------------------------------------------------------------ |
-| GET    | /games                     | Returns games                   |                                                     | Returns games' id, name, urls                                      |
-| GET    | /games/:gameId/assets      | Returns game assets and targets |                                                     | Returns game & target data for /:gameId                            |
-| GET    | /games/:gameId/startTokens | Get token to start game         |                                                     | Returns jsonwebtoken with startTime, targetsFound, targetsNotFound |
-| POST   | /games/:gameId/guesses     | Verify target coordinates       | { targetId, x: x% of image, y: y% of image }, token | Returns guessSucess, targetsFound, targetsNotFound                 |
-| GET    | /winners                   | Returns winners                 |                                                     | Returns list of winners' name, time, gameId                        |
-| POST   | /winners                   | Create winner                   | { name }, token with confirmed win data             | Returns winner data if win verified, else 403                      |
+| METHOD | URI                    | Function                            | Body                                                | Notes                                               |
+| ------ | ---------------------- | ----------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| GET    | /games                 | Returns all games                   |                                                     | Returns games' id, name, urls                       |
+| GET    | /games/:gameId/assets  | Returns assets needed to start game |                                                     | Returns game & target data, startTime, jsonwebtoken |
+| POST   | /games/:gameId/guesses | Verify target coordinates           | { targetId, x: x% of image, y: y% of image }, token | Returns guessSucess, targetsFound, targetsNotFound  |
+| GET    | /winners               | Returns winners                     |                                                     | Returns list of winners' name, time, gameId         |
+| POST   | /winners               | Create winner                       | { name }, token with confirmed win data             | Returns winner data if win verified, else 403       |
 
 ### API Gameplay loop
 
 1. call GET /games to get available games + image urls
-2. call GET /games/:gameId/assets to retrieve targets for desired game
-3. call GET /games/:gameId/startTokens to retrieve token to start gameplay
-4. call POST /games/:gameId/guesses to play the game and make guesses (until all targets found)
-5. call POST /winners once all targets founds to record win time
+2. call GET /games/:gameId/assets to retrieve game data and token to start gameplay
+3. call POST /games/:gameId/guesses (with token) to play the game and make guesses (until all targets found)
+    - Updated token will be returned to use on future /guesses requests (if guess is successful)
+4. call POST /winners once all targets founds to record win time
 
 ### Learning Outcomes
 
@@ -93,20 +92,21 @@ npm run dev
 -   query params
 -   games orderby id
 
-
--   merge /assets and /startToken
-
 ## Frontend TODOS
 
 -   gamepage
+
     -   tests
     -   menu
         -   menu disappear on click anywhere?
         -   menu call verify position
-        -   menu open + close animation 
+        -   menu open + close animation
     -   timer
+    -   Refactor to use new player object
+    -   Refactor to use new merged /assets
 
 -   Start Page
+
     -   startpage leaderboard button
     -   game intro + explanation
 

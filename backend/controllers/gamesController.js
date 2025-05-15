@@ -18,34 +18,30 @@ const getGames = async (req, res, next) => {
 const getGameAssets = async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        throw new ValidationError('Error validating gameId path parameter', errors.array());
-    }
-    try {
-        const id = req.params.gameId;
-        const game = await db.getGame(id);
-        res.json( game );
-    } catch (error) {
-        next(error);
-    }
-};
-
-const getGameStartToken = async (req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        throw new ValidationError('Error validating gameId path parameter', errors.array());
+        throw new ValidationError(
+            'Error validating gameId path parameter',
+            errors.array()
+        );
     }
     try {
         const gameId = req.params.gameId;
         const gameData = await db.getGame(gameId);
         if (!gameData) {
-            return res.status(404).json({ message: 'Game not found.'});
+            return res.status(404).json({ message: 'Game not found.' });
         }
         const newPlayer = player.createPlayer(gameId, gameData.targets);
         const options = {
             expiresIn: 60 * 60 * 2, // 2 hours
         };
         const token = jwt.sign(newPlayer, process.env.TOKEN_SECRET, options);
-        res.json({ token });
+        res.json({
+            gameId: gameData.id,
+            name: gameData.name,
+            url: gameData.url,
+            targets: newPlayer.targets,
+            startTime: newPlayer.startTime,
+            token,
+        });
     } catch (error) {
         next(error);
     }
@@ -55,7 +51,10 @@ const ERROR_MARGIN = 3;
 const verifyUserGuess = async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        throw new ValidationError('Error validating coordinates', errors.array());
+        throw new ValidationError(
+            'Error validating coordinates',
+            errors.array()
+        );
     }
     const targetId = req.body.targetId;
     try {
@@ -74,16 +73,18 @@ const verifyUserGuess = async (req, res, next) => {
         const returnData = {};
         if (differenceX <= ERROR_MARGIN && differenceY <= ERROR_MARGIN) {
             // target found, update token
-            let { exp, iat, ...updatedPlayer} = player.addFoundTarget(
+            let { exp, iat, ...updatedPlayer } = player.addFoundTarget(
                 req.player,
                 target.id,
                 target.x,
                 target.y
             );
-            const token = jwt.sign(updatedPlayer, process.env.TOKEN_SECRET, { expiresIn: 60 * 60 * 2 });
+            const token = jwt.sign(updatedPlayer, process.env.TOKEN_SECRET, {
+                expiresIn: 60 * 60 * 2,
+            });
             // return data to client
             returnData.guessSuccess = true;
-            returnData.player = updatedPlayer;
+            returnData.targets = updatedPlayer.targets;
             returnData.token = token;
         } else {
             returnData.guessSuccess = false;
@@ -94,4 +95,4 @@ const verifyUserGuess = async (req, res, next) => {
     }
 };
 
-export { getGames, getGameAssets, getGameStartToken, verifyUserGuess };
+export { getGames, getGameAssets, verifyUserGuess };
