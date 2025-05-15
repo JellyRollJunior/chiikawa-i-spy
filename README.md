@@ -98,7 +98,6 @@ npm run dev
 -   gamepage
     -   tests
     -   IMAGE
-        -   EXTRACT IMAGE TO COMPONENT
         -   MERGE IMAGE AND MENU INTO ONE COMPONENT
     -   menu
         -   menu disappear on click anywhere?
@@ -110,7 +109,6 @@ npm run dev
     -   game intro + explanation
 
 -   general
-    -   extract game image to its own component?
     -   shrink targets on smaller windows size
 
 ### Final plans

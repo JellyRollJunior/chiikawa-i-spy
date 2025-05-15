@@ -28,7 +28,7 @@ const GamePage = () => {
               <IconWrapper size={46} margin={12} leftIcon={0} rightIcon={5}>
                 <h2 className={shared.title}>{session.name}</h2>
               </IconWrapper>
-              <GameImage />
+              <GameImage url={session.url} targets={session.targets} />
             </section>
             <section className={styles.targetSection}>
               <ul className={shared.horizontalWrapper}>
