@@ -1,4 +1,4 @@
-const getRequest = async (endpoint, options) => {
+const makeRequest = async (endpoint, options) => {
     const response = await fetch(endpoint, options);
     const json = await response.json();
     if (!response.ok) {
@@ -10,4 +10,4 @@ const getRequest = async (endpoint, options) => {
     return json;
 };
 
-export { getRequest };
+export { makeRequest };

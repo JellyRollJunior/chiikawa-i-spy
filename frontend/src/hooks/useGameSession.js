@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getRequest } from '../utils/requests.js';
+import { makeRequest } from '../utils/requests.js';
 import { getUrl } from '../utils/serverUrl.js';
 
 const useGameSession = (gameId) => {
@@ -12,11 +12,11 @@ const useGameSession = (gameId) => {
         const fetchGameAssets = async () => {
             try {
                 setLoading(true);
-                const assetsPromise = getRequest(getUrl(`/games/${gameId}/assets`), {
+                const assetsPromise = makeRequest(getUrl(`/games/${gameId}/assets`), {
                     mode: 'cors',
                     signal: controller.signal,
                 });
-                const tokenPromise = getRequest(getUrl(`/games/${gameId}/startTokens`), {
+                const tokenPromise = makeRequest(getUrl(`/games/${gameId}/startTokens`), {
                     mode: 'cors',
                     signal: controller.signal
                 })

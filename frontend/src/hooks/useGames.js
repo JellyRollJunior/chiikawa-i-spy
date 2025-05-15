@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getUrl } from '../utils/serverUrl.js';
-import { getRequest } from '../utils/requests.js';
+import { makeRequest } from '../utils/requests.js';
 
 const useGames = () => {
     const [games, setGames] = useState(null);
@@ -12,7 +12,7 @@ const useGames = () => {
         const fetchGames = async () => {
             try {
                 setLoading(true);
-                const data = await getRequest(getUrl('/games'), {
+                const data = await makeRequest(getUrl('/games'), {
                     mode: 'cors',
                     signal: controller.signal,
                 });

@@ -12,7 +12,7 @@ const TargetMenu = ({ targets, isVisible, x, y }) => {
           <div className={styles.targetBox}></div>
           <ul className={styles.optionWrapper}>
             {targets && targets.map((target) =>
-              <li>
+              <li key={target.id}>
                 <button className={`${styles.menuOption} ${shared.primaryButton}`}>{target.name}</button>
               </li>
             )}

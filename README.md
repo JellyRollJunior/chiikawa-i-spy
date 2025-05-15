@@ -100,8 +100,11 @@ npm run dev
     -   menu
         -   menu disappear on click anywhere?
         -   menu call verify position
+            -   post request!
         -   menu open + close animation 
     -   timer
+    -   image
+        -   render found targets
 
 -   Start Page
     -   startpage leaderboard button
