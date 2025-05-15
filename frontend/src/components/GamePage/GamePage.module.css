@@ -14,11 +14,6 @@
   border-width: 5px;
 }
 
-.imageWrapper {
-  position: relative;
-  min-width: 700px;
-}
-
 .targetSection {
   width: 100%;
   padding: 12px 6px 6px 6px;

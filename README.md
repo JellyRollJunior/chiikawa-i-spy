@@ -97,6 +97,9 @@ npm run dev
 
 -   gamepage
     -   tests
+    -   IMAGE
+        -   EXTRACT IMAGE TO COMPONENT
+        -   MERGE IMAGE AND MENU INTO ONE COMPONENT
     -   menu
         -   menu disappear on click anywhere?
         -   menu show targets
