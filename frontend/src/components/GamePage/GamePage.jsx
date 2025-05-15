@@ -33,7 +33,7 @@ const GamePage = () => {
             <section className={styles.targetSection}>
               <ul className={shared.horizontalWrapper}>
                 {session.targets.map((target, index) => (
-                  <li className={styles.target}>
+                  <li className={styles.target} key={target.id}>
                     <img src={tempImages[index]} alt="" className={styles.targetImage} />
                     <h4>{target.name}</h4>
                   </li>

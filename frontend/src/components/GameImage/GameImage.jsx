@@ -29,7 +29,7 @@ const GameImage = ({url, targets}) => {
         alt="Chiikawa Village"
         onClick={(event) => toggleMenu(event)}
       />
-      <TargetMenu isVisible={showMenu} x={menuXY[0]} y={menuXY[1]} />
+      <TargetMenu targets={targets} isVisible={showMenu} x={menuXY[0]} y={menuXY[1]} />
     </div>
   );
 };

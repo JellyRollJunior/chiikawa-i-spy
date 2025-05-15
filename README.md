@@ -97,19 +97,17 @@ npm run dev
 
 -   gamepage
     -   tests
-    -   IMAGE
-        -   MERGE IMAGE AND MENU INTO ONE COMPONENT
     -   menu
         -   menu disappear on click anywhere?
-        -   menu show targets
         -   menu call verify position
+        -   menu open + close animation 
+    -   timer
 
 -   Start Page
     -   startpage leaderboard button
     -   game intro + explanation
 
 -   general
-    -   shrink targets on smaller windows size
 
 ### Final plans
 
