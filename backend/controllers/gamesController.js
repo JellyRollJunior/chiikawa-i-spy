@@ -53,12 +53,12 @@ const getGameStartToken = async (req, res, next) => {
 
 const ERROR_MARGIN = 3;
 const verifyUserGuess = async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        throw new ValidationError('Error validating coordinates', errors.array());
+    }
+    const targetId = req.body.targetId;
     try {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            throw new ValidationError('Error validating coordinates', errors.array());
-        }
-        const targetId = req.body.targetId;
         // if target does not exist, throw error
         const target = await db.getTarget(targetId);
         if (target == null) {
@@ -77,14 +77,13 @@ const verifyUserGuess = async (req, res, next) => {
             let { exp, iat, ...updatedPlayer} = player.addFoundTarget(
                 req.player,
                 target.id,
-                target.name,
                 target.x,
                 target.y
             );
             const token = jwt.sign(updatedPlayer, process.env.TOKEN_SECRET, { expiresIn: 60 * 60 * 2 });
             // return data to client
             returnData.guessSuccess = true;
-            returnData.targetsFound = updatedPlayer.targetsFound;
+            returnData.player = updatedPlayer;
             returnData.token = token;
         } else {
             returnData.guessSuccess = false;
