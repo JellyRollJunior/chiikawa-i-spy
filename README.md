@@ -93,8 +93,7 @@ npm run dev
 -   query params
 -   games orderby id
 
--   Change to accomodate new refactor
-    -   /check winner
+
 -   merge /assets and /startToken
 
 ## Frontend TODOS

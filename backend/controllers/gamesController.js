@@ -16,11 +16,11 @@ const getGames = async (req, res, next) => {
 };
 
 const getGameAssets = async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        throw new ValidationError('Error validating gameId path parameter', errors.array());
+    }
     try {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            throw new ValidationError('Error validating gameId path parameter', errors.array());
-        }
         const id = req.params.gameId;
         const game = await db.getGame(id);
         res.json( game );
