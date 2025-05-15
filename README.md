@@ -92,6 +92,17 @@ npm run dev
 
 -   query params
 -   games orderby id
+-   refactor player object
+    -   refactor to single target object
+    -   if target is found,
+        -   add field isFound: true
+        -   add coordinates of target
+    -   else just have id and name ifFound false
+-   Change to accomodate new refactor
+    -   player add target found
+    -   /check winner
+    -   /make guess
+    -   /start token?
 
 ## Frontend TODOS
 

@@ -1,42 +1,46 @@
-const createPlayer = (gameId, targets) => {
+const createPlayer = (gameId, targetData) => {
     const startTime = new Date().toISOString();
-    let targetsNotFound = targets.map((target) => {
-        return target.id;
+    const targets = targetData.map((target) => {
+        return { ...target, isFound: false };
     });
-    const targetsFound = [];
 
     return {
         gameId,
         startTime,
-        targetsNotFound,
-        targetsFound,
+        targets,
     };
 };
 
-const addFoundTarget = (player, targetId, targetName, targetX, targetY) => {
-    // if target already found, return player
-    if (player.targetsFound.find((target) => target.id == targetId)) {
+const getTargetById = (player, targetId) => {
+    if (!player.targets) return player;
+    return player.targets.find((target) => target.id == targetId);
+}
+
+const addFoundTarget = (player, targetId, targetX, targetY) => {
+    // if targets undefined, target with targetId does not exist, or target is found, return player
+    if (
+        !player.targets ||
+        !getTargetById(player, targetId) ||
+        getTargetById(player, targetId).isFound
+    ) {
         return player;
     }
-    // remove target from targetsNotFound
-    const targetsNotFound = player.targetsNotFound.filter(
-        (id) => id != targetId
-    );
-    // add target data to targetsFound
-    const targetsFound = [...player.targetsFound];
-    targetsFound.push({
-        id: targetId,
-        name: targetName,
+    // add target found data
+    const foundTarget = {
+        ...getTargetById(player, targetId),
+        isFound: true,
         x: targetX,
         y: targetY,
-    });
+    };
 
     return {
         gameId: player.gameId,
         startTime: player.startTime,
-        targetsNotFound,
-        targetsFound,
-    };
+        targets: [
+            ...player.targets.filter((target) => target.id != targetId),
+            foundTarget,
+        ]
+    }
 };
 
 export { createPlayer, addFoundTarget };
