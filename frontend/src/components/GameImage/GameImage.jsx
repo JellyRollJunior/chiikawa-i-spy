@@ -1,7 +1,10 @@
 import { useState } from 'react';
-import { TargetMenu } from '../targetMenu/TargetMenu.jsx';
+import { TargetMenu } from '../TargetMenu/TargetMenu.jsx';
+import { makeRequest } from '../../utils/requests.js';
 import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './GameImage.module.css';
+import { getUrl } from '../../utils/serverUrl.js';
+import { useParams } from 'react-router';
 
 const GameImage = ({url, targets}) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -22,6 +25,35 @@ const GameImage = ({url, targets}) => {
     setShowMenu(!showMenu);
   };
 
+  // make state for found targets -> add to state if guess successful
+  const gameId = useParams().gameId;
+  const makeGuess = async (targetId) => {
+    // if no token, refresh to get new token
+    const token = localStorage.getItem('token');
+    if (!token) window.location.reload();
+    console.log({
+        targetId,
+        x: Math.floor(guess[0]),
+        y: guess[1],
+      })
+
+    const data = await makeRequest(getUrl(`/games/${gameId}/guesses`), {
+      mode: 'cors',
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        targetId,
+        x: Math.floor(guess[0]),
+        y: Math.floor(guess[1]),
+      })
+    });
+    console.log(data);
+    // if no token error -> refresh page to get new token
+  }
+
   return (
     <div className={styles.imageWrapper}>
       <img
@@ -29,7 +61,7 @@ const GameImage = ({url, targets}) => {
         alt="Chiikawa Village"
         onClick={(event) => toggleMenu(event)}
       />
-      <TargetMenu targets={targets} isVisible={showMenu} x={menuXY[0]} y={menuXY[1]} />
+      <TargetMenu targets={targets} isVisible={showMenu} x={menuXY[0]} y={menuXY[1]} onGuess={makeGuess} />
     </div>
   );
 };

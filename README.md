@@ -92,6 +92,10 @@ npm run dev
 
 -   query params
 -   games orderby id
+-   targets orderby id
+-   /games/:gameId/guesses 
+    -   add isTargetFound
+    -   add non found targets
 
 ## Frontend TODOS
 
@@ -111,6 +115,8 @@ npm run dev
     -   game intro + explanation
 
 -   general
+    -   Modify useGameSession to return setSession
+        -   when we make a successful guess, update target data with setSession
 
 ### Final plans
 
