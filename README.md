@@ -101,8 +101,8 @@ npm run dev
         -   menu call verify position
         -   menu open + close animation
     -   timer
-    -   Refactor to use new player object
-    -   Refactor to use new merged /assets
+    -   target section
+        -   if target found, render targets as found!
 
 -   Start Page
 

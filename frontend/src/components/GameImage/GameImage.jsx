@@ -22,6 +22,8 @@ const GameImage = ({url, targets}) => {
     setShowMenu(!showMenu);
   };
 
+  // replace once images uploaded to supabase
+  console.log(url);
   return (
     <div className={styles.imageWrapper}>
       <img

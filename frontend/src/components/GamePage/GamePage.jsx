@@ -10,11 +10,11 @@ import shisa from '../../assets/temp/shisa.jpg';
 import hachiware from '../../assets/temp/hachiware.jpg';
 import chiikawa from '../../assets/temp/chiikawa.jpg';
 
-const tempImages = [ usagi, chiikawa, hachiware, shisa ];
+const tempImages = [ usagi, shisa, hachiware, chiikawa ];
 
 const GamePage = () => {
   const gameId = useParams().gameId;
-  const { session, error, loading } = useGameSession(gameId);
+  const { assets, targets, setTargets, error, loading } = useGameSession(gameId);
 
   return (
     <>
@@ -22,17 +22,17 @@ const GamePage = () => {
       <main>
         {loading && <h3 className={shared.messages}>Loading</h3>}
         {error && <h3 className={shared.messages}>{error}</h3>}
-        {session && !error && (
+        {assets && targets && !error && (
           <div className={`${styles.wrapper} ${shared.marginTopMedium}`}>
             <section className={`${shared.card} ${styles.gameContent}`}>
               <IconWrapper size={46} margin={12} leftIcon={0} rightIcon={5}>
-                <h2 className={shared.title}>{session.name}</h2>
+                <h2 className={shared.title}>{assets.name}</h2>
               </IconWrapper>
-              <GameImage url={session.url} targets={session.targets} />
+              <GameImage url={assets.url} targets={targets} setTargets={setTargets} />
             </section>
             <section className={styles.targetSection}>
               <ul className={shared.horizontalWrapper}>
-                {session.targets.map((target, index) => (
+                {targets.map((target, index) => (
                   <li className={styles.target} key={target.id}>
                     <img src={tempImages[index]} alt="" className={styles.targetImage} />
                     <h4>{target.name}</h4>
