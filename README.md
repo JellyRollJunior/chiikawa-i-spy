@@ -90,7 +90,6 @@ npm run dev
 ### Backend TODOS
 
 -   query params
--   games orderby id
 
 ## Frontend TODOS
 

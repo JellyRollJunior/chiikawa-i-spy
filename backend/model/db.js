@@ -17,7 +17,11 @@ const prisma = new PrismaClient({
 
 const getGames = async () => {
     try {
-        const games = await prisma.game.findMany();
+        const games = await prisma.game.findMany({
+            orderBy: {
+                id: 'asc',
+            }
+        });
         return games;
     } catch (error) {
         throw new DatabaseError('Error retrieving games', 500);
@@ -36,6 +40,9 @@ const getGame = async (id) => {
                         id: true,
                         name: true,
                     },
+                    orderBy: {
+                        id: 'asc',
+                    }
                 },
             },
         });
@@ -93,6 +100,7 @@ const getWinners = async () => {
         const winners = await prisma.$queryRaw`
             SELECT *,  EXTRACT(EPOCH FROM ("endTime" - "startTime")) AS seconds
             FROM "Winner"
+            ORDER BY seconds ASC
         `;
         return winners;
     } catch (error) {
