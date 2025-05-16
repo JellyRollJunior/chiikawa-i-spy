@@ -36,6 +36,7 @@ const GamePage = () => {
                   <li className={styles.target} key={target.id}>
                     <img src={tempImages[index]} alt="" className={styles.targetImage} />
                     <h4>{target.name}</h4>
+                    {target.isFound && <h2>I AM FOUND!</h2>}
                   </li>
                 ))}
               </ul>

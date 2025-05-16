@@ -6,7 +6,7 @@ import styles from './GameImage.module.css';
 import { getUrl } from '../../utils/serverUrl.js';
 import { useParams } from 'react-router';
 
-const GameImage = ({url, targets}) => {
+const GameImage = ({url, targets, setTargets}) => {
   const [showMenu, setShowMenu] = useState(false);
   const [menuXY, setMenuXY] = useState([0, 0]);
   const [guess, setGuess] = useState([0, 0]);
@@ -25,17 +25,11 @@ const GameImage = ({url, targets}) => {
     setShowMenu(!showMenu);
   };
 
-  // make state for found targets -> add to state if guess successful
   const gameId = useParams().gameId;
   const makeGuess = async (targetId) => {
     // if no token, refresh to get new token
     const token = localStorage.getItem('token');
     if (!token) window.location.reload();
-    console.log({
-        targetId,
-        x: Math.floor(guess[0]),
-        y: guess[1],
-      })
 
     const data = await makeRequest(getUrl(`/games/${gameId}/guesses`), {
       mode: 'cors',
@@ -50,16 +44,18 @@ const GameImage = ({url, targets}) => {
         y: Math.floor(guess[1]),
       })
     });
-    console.log(data);
-    // if no token error -> refresh page to get new token
+    if (data.guessSuccess) {
+      localStorage.setItem('token', data.token);
+      setTargets(data.targets);
+    }
   }
 
   // replace once images uploaded to supabase
-  console.log(url);
+  url = chiikawaWoSagase;
   return (
     <div className={styles.imageWrapper}>
       <img
-        src={chiikawaWoSagase}
+        src={url}
         alt="Chiikawa Village"
         onClick={(event) => toggleMenu(event)}
       />

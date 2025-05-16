@@ -90,14 +90,6 @@ npm run dev
 ### Backend TODOS
 
 -   query params
-<<<<<<< HEAD
--   games orderby id
--   targets orderby id
--   /games/:gameId/guesses 
-    -   add isTargetFound
-    -   add non found targets
-=======
->>>>>>> main
 
 ## Frontend TODOS
 
@@ -107,18 +99,10 @@ npm run dev
     -   menu
         -   menu disappear on click anywhere?
         -   menu call verify position
-<<<<<<< HEAD
-            -   post request!
-        -   menu open + close animation 
-    -   timer
-    -   image
-        -   render found targets
-=======
         -   menu open + close animation
     -   timer
     -   target section
         -   if target found, render targets as found!
->>>>>>> main
 
 -   Start Page
 
@@ -131,4 +115,5 @@ npm run dev
 
 ### Final plans
 
+-   BACKEND: sort returned target data (otherwise target images will get shuffled. Can remove once supabase images done)
 -   image storage on supabase
