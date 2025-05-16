@@ -3,7 +3,8 @@ import { makeRequest } from '../utils/requests.js';
 import { getUrl } from '../utils/serverUrl.js';
 
 const useGameSession = (gameId) => {
-    const [session, setSession] = useState(null);
+    const [assets, setAssets] = useState(null);
+    const [targets, setTargets] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -12,18 +13,14 @@ const useGameSession = (gameId) => {
         const fetchGameAssets = async () => {
             try {
                 setLoading(true);
-                const assetsPromise = makeRequest(getUrl(`/games/${gameId}/assets`), {
+                const data = await makeRequest(getUrl(`/games/${gameId}/assets`), {
                     mode: 'cors',
                     signal: controller.signal,
                 });
-                const tokenPromise = makeRequest(getUrl(`/games/${gameId}/startTokens`), {
-                    mode: 'cors',
-                    signal: controller.signal
-                })
-                const [assets, token] = await Promise.all([assetsPromise, tokenPromise]);
-                console.log({ ...assets, ...token });
-                localStorage.setItem('token', token.token);
-                setSession(assets);
+                const { token, targets, ...assets } = data;
+                localStorage.setItem('token', token);
+                setAssets(assets);
+                setTargets(targets);
                 setError(null);
             } catch (error) {
                 console.log(error);
@@ -38,7 +35,7 @@ const useGameSession = (gameId) => {
         return () => controller.abort();
     }, [gameId]);
 
-    return { session, error, loading };
+    return { assets, targets, setTargets, error, loading };
 };
 
 export { useGameSession };

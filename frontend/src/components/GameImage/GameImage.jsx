@@ -54,6 +54,8 @@ const GameImage = ({url, targets}) => {
     // if no token error -> refresh page to get new token
   }
 
+  // replace once images uploaded to supabase
+  console.log(url);
   return (
     <div className={styles.imageWrapper}>
       <img
