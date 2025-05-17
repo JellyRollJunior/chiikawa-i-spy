@@ -90,6 +90,8 @@ npm run dev
 ### Backend TODOS
 
 -   query params
+-   bug: targets get swapped on successfully finding target
+    -   even once supabase done (pictures sync), don't want to targets to swap places! need to fix this
 
 ## Frontend TODOS
 
@@ -100,20 +102,14 @@ npm run dev
         -   menu disappear on click anywhere?
         -   menu call verify position
         -   menu open + close animation
+    -   unsuccessful guess feedback
     -   timer
-    -   target section
-        -   if target found, render targets as found!
 
 -   Start Page
 
     -   startpage leaderboard button
     -   game intro + explanation
 
--   general
-    -   Modify useGameSession to return setSession
-        -   when we make a successful guess, update target data with setSession
-
 ### Final plans
 
--   BACKEND: sort returned target data (otherwise target images will get shuffled. Can remove once supabase images done)
 -   image storage on supabase

@@ -45,3 +45,11 @@
   border: 3px solid var(--green);
   border-radius: 50%;
 }
+
+.foundImage {
+  border: 3px solid var(--dark-pink);
+}
+
+.foundTitle {
+  color: var(--dark-pink);
+}

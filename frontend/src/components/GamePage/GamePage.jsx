@@ -34,9 +34,8 @@ const GamePage = () => {
               <ul className={shared.horizontalWrapper}>
                 {targets.map((target, index) => (
                   <li className={styles.target} key={target.id}>
-                    <img src={tempImages[index]} alt="" className={styles.targetImage} />
-                    <h4>{target.name}</h4>
-                    {target.isFound && <h2>I AM FOUND!</h2>}
+                    <img src={tempImages[index]} alt="" className={`${styles.targetImage} ${target.isFound && styles.foundImage}`} />
+                    <h4 className={target.isFound && `${styles.foundTitle}`}>{target.name}{target.isFound && ' ✓'}</h4>
                   </li>
                 ))}
               </ul>
