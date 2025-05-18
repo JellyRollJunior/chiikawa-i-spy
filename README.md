@@ -97,16 +97,20 @@ npm run dev
 
     -   tests
     -   menu
-        -   menu disappear on click anywhere?
-        -   menu call verify position
+        -   close menu on guess
         -   menu open + close animation
     -   unsuccessful guess feedback
     -   timer
+    -   winner pages
 
 -   Start Page
 
     -   startpage leaderboard button
-    -   game intro + explanation
+
+-   General
+
+    -   custom font
+
 
 ### Final plans
 
