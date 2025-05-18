@@ -90,8 +90,6 @@ npm run dev
 ### Backend TODOS
 
 -   query params
--   bug: targets get swapped on successfully finding target
-    -   even once supabase done (pictures sync), don't want to targets to swap places! need to fix this
 
 ## Frontend TODOS
 

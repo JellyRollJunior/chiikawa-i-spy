@@ -14,7 +14,7 @@ const createPlayer = (gameId, targetData) => {
 const getTargetById = (player, targetId) => {
     if (!player.targets) return player;
     return player.targets.find((target) => target.id == targetId);
-}
+};
 
 const addFoundTarget = (player, targetId, targetX, targetY) => {
     // if targets undefined, target with targetId does not exist, or target is found, return player
@@ -33,14 +33,18 @@ const addFoundTarget = (player, targetId, targetX, targetY) => {
         y: targetY,
     };
 
+    // return targets sorted by ID
+    const targets = [
+        ...player.targets.filter((target) => target.id != targetId),
+        foundTarget,
+    ];
+    targets.sort((a, b) => Number(a.id) - Number(b.id));
+
     return {
         gameId: player.gameId,
         startTime: player.startTime,
-        targets: [
-            ...player.targets.filter((target) => target.id != targetId),
-            foundTarget,
-        ]
-    }
+        targets,
+    };
 };
 
 export { createPlayer, addFoundTarget };
