@@ -1,0 +1,17 @@
+.notification {
+  position: absolute;
+  top: 24px;
+  left: 0; 
+  right: 0; 
+  width: fit-content;
+  min-width: 100px;
+  padding: 2px 24px;
+  margin-inline: auto;
+
+  text-align: center;
+  border-width: 3px; 
+}
+
+.successNotification {
+  color: var(--dark-green);
+}

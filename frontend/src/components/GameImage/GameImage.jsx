@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { TargetMenu } from '../TargetMenu/TargetMenu.jsx';
+import { useParams } from 'react-router';
+import { getUrl } from '../../utils/serverUrl.js';
 import { makeRequest } from '../../utils/requests.js';
+import { Notification } from '../Notification/Notification.jsx';
+import { TargetMenu } from '../TargetMenu/TargetMenu.jsx';
 import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './GameImage.module.css';
-import { getUrl } from '../../utils/serverUrl.js';
-import { useParams } from 'react-router';
 
 const GameImage = ({url, targets, setTargets}) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -54,6 +55,7 @@ const GameImage = ({url, targets, setTargets}) => {
   url = chiikawaWoSagase;
   return (
     <div className={styles.imageWrapper}>
+      <Notification message='you found swag' successNotification={false} />
       <img
         src={url}
         alt="Chiikawa Village"

@@ -99,6 +99,7 @@ npm run dev
     -   menu
         -   close menu on guess
         -   menu open + close animation
+        -   remove found targets from menu
     -   unsuccessful guess feedback
     -   timer
     -   winner pages
