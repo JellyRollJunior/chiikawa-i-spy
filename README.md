@@ -111,7 +111,7 @@ npm run dev
 
     -   custom font
 
-
 ### Final plans
 
 -   image storage on supabase
+-   mobile view
