@@ -102,13 +102,11 @@ npm run dev
 -   gamepage
     -   menu
         -   menu open + close animation
-    -   Notificaiton animate fade in / fade out
     -   timer
     -   winner pages
         -   on win, -> fade in win modal
         -   win modal
             -   input for name
-            -   
 
 -   Start Page
 
