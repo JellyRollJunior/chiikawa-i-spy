@@ -98,7 +98,7 @@ npm run dev
 ## Frontend TODOS
 
 -   gamepage
-
+    - TRY CATCH ON ALL THE ASYNC CALL! I FORGOT OOPS
     -   timer
     -   winner pages
         -   call /post winners

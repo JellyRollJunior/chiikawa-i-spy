@@ -29,6 +29,7 @@ const GameImage = ({ url, targets, setTargets, showWin }) => {
     setShowMenu(!showMenu);
   };
 
+  // NEED TO TRY CATCH THIS!
   const gameId = useParams().gameId;
   const makeGuess = async (targetId) => {
     // if no token, refresh to get new token
@@ -56,10 +57,18 @@ const GameImage = ({ url, targets, setTargets, showWin }) => {
       setTargets(data.targets);
       handleNotification(`You found ${targets.find((target) => target.id == targetId).name}!`, true);
 
-      // verify if win
+      // check if win
       if (!data.targets.find((target) => target.isFound == false)) {
-        // post win
-        // if post success then
+        const winnerToken = await makeRequest(getUrl('/winners', {
+          mode: 'cors',
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${data.token}`,
+            'Content-Type': 'application/json',
+          }
+        }));
+        localStorage.setItem('token', winnerToken);
+        // if server returns win, show win modal
         showWin();
       }
     } else {
