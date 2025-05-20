@@ -71,3 +71,7 @@
     opacity: 100;
   }
 }
+
+.bold {
+  font-family: 'Sen-Bold', sans-serif;
+}

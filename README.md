@@ -46,14 +46,14 @@ npm run dev
 
 ### Endpoints
 
-| METHOD | URI                    | Function                            | Body                                                | Notes                                               |
-| ------ | ---------------------- | ----------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| GET    | /games                 | Returns all games                   |                                                     | Returns games' id, name, urls                       |
-| GET    | /games/:gameId/assets  | Returns assets needed to start game |                                                     | Returns game & target data, startTime, jsonwebtoken |
-| POST   | /games/:gameId/guesses | Verify target coordinates           | { targetId, x: x% of image, y: y% of image }, token | Returns guessSucess, targetsFound, targetsNotFound  |
-| GET    | /winners               | Returns winners                     |                                                     | Returns list of winners' name, time, gameId         |
-| POST   | /winners               | Create winner                       | token with confirmed win data                       | Returns winner data if win verified, else 403       |
-| PUT   | /winners               | Rename winner                       | { name }, token with winning player data (from POST /winners)                       | Returns updated winner if winner verified, else 403       |
+| METHOD | URI                    | Function                            | Body                                                          | Notes                                               |
+| ------ | ---------------------- | ----------------------------------- | ------------------------------------------------------------- | --------------------------------------------------- |
+| GET    | /games                 | Returns all games                   |                                                               | Returns games' id, name, urls                       |
+| GET    | /games/:gameId/assets  | Returns assets needed to start game |                                                               | Returns game & target data, startTime, jsonwebtoken |
+| POST   | /games/:gameId/guesses | Verify target coordinates           | { targetId, x: x% of image, y: y% of image }, token           | Returns guessSucess, targetsFound, targetsNotFound  |
+| GET    | /winners               | Returns winners                     |                                                               | Returns list of winners' name, time, gameId         |
+| POST   | /winners               | Create winner                       | token with confirmed win data                                 | Returns winner data if win verified, else 403       |
+| PUT    | /winners               | Rename winner                       | { name }, token with winning player data (from POST /winners) | Returns updated winner if winner verified, else 403 |
 
 ### API Gameplay loop
 
@@ -75,6 +75,8 @@ npm run dev
 
 -   Frontend
     -   Relearning vitest (mocking hooks/components, user events, dynamic mocks, snapshot tests)
+    -   Animating react components
+    -
 
 ### Retrospective aka yapping
 
@@ -101,7 +103,10 @@ npm run dev
     -   winner pages
         -   on win, -> fade in win modal
         -   win modal
-            -   input for name`
+            -   input for name
+            -   explanation
+            -   style modal
+            -   input on focus style
 
 -   targetMenu tests
 
@@ -110,8 +115,7 @@ npm run dev
     -   startpage leaderboard button
 
 -   General
-
-    -   custom font
+    -   error page, 404 page
 
 ### Final plans
 

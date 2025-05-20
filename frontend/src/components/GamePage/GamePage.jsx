@@ -3,6 +3,7 @@ import { Header } from '../Header/Header.jsx';
 import { IconWrapper } from '../IconWrapper/IconWrapper.jsx';
 import { useGameSession } from '../../hooks/useGameSession.js';
 import { GameImage } from '../GameImage/GameImage.jsx';
+import { WinModal } from '../WinModal/WinModal.jsx';
 import styles from './GamePage.module.css';
 import shared from '../../styles/shared.module.css';
 import usagi from '../../assets/temp/usagi.jpg';
@@ -43,6 +44,7 @@ const GamePage = () => {
           </div>
         )}
       </main>
+      <WinModal></WinModal>
     </>
   );
 };

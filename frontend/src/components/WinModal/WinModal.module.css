@@ -1,0 +1,40 @@
+.modalWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(104, 104, 104, 0.3);
+}
+
+.modal {
+  min-width: 250px;
+  padding: 16px 12px;
+  color: var(--dark-green);
+  border-width: 5px;
+}
+
+.modal h2,
+.modal p,
+.modal label {
+  color: inherit
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form :first-child {
+  align-self: center;
+}
+
+.form input {
+  display: block;
+  border-radius: 5px;
+}

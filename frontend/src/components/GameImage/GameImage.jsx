@@ -49,7 +49,6 @@ const GameImage = ({ url, targets, setTargets }) => {
         y: Math.floor(guess[1]),
       }),
     });
-    console.log(data);
 
     // display guess feedback
     if (data.guessSuccess) {

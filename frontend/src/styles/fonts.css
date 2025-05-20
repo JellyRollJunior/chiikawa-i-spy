@@ -23,6 +23,11 @@
   src: url(../assets/fonts/Sen-Regular.woff2);
 }
 
+html {
+  font-family: 'Sen-Regular', sans-serif;
+  font-size: 16px;
+}
+
 h1 {
   font-family: 'Sen-ExtraBold', sans-serif;
 }
@@ -39,9 +44,4 @@ button {
 h4,
 h5 {
   font-family: 'Sen-Medium', sans-serif;
-}
-
-html {
-  font-family: 'Sen-Regular', sans-serif;
-  font-size: 16px;
 }
