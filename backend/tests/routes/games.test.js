@@ -79,16 +79,13 @@ describe('POST /games/:gameId/guesses', () => {
     let gameId;
     let token;
     let targetId;
+    const USAGI_COORDINATES = { x: 53, y: 7 };
+
     beforeAll(async () => {
         gameId = await getGameId();
-        const tokenResponse = await request(app).get(
-            `/games/${gameId}/startTokens`
-        );
-        const assetsResponse = await request(app).get(
-            `/games/${gameId}/assets`
-        );
-        token = tokenResponse.body.token;
-        targetId = assetsResponse.body.targets.find(
+        const response = await request(app).get(`/games/${gameId}/assets`);
+        token = response.body.token;
+        targetId = response.body.targets.find(
             (target) => target.name == 'usagi'
         ).id;
     });
@@ -110,23 +107,26 @@ describe('POST /games/:gameId/guesses', () => {
             .set('Accept', 'application/json')
             .set('Authorization', `bearer ${token}`)
             .type('json')
-            .send({ targetId, x: 53, y: 7 });
+            .send({ targetId, x: USAGI_COORDINATES.x, y: USAGI_COORDINATES.y });
         // verify response data
         expect(response.body.guessSuccess).toEqual(true);
-        expect(response.body.targetsFound[0].id).toStrictEqual(targetId);
-        expect(response.body.targetsFound[0].name).toStrictEqual('usagi');
+        const usagi = response.body.targets.find(
+            (target) => target.id == targetId
+        );
+        expect(usagi.name).toStrictEqual('usagi');
+        expect(usagi.x).toBe(USAGI_COORDINATES.x);
+        expect(usagi.y).toBe(USAGI_COORDINATES.y);
         // verify token data
         const player = jwt.verify(
             response.body.token,
             process.env.TOKEN_SECRET
         );
-        expect(player.targetsNotFound.filter((id) => id == targetId)).toEqual(
-            []
+        const tokenUsagi = player.targets.find(
+            (target) => target.id == targetId
         );
-        expect(
-            player.targetsFound.filter((target) => target.id == targetId)[0]
-                .name
-        ).toStrictEqual('usagi');
+        expect(tokenUsagi.name).toStrictEqual('usagi');
+        expect(tokenUsagi.x).toBe(USAGI_COORDINATES.x);
+        expect(tokenUsagi.y).toBe(USAGI_COORDINATES.y);
     });
 
     it('Responds with false guessSuccess on incorrect guess', async () => {
