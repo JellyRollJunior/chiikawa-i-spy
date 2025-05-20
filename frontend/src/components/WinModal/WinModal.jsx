@@ -5,7 +5,7 @@ import shared from '../../styles/shared.module.css';
 const WinModal = () => {
   return (
     <div className={styles.modalWrapper}>
-      <div className={`${shared.card} ${styles.modal}`}>
+      <div className={`${shared.card} ${styles.modal} ${shared.fadeIn}`}>
         <form className={styles.form} action="">
           <IconWrapper size={32}>
             <h2>Winner</h2>

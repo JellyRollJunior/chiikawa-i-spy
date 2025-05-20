@@ -101,11 +101,7 @@ npm run dev
 
     -   timer
     -   winner pages
-        -   on win, -> fade in win modal
         -   win modal
-            -   input for name
-            -   explanation
-            -   style modal
             -   input on focus style
 
 -   targetMenu tests
