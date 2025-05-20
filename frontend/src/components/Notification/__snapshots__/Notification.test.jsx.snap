@@ -1,0 +1,41 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Notification component > renders header with message and success class by default 1`] = `
+<div>
+  <h3
+    class="_notification_dfd14c _card_5890fc _successNotification_dfd14c"
+  >
+    Hello
+  </h3>
+</div>
+`;
+
+exports[`Notification component > renders header with message and success styling by default 1`] = `
+<div>
+  <h3
+    class="_notification_dfd14c _card_5890fc _successNotification_dfd14c"
+  >
+    Hello
+  </h3>
+</div>
+`;
+
+exports[`Notification component > renders header with provided message 1`] = `
+<div>
+  <h3
+    class="_notification_dfd14c _card_5890fc _successNotification_dfd14c"
+  >
+    Hello
+  </h3>
+</div>
+`;
+
+exports[`Notification component > renders message header and success class by default 1`] = `
+<div>
+  <h3
+    class="_notification_dfd14c _card_5890fc _successNotification_dfd14c"
+  >
+    Hello
+  </h3>
+</div>
+`;
