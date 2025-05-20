@@ -90,19 +90,25 @@ npm run dev
 ### Backend TODOS
 
 -   query params
+-   update player tests
+-   Change winner confirmation workflow
+    -   initial post to confirm win
+        -   return token and win time for player
+    -   initial PUT call to change name
+        -   create the actual db entry for winner
 
 ## Frontend TODOS
 
 -   gamepage
-    -   BUG: usagi target rendered multiple times on making successful guesses
-    -   tests
-        -   game page
     -   menu
         -   menu open + close animation
-        -   remove found targets from menu
     -   Notificaiton animate fade in / fade out
     -   timer
     -   winner pages
+        -   on win, -> fade in win modal
+        -   win modal
+            -   input for name
+            -   
 
 -   Start Page
 

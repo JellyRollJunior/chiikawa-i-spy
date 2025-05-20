@@ -49,12 +49,13 @@ const GameImage = ({ url, targets, setTargets }) => {
         y: Math.floor(guess[1]),
       }),
     });
+    console.log(data);
 
     // display guess feedback
     if (data.guessSuccess) {
       localStorage.setItem('token', data.token);
       setTargets(data.targets);
-      handleNotification(`You found ${data.targets.find((target) => target.id = targetId).name}!`, true);
+      handleNotification(`You found ${targets.find((target) => target.id == targetId).name}!`, true);
     } else {
       handleNotification(`No target found. Try again!`, false);
     }
