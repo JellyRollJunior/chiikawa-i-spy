@@ -25,8 +25,6 @@ const GameImage = ({ url, targets, setTargets }) => {
       (x / event.currentTarget.width) * 100,
       (y / event.currentTarget.height) * 100,
     ]);
-    console.log([x, y]);
-    console.log(guess);
     setMenuXY([x, y]);
     setShowMenu(!showMenu);
   };

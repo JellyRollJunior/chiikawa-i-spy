@@ -12,7 +12,7 @@ const TargetMenu = ({ targets, isVisible, x, y, onGuess }) => {
           <div className={styles.targetBox}></div>
           <ul className={styles.optionWrapper}>
             {targets &&
-              targets.map((target) => (
+              targets.filter((target) => !target.isFound).map((target) => (
                 <li key={target.id}>
                   <button
                     onClick={() => onGuess(target.id)}

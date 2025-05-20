@@ -94,10 +94,11 @@ npm run dev
 ## Frontend TODOS
 
 -   gamepage
-
+    -   BUG: usagi target rendered multiple times on making successful guesses
     -   tests
+        -   game image
+        -   game page
     -   menu
-        -   close menu on guess
         -   menu open + close animation
         -   remove found targets from menu
     -   Notificaiton animate fade in / fade out
