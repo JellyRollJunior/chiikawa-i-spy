@@ -96,7 +96,6 @@ npm run dev
 -   gamepage
     -   BUG: usagi target rendered multiple times on making successful guesses
     -   tests
-        -   game image
         -   game page
     -   menu
         -   menu open + close animation

@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Image component > renders game image and target menu 1`] = `
+<div>
+  <div
+    class="_imageWrapper_d05160"
+  >
+    <img
+      alt="Chiikawa Village"
+      src="/src/assets/temp/chiikawa-wo-sagase.jpg"
+    />
+    <div
+      class="_menuWrapper_845c23"
+      style="left: 0px; top: 0px; display: none;"
+    >
+      <div
+        class="_menu_845c23"
+      >
+        <div
+          class="_targetBox_845c23"
+        />
+        <ul
+          class="_optionWrapper_845c23"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
