@@ -12,6 +12,12 @@ winnersRouter.post(
     verifyToken,
     winnersController.postWinners
 );
-
+winnersRouter.put(
+    '/',
+    retrieveToken,
+    verifyToken,
+    nameValidation,
+    winnersController.putWinners
+);
 
 export { winnersRouter };

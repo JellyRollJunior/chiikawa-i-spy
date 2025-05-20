@@ -49,6 +49,21 @@ const putWinners = async (req, res, next) => {
     if (!errors.isEmpty()) {
         throw new ValidationError('Error validating name', errors.array());
     }
+    try {
+        // verify winner
+        const winner = req.player;
+        if (!winner.id) {
+            const error = new Error('Player has not found all targets.');
+            error.status = 403;
+            throw error;
+        }
+        // update winner name
+        const name = req.body.name;
+        const updatedWinner = await db.updateWinner(winner.id, name);
+        res.json({ winner: updatedWinner });
+    } catch (error) {
+        next(error);
+    }
 };
 
-export { getWinners, postWinners };
+export { getWinners, postWinners, putWinners };

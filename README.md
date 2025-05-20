@@ -91,11 +91,6 @@ npm run dev
 
 -   query params
 -   update player tests
--   Change winner confirmation workflow
-    -   initial post to confirm win
-        -   return token and win time for player
-    -   initial PUT call to change name
-        -   create the actual db entry for winner
 
 ## Frontend TODOS
 
@@ -107,7 +102,7 @@ npm run dev
             -   input for name
 
 -   targetMenu tests
-    
+
 -   Start Page
 
     -   startpage leaderboard button
