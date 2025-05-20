@@ -100,8 +100,6 @@ npm run dev
 ## Frontend TODOS
 
 -   gamepage
-    -   menu
-        -   menu open + close animation
     -   timer
     -   winner pages
         -   on win, -> fade in win modal

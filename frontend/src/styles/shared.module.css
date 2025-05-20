@@ -58,21 +58,16 @@
 }
 
 /* animations */
-.fadeInfadeOut {
-  animation: fade-in-fade-out 1.5s ease-out;
+.fadeIn {
+  animation: fade-in 0.25s ease-out;
 }
 
-@keyframes fade-in-fade-out {
-  from {
+@keyframes fade-in {
+  0% {
     opacity: 0;
   }
-  15% {
+
+  100% {
     opacity: 100;
-  }
-  85% {
-    opacity: 100;
-  }
-  to {
-    opacity: 0;
   }
 }

@@ -7,7 +7,7 @@ const TargetMenu = ({ targets, isVisible, x, y, onGuess }) => {
 
   return (
     <>
-      <div className={styles.menuWrapper} style={style}>
+      <div className={`${shared.fadeIn} ${styles.menuWrapper}`} style={style}>
         <div className={styles.menu}>
           <div className={styles.targetBox}></div>
           <ul className={styles.optionWrapper}>

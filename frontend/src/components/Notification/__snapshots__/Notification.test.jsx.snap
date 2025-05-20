@@ -3,7 +3,7 @@
 exports[`Notification component > renders header with message and success styling by default 1`] = `
 <div>
   <h3
-    class="_notification_dfd14c _card_5890fc _successNotification_dfd14c"
+    class="_notification_dfd14c _fadeInfadeOut_dfd14c _card_5890fc _successNotification_dfd14c"
   >
     Hello
   </h3>

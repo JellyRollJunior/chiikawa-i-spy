@@ -4,7 +4,7 @@ import shared from '../../styles/shared.module.css';
 const Notification = ({ message, successNotification = true }) => {
   return (
     <h3
-      className={`${styles.notification} ${shared.fadeInfadeOut} ${
+      className={`${styles.notification} ${styles.fadeInfadeOut} ${
         successNotification
           ? `${shared.card} ${styles.successNotification}`
           : shared.primaryButton

@@ -15,3 +15,23 @@
 .successNotification {
   color: var(--dark-green);
 }
+
+/* animation */
+.fadeInfadeOut {
+  animation: fade-in-fade-out 1.5s ease-out;
+}
+
+@keyframes fade-in-fade-out {
+  from {
+    opacity: 0;
+  }
+  15% {
+    opacity: 100;
+  }
+  85% {
+    opacity: 100;
+  }
+  to {
+    opacity: 0;
+  }
+}
