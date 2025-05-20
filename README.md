@@ -103,8 +103,6 @@ npm run dev
     -   winner pages
         -   call /post winners
         -   call /put winners
-        -   win modal
-            -   configure seconds
 
 -   targetMenu tests
 

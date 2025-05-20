@@ -2,7 +2,7 @@ import { IconWrapper } from '../IconWrapper/IconWrapper';
 import styles from './WinModal.module.css';
 import shared from '../../styles/shared.module.css';
 
-const WinModal = () => {
+const WinModal = ({ time }) => {
   return (
     <div className={styles.modalWrapper}>
       <div className={`${shared.card} ${styles.modal} ${shared.fadeIn}`}>
@@ -11,7 +11,7 @@ const WinModal = () => {
             <h2>Winner</h2>
           </IconWrapper>
           <p>
-            Wow! You found all the hidden critters in <strong className={shared.bold}> seconds</strong>
+            Wow! You found all the hidden critters in <strong className={shared.bold}>{time} seconds</strong>
           </p>
           <p>Add your username to the leaderboards</p>
           <label className={`${shared.bold} ${shared.marginTopSmall}`} htmlFor="name">Username</label>
