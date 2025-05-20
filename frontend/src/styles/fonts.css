@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Sen-ExtraBold';
+  src: url(../assets/fonts/Sen-ExtraBold.woff2);
+}
+
+@font-face {
+  font-family: 'Sen-Bold';
+  src: url(../assets/fonts/Sen-Bold.woff2);
+}
+
+@font-face {
+  font-family: 'Sen-SemiBold';
+  src: url(../assets/fonts/Sen-SemiBold.woff2);
+}
+
+@font-face {
+  font-family: 'Sen-Medium';
+  src: url(../assets/fonts/Sen-Medium.woff2);
+}
+
+@font-face {
+  font-family: 'Sen-Regular';
+  src: url(../assets/fonts/Sen-Regular.woff2);
+}
+
+h1 {
+  font-family: 'Sen-ExtraBold', sans-serif;
+}
+
+h2 {
+  font-family: 'Sen-SemiBold', sans-serif;
+}
+
+h3,
+button {
+  font-family: 'Sen-Bold', sans-serif;
+}
+
+h4,
+h5 {
+  font-family: 'Sen-Medium', sans-serif;
+}
+
+html {
+  font-family: 'Sen-Regular', sans-serif;
+  font-size: 16px;
+}
