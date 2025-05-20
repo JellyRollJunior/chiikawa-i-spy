@@ -1,0 +1,91 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Page > render page with header, game name, GameImage component, and targets 1`] = `
+<div>
+  <header />
+  <main>
+    <div
+      class="_wrapper_ded547 _marginTopMedium_5890fc"
+    >
+      <section
+        class="_card_5890fc _gameContent_ded547"
+      >
+        <div>
+          <h2
+            class="_title_5890fc"
+          >
+            Chiikawa Village
+          </h2>
+        </div>
+        <img
+          src="www.chiikawa.com"
+        />
+      </section>
+      <section
+        class="_targetSection_ded547"
+      >
+        <ul
+          class="_horizontalWrapper_5890fc"
+        >
+          <li
+            class="_target_ded547"
+          >
+            <img
+              alt=""
+              class="_targetImage_ded547 false"
+              src="/src/assets/temp/usagi.jpg"
+            />
+            <h4
+              class=""
+            >
+              Floppy-Eared Usagi
+            </h4>
+          </li>
+          <li
+            class="_target_ded547"
+          >
+            <img
+              alt=""
+              class="_targetImage_ded547 false"
+              src="/src/assets/temp/shisa.jpg"
+            />
+            <h4
+              class=""
+            >
+              Satapanbin Shisa
+            </h4>
+          </li>
+          <li
+            class="_target_ded547"
+          >
+            <img
+              alt=""
+              class="_targetImage_ded547 false"
+              src="/src/assets/temp/hachiware.jpg"
+            />
+            <h4
+              class=""
+            >
+              Guitar Hachiware
+            </h4>
+          </li>
+          <li
+            class="_target_ded547"
+          >
+            <img
+              alt=""
+              class="_targetImage_ded547 false"
+              src="/src/assets/temp/chiikawa.jpg"
+            />
+            <h4
+              class=""
+            >
+              Aura Chiikawa
+            </h4>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</div>
+`;
