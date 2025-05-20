@@ -7,7 +7,7 @@ import { TargetMenu } from '../TargetMenu/TargetMenu.jsx';
 import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './GameImage.module.css';
 
-const GameImage = ({ url, targets, setTargets }) => {
+const GameImage = ({ url, targets, setTargets, showWin }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [menuXY, setMenuXY] = useState([0, 0]);
   const [guess, setGuess] = useState([0, 0]);
@@ -55,6 +55,13 @@ const GameImage = ({ url, targets, setTargets }) => {
       localStorage.setItem('token', data.token);
       setTargets(data.targets);
       handleNotification(`You found ${targets.find((target) => target.id == targetId).name}!`, true);
+
+      // verify if win
+      if (!data.targets.find((target) => target.isFound == false)) {
+        // post win
+        // if post success then
+        showWin();
+      }
     } else {
       handleNotification(`No target found. Try again!`, false);
     }

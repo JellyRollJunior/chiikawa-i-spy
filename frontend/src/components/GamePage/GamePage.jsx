@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 import { Header } from '../Header/Header.jsx';
 import { IconWrapper } from '../IconWrapper/IconWrapper.jsx';
 import { useGameSession } from '../../hooks/useGameSession.js';
@@ -16,6 +17,11 @@ const tempImages = [ usagi, shisa, hachiware, chiikawa ];
 const GamePage = () => {
   const gameId = useParams().gameId;
   const { assets, targets, setTargets, error, loading } = useGameSession(gameId);
+  const [win, setWin] = useState(false);
+
+  const showWin = () => {
+    setWin(true);
+  }
 
   return (
     <>
@@ -29,7 +35,7 @@ const GamePage = () => {
               <IconWrapper size={46} margin={12} leftIcon={0} rightIcon={5}>
                 <h2 className={shared.title}>{assets.name}</h2>
               </IconWrapper>
-              <GameImage url={assets.url} targets={targets} setTargets={setTargets} />
+              <GameImage url={assets.url} targets={targets} setTargets={setTargets} showWin={showWin} />
             </section>
             <section className={styles.targetSection}>
               <ul className={shared.horizontalWrapper}>
@@ -44,7 +50,7 @@ const GamePage = () => {
           </div>
         )}
       </main>
-      <WinModal></WinModal>
+      {win && <WinModal></WinModal>}
     </>
   );
 };
