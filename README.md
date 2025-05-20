@@ -90,7 +90,9 @@ npm run dev
 ### Backend TODOS
 
 -   query params
--   update player tests
+-   update 
+    -   player tests
+
 
 ## Frontend TODOS
 
