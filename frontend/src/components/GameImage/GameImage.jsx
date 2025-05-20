@@ -60,6 +60,7 @@ const GameImage = ({ url, targets, setTargets }) => {
     } else {
       handleNotification(`No target found. Try again!`, false);
     }
+    setShowMenu(false);
   };
 
   const handleNotification = async (message, successNotification) => {
