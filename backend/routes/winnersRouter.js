@@ -10,7 +10,6 @@ winnersRouter.post(
     '/',
     retrieveToken,
     verifyToken,
-    winnerValidation,
     winnersController.postWinners
 );
 

@@ -1,6 +1,9 @@
+import dotenv from 'dotenv';
+import jwt from 'jsonwebtoken';
 import { validationResult } from 'express-validator';
-import * as db from '../model/db.js';
 import { ValidationError } from '../errors/ValidationError.js';
+import * as db from '../model/db.js';
+dotenv.config();
 
 const getWinners = async (req, res, next) => {
     try {
@@ -13,10 +16,6 @@ const getWinners = async (req, res, next) => {
 
 const postWinners = async (req, res, next) => {
     const endTime = new Date();
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        throw new ValidationError('Error validating winner name', errors.array());
-    }
     try {
         // confirm win
         const player = req.player;
@@ -26,9 +25,12 @@ const postWinners = async (req, res, next) => {
             throw error;
         }
         // insert winner
-        const name = req.body.name;
-        const winner = await db.insertWinner(name, player.startTime, endTime, player.gameId);
-        res.json({ winner });
+        const winner = await db.insertWinner('Anonymous mob character', player.startTime, endTime, player.gameId);
+        const options = {
+            expiresIn: 60 * 2, // 2 mins
+        };
+        const token = jwt.sign(winner, process.env.TOKEN_SECRET, options)
+        res.json({ token });
     } catch (error) {
         next(error);
     }
