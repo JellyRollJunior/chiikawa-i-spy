@@ -34,3 +34,15 @@ ul {
 a {
   text-decoration: none;
 }
+
+input {
+  display: block;
+  border-radius: 5px;
+  border: 2px solid var(--green);
+}
+
+input:active,
+input:focus {
+  outline: var(--dark-pink);
+  border-color: var(--dark-pink);
+}

@@ -21,7 +21,7 @@
 .modal h2,
 .modal p,
 .modal label {
-  color: inherit
+  color: inherit;
 }
 
 .form {
@@ -32,9 +32,4 @@
 
 .form :first-child {
   align-self: center;
-}
-
-.form input {
-  display: block;
-  border-radius: 5px;
 }

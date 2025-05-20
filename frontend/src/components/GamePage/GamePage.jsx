@@ -17,7 +17,7 @@ const tempImages = [ usagi, shisa, hachiware, chiikawa ];
 const GamePage = () => {
   const gameId = useParams().gameId;
   const { assets, targets, setTargets, error, loading } = useGameSession(gameId);
-  const [win, setWin] = useState(false);
+  const [win, setWin] = useState(true);
 
   const showWin = () => {
     setWin(true);

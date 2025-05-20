@@ -101,8 +101,10 @@ npm run dev
 
     -   timer
     -   winner pages
+        -   call /post winners
+        -   call /put winners
         -   win modal
-            -   input on focus style
+            -   configure seconds
 
 -   targetMenu tests
 
