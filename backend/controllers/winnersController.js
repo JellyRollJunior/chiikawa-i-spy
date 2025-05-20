@@ -19,20 +19,35 @@ const postWinners = async (req, res, next) => {
     try {
         // confirm win
         const player = req.player;
-        if (player.targets.filter((target) => target.isFound == false).length != 0) {
+        if (
+            player.targets.filter((target) => target.isFound == false).length !=
+            0
+        ) {
             const error = new Error('Player has not found all targets.');
             error.status = 403;
             throw error;
         }
         // insert winner
-        const winner = await db.insertWinner('Anonymous mob character', player.startTime, endTime, player.gameId);
+        const winner = await db.insertWinner(
+            'Anonymous mob character',
+            player.startTime,
+            endTime,
+            player.gameId
+        );
         const options = {
             expiresIn: 60 * 2, // 2 mins
         };
-        const token = jwt.sign(winner, process.env.TOKEN_SECRET, options)
+        const token = jwt.sign(winner, process.env.TOKEN_SECRET, options);
         res.json({ token });
     } catch (error) {
         next(error);
+    }
+};
+
+const putWinners = async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        throw new ValidationError('Error validating name', errors.array());
     }
 };
 

@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { retrieveToken, verifyToken } from '../middleware/token.js';
-import { winnerValidation } from '../validations/winnerValidation.js';
+import { nameValidation } from '../validations/nameValidation.js';
 import * as winnersController from '../controllers/winnersController.js';
 
 const winnersRouter = Router();
@@ -12,5 +12,6 @@ winnersRouter.post(
     verifyToken,
     winnersController.postWinners
 );
+
 
 export { winnersRouter };

@@ -20,7 +20,7 @@ const getGames = async () => {
         const games = await prisma.game.findMany({
             orderBy: {
                 id: 'asc',
-            }
+            },
         });
         return games;
     } catch (error) {
@@ -42,7 +42,7 @@ const getGame = async (id) => {
                     },
                     orderBy: {
                         id: 'asc',
-                    }
+                    },
                 },
             },
         });
@@ -124,6 +124,22 @@ const insertWinner = async (name, startTime, endTime, gameId) => {
     }
 };
 
+const updateWinner = async (id, name) => {
+    try {
+        const winner = await prisma.winner.update({
+            where: {
+                id: Number(id),
+            },
+            data: {
+                name: name,
+            },
+        });
+        return winner;
+    } catch (error) {
+        throw new DatabaseError('Error updating winner', 500);
+    }
+};
+
 export {
     getGames,
     getGame,
@@ -132,4 +148,5 @@ export {
     insertTarget,
     getWinners,
     insertWinner,
+    updateWinner,
 };
