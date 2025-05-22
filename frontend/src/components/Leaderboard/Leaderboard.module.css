@@ -1,0 +1,16 @@
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.leaderboardItem {
+  display: grid;
+  grid-template-columns: 50px 1fr 80px;
+}
+
+.leaderboardItem * {
+  text-align: center;
+}
