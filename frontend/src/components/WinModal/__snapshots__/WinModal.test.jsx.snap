@@ -1,0 +1,51 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Win Modal component > Renders win time, name input, and submit button 1`] = `
+<div>
+  <div
+    class="_modalWrapper_e4f685"
+  >
+    <div
+      class="_card_5890fc _modal_e4f685 _fadeIn_5890fc"
+    >
+      <form
+        class="_form_e4f685"
+      >
+        <p>
+          Wow! You found all the hidden critters in
+           
+          <strong
+            class="_bold_5890fc"
+          >
+            3
+             seconds
+          </strong>
+        </p>
+        <p>
+          Add your username to the leaderboards
+        </p>
+        <label
+          class="_bold_5890fc _marginTopSmall_5890fc"
+          for="name"
+        >
+          Name
+        </label>
+        <input
+          id="name"
+          maxlength="32"
+          minlength="1"
+          name="name"
+          required=""
+          type="text"
+          value="Anonymous Mob Creature"
+        />
+        <button
+          class="_primaryButton_5890fc _marginTopSmall_5890fc"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;

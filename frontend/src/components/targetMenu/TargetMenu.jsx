@@ -1,7 +1,7 @@
 import styles from './TargetMenu.module.css';
 import shared from '../../styles/shared.module.css';
 
-const TargetMenu = ({ targets, isVisible, x, y, handleGuess }) => {
+const TargetMenu = ({ targets, isVisible, handleGuess, x = 0, y = 0}) => {
   const style = { left: x, top: y };
   style.display = isVisible ? 'block' : 'none';
 

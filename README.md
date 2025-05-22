@@ -102,9 +102,6 @@ npm run dev
     -   timer
 -   Extract notification to main level -> show errors in notification
 
--   targetMenu tests
--   win modal tests
-
 -   Start Page
 
     -   startpage leaderboard button

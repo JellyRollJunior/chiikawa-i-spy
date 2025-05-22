@@ -10,7 +10,7 @@ exports[`Game Image component > renders game image and target menu 1`] = `
       src="/src/assets/temp/chiikawa-wo-sagase.jpg"
     />
     <div
-      class="_menuWrapper_845c23"
+      class="_fadeIn_5890fc _menuWrapper_845c23"
       style="left: 0px; top: 0px; display: none;"
     >
       <div
