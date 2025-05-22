@@ -17,10 +17,12 @@ const tempImages = [ usagi, shisa, hachiware, chiikawa ];
 const GamePage = () => {
   const gameId = useParams().gameId;
   const { assets, targets, setTargets, error, loading } = useGameSession(gameId);
-  const [winModal, setWinModal] = useState({ isVisible: false, winTime: null });
+  const [isWinModalVisible, setIsWinModalVisible] = useState(false);
+  const [winTime, setWinTime] = useState(false);
 
   const showWinModal = (winTime) => {
-    setWinModal({ isVisible: true, winTime });
+    setIsWinModalVisible(true);
+    setWinTime(winTime);
   }
 
   return (
@@ -50,7 +52,7 @@ const GamePage = () => {
           </div>
         )}
       </main>
-      {winModal.isVisible && <WinModal time={winModal.winTime}></WinModal>}
+      {isWinModalVisible && <WinModal time={winTime}></WinModal>}
     </>
   );
 };

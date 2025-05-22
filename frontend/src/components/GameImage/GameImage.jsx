@@ -8,6 +8,7 @@ import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './GameImage.module.css';
 
 const GameImage = ({ url, targets, setTargets, showWinModal }) => {
+  const gameId = useParams().gameId;
   const [showMenu, setShowMenu] = useState(false);
   const [menuXY, setMenuXY] = useState([0, 0]);
   const [guess, setGuess] = useState([0, 0]);
@@ -29,8 +30,7 @@ const GameImage = ({ url, targets, setTargets, showWinModal }) => {
     setShowMenu(!showMenu);
   };
 
-  const gameId = useParams().gameId;
-  const makeGuess = async (targetId) => {
+  const handleGuess = async (targetId) => {
     // if no token, refresh to get new token
     const token = localStorage.getItem('token');
     if (!token) window.location.reload();
@@ -68,6 +68,7 @@ const GameImage = ({ url, targets, setTargets, showWinModal }) => {
     }
   };
 
+  // check if user won and handle win
   const handleWin = async (targetData) => {
     if (!targetData.find((target) => target.isFound == false)) {
       try {
@@ -119,7 +120,7 @@ const GameImage = ({ url, targets, setTargets, showWinModal }) => {
         isVisible={showMenu}
         x={menuXY[0]}
         y={menuXY[1]}
-        onGuess={makeGuess}
+        handleGuess={handleGuess}
         handleNotification={handleNotification}
       />
     </div>

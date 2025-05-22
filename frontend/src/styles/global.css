@@ -37,6 +37,7 @@ a {
 
 input {
   display: block;
+  padding: 1px 5px;
   border-radius: 5px;
   border: 2px solid var(--green);
 }

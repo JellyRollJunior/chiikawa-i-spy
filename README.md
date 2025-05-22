@@ -94,20 +94,16 @@ npm run dev
 ### Backend TODOS
 
 -   query params
--   add gameId to winners
--   return win time in post /winners
 
 ## Frontend TODOS
 
 -   gamepage
 
-    -   TRY CATCH ON ALL THE ASYNC CALL! I FORGOT OOPS
     -   timer
-    -   winner pages
-        -   call /post winners
-        -   call /put winners
+-   Extract notification to main level -> show errors in notification
 
 -   targetMenu tests
+-   win modal tests
 
 -   Start Page
 

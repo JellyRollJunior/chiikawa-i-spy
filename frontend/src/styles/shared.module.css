@@ -57,6 +57,11 @@
   padding: 2px 12px;
 }
 
+.error {
+  text-align: center;
+  color: red;
+}
+
 /* animations */
 .fadeIn {
   animation: fade-in 0.25s ease-out;
