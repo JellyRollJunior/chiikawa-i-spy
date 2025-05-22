@@ -1,5 +1,17 @@
+import { useWinners } from "../../hooks/useWinners";
+
 const Leaderboard = () => {
-  return <div>Hi</div>;
+  const { winners, loading, error } = useWinners();
+
+  return (
+    <section>
+      <ul>
+        {winners && winners.map((winner) => (
+          <li>{winner.name}</li>
+        ))}
+      </ul>
+    </section>
+  )
 };
 
 export { Leaderboard };

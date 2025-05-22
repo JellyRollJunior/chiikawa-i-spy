@@ -17,7 +17,7 @@ const StartPage = () => {
         {loading && <h3 className={shared.messages}>Loading games</h3>}
         {error && <h3 className={shared.messages}>{error}</h3>}
         {games && !error && (
-          <>
+          <section>
             <div className={shared.marginTopMedium}>
               <IconWrapper size={46} margin={12}>
                 <h2 className={`${shared.card} ${shared.title}`}>Games</h2>
@@ -35,7 +35,7 @@ const StartPage = () => {
                 </li>
               ))}
             </ul>
-          </>
+          </section>
         )}
         <Leaderboard />
       </main>

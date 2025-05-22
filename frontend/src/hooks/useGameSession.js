@@ -15,6 +15,7 @@ const useGameSession = (gameId) => {
                 setLoading(true);
                 const data = await makeRequest(getUrl(`/games/${gameId}/assets`), {
                     mode: 'cors',
+                    method: 'get',
                     signal: controller.signal,
                 });
                 const { token, targets, ...assets } = data;

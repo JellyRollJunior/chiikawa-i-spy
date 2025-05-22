@@ -100,11 +100,13 @@ npm run dev
 -   gamepage
 
     -   timer
--   Extract notification to main level -> show errors in notification
 
--   Start Page
-
-    -   startpage leaderboard button
+-   Leaderboard
+    -   tests
+    -   call get /winners
+    -   display winners
+    -   separate winners by gameId
+    -   gameId tab for each game
 
 -   General
     -   error page, 404 page
@@ -112,5 +114,7 @@ npm run dev
 
 ### Final plans
 
+-   Extract notification to main level -> show errors in notification
+    -   revamp notification system on errors
 -   image storage on supabase
 -   mobile view
