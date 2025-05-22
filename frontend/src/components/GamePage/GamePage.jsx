@@ -52,7 +52,7 @@ const GamePage = () => {
           </div>
         )}
       </main>
-      {isWinModalVisible && <WinModal time={winTime}></WinModal>}
+      {isWinModalVisible && <WinModal time={winTime} />}
     </>
   );
 };

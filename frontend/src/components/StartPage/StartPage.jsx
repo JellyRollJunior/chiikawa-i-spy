@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useGames } from '../../hooks/useGames.js';
 import { Header } from '../Header/Header.jsx';
 import { IconWrapper } from '../IconWrapper/IconWrapper.jsx';
+import { Leaderboard } from '../Leaderboard/Leaderboard.jsx';
 import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './StartPage.module.css';
 import shared from '../../styles/shared.module.css';
@@ -36,6 +37,7 @@ const StartPage = () => {
             </ul>
           </>
         )}
+        <Leaderboard />
       </main>
     </>
   );

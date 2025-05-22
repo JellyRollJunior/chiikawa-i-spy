@@ -32,6 +32,10 @@ vi.mock('../Header/Header.jsx', () => ({
   Header: ({ children }) => <header>{children}</header>
 }));
 
+vi.mock('../Leaderboard/Leaderboard.jsx', () => ({
+  Leaderboard: ({ children }) => {children}
+}));
+
 describe('Start page', () => {
   it('renders title and games', () => {
     // mock game data
