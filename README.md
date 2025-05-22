@@ -94,6 +94,8 @@ npm run dev
 ### Backend TODOS
 
 -   query params
+-   add gameId to winners
+-   return win time in post /winners
 
 ## Frontend TODOS
 
@@ -112,6 +114,7 @@ npm run dev
 
 -   General
     -   error page, 404 page
+    -   bug: target menu goes out of bounds
 
 ### Final plans
 

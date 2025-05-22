@@ -29,7 +29,6 @@ const GameImage = ({ url, targets, setTargets, showWin }) => {
     setShowMenu(!showMenu);
   };
 
-  // NEED TO TRY CATCH THIS!
   const gameId = useParams().gameId;
   const makeGuess = async (targetId) => {
     // if no token, refresh to get new token
@@ -37,44 +36,61 @@ const GameImage = ({ url, targets, setTargets, showWin }) => {
     if (!token) window.location.reload();
 
     // veriy if guess is correct
-    const data = await makeRequest(getUrl(`/games/${gameId}/guesses`), {
-      mode: 'cors',
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        targetId,
-        x: Math.floor(guess[0]),
-        y: Math.floor(guess[1]),
-      }),
-    });
+    try {
+      const data = await makeRequest(getUrl(`/games/${gameId}/guesses`), {
+        mode: 'cors',
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          targetId,
+          x: Math.floor(guess[0]),
+          y: Math.floor(guess[1]),
+        }),
+      });
 
-    // display guess feedback
-    if (data.guessSuccess) {
-      localStorage.setItem('token', data.token);
-      setTargets(data.targets);
-      handleNotification(`You found ${targets.find((target) => target.id == targetId).name}!`, true);
+      // display guess feedback
+      if (data.guessSuccess) {
+        localStorage.setItem('token', data.token);
+        setTargets(data.targets);
+        handleNotification(`You found ${targets.find((target) => target.id == targetId).name}!`, true);
+        handleWin(data.targets);
+      } else {
+        handleNotification(`No target found. Try again!`, false);
+      }
+    } catch (error) {
+      console.error(error);
+      handleNotification(`Unable to verify target position. Please try again.`, false);
+    } finally {
+      setShowMenu(false);
+    }
+  };
 
-      // check if win
-      if (!data.targets.find((target) => target.isFound == false)) {
-        const winnerToken = await makeRequest(getUrl('/winners', {
+  const handleWin = async (targetData) => {
+    if (!targetData.find((target) => target.isFound == false)) {
+      try {
+        const token = localStorage.getItem('token');
+        const winnerData = await makeRequest(getUrl('/winners'), {
           mode: 'cors',
           method: 'POST',
           headers: {
-            Authorization: `Bearer ${data.token}`,
+            Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json',
-          }
-        }));
-        localStorage.setItem('token', winnerToken);
-        // if server returns win, show win modal
-        showWin();
-      }
-    } else {
-      handleNotification(`No target found. Try again!`, false);
+          },
+        });
+
+        // If server returns token, we won!
+        if (winnerData.token) {
+          localStorage.setItem('token', winnerData.token);
+          showWin();
+        }
+      } catch (error) {
+        console.error(error);
+        handleNotification('Unable to verify win. Please try again.', false);
+      } 
     }
-    setShowMenu(false);
   };
 
   const handleNotification = async (message, successNotification) => {
