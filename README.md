@@ -52,7 +52,7 @@ npm run dev
 | GET    | /games/:gameId/assets  | Returns assets needed to start game |                                                               | Returns game & target data, startTime, jsonwebtoken |
 | POST   | /games/:gameId/guesses | Verify target coordinates           | { targetId, x: x% of image, y: y% of image }, token           | Returns guessSucess, targetsFound, targetsNotFound  |
 | GET    | /winners               | Returns winners                     |                                                               | Returns list of winners' name, time, gameId         |
-| POST   | /winners               | Create winner                       | token with confirmed win data                                 | Returns winner data if win verified, else 403       |
+| POST   | /winners               | Create winner                       | token with confirmed win data, time to win in seconds         | Returns token and time if win verified, else 403    |
 | PUT    | /winners               | Rename winner                       | { name }, token with winning player data (from POST /winners) | Returns updated winner if winner verified, else 403 |
 
 ### API Gameplay loop
@@ -100,7 +100,8 @@ npm run dev
 ## Frontend TODOS
 
 -   gamepage
-    - TRY CATCH ON ALL THE ASYNC CALL! I FORGOT OOPS
+
+    -   TRY CATCH ON ALL THE ASYNC CALL! I FORGOT OOPS
     -   timer
     -   winner pages
         -   call /post winners

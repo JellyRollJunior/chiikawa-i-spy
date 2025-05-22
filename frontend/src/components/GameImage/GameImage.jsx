@@ -7,7 +7,7 @@ import { TargetMenu } from '../TargetMenu/TargetMenu.jsx';
 import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './GameImage.module.css';
 
-const GameImage = ({ url, targets, setTargets, showWin }) => {
+const GameImage = ({ url, targets, setTargets, showWinModal }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [menuXY, setMenuXY] = useState([0, 0]);
   const [guess, setGuess] = useState([0, 0]);
@@ -84,7 +84,7 @@ const GameImage = ({ url, targets, setTargets, showWin }) => {
         // If server returns token, we won!
         if (winnerData.token) {
           localStorage.setItem('token', winnerData.token);
-          showWin();
+          showWinModal(winnerData.seconds);
         }
       } catch (error) {
         console.error(error);

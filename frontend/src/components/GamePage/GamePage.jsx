@@ -17,10 +17,10 @@ const tempImages = [ usagi, shisa, hachiware, chiikawa ];
 const GamePage = () => {
   const gameId = useParams().gameId;
   const { assets, targets, setTargets, error, loading } = useGameSession(gameId);
-  const [win, setWin] = useState(false);
+  const [winModal, setWinModal] = useState({ isVisible: false, winTime: null });
 
-  const showWin = () => {
-    setWin(true);
+  const showWinModal = (winTime) => {
+    setWinModal({ isVisible: true, winTime });
   }
 
   return (
@@ -35,7 +35,7 @@ const GamePage = () => {
               <IconWrapper size={46} margin={12} leftIcon={0} rightIcon={5}>
                 <h2 className={shared.title}>{assets.name}</h2>
               </IconWrapper>
-              <GameImage url={assets.url} targets={targets} setTargets={setTargets} showWin={showWin} />
+              <GameImage url={assets.url} targets={targets} setTargets={setTargets} showWinModal={showWinModal} />
             </section>
             <section className={styles.targetSection}>
               <ul className={shared.horizontalWrapper}>
@@ -50,7 +50,7 @@ const GamePage = () => {
           </div>
         )}
       </main>
-      {win && <WinModal></WinModal>}
+      {winModal.isVisible && <WinModal time={winModal.winTime}></WinModal>}
     </>
   );
 };

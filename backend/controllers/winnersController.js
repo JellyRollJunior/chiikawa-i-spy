@@ -37,8 +37,8 @@ const postWinners = async (req, res, next) => {
         const options = {
             expiresIn: 60 * 2, // 2 mins
         };
-        const token = jwt.sign(winner, process.env.TOKEN_SECRET, options);
-        res.json({ token });
+        const token = jwt.sign({ id: winner.id }, process.env.TOKEN_SECRET, options);
+        res.json({ token, seconds: winner.seconds });
     } catch (error) {
         next(error);
     }

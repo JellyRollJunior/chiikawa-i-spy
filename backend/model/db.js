@@ -108,6 +108,20 @@ const getWinners = async () => {
     }
 };
 
+const getWinnerById = async (id) => {
+    try {
+        const winners = await prisma.$queryRaw`
+            SELECT *,  EXTRACT(EPOCH FROM ("endTime" - "startTime")) AS seconds
+            FROM "Winner"
+            WHERE id = ${Number(id)}
+            ORDER BY seconds ASC
+        `;
+        return winners;
+    } catch (error) {
+        throw new DatabaseError('Error retrieving winners', 500);
+    }
+}
+
 const insertWinner = async (name, startTime, endTime, gameId) => {
     try {
         const winner = await prisma.winner.create({
@@ -118,7 +132,8 @@ const insertWinner = async (name, startTime, endTime, gameId) => {
                 gameId: Number(gameId),
             },
         });
-        return winner;
+        const fullWinner = await getWinnerById(winner.id);
+        return fullWinner[0];
     } catch (error) {
         throw new DatabaseError('Error inserting winner', 500);
     }
