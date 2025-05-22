@@ -15,7 +15,7 @@ const useWinners = () => {
                 const data = await makeRequest(getUrl('/winners'), {
                     mode: 'cors',
                     method: 'get',
-                    signal: controller.signal
+                    signal: controller.signal,
                 });
                 setWinner(data.winners);
             } catch (error) {
@@ -28,7 +28,6 @@ const useWinners = () => {
 
         fetchWinners();
     }, []);
-
 
     return { winners, loading, error };
 };

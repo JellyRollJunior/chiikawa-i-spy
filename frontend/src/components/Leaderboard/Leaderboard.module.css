@@ -5,7 +5,10 @@
   min-width: 300px;
   max-width: 450px;
   width: 100%;
-  padding: 16px 12px;
+  padding: 16px 8px 16px 12px;
+
+  color: var(--green);
+  text-align: center;
 }
 
 .leaderboardItem {
@@ -13,6 +16,12 @@
   grid-template-columns: 50px 1fr 80px;
 }
 
-.leaderboardItem * {
-  text-align: center;
+.leaderboardLegend {
+  composes: leaderboardItem;
+  margin-bottom: 8px;
+  color: var(--dark-pink);
+}
+
+.left {
+  text-align: left;
 }

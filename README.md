@@ -103,8 +103,6 @@ npm run dev
 
 -   Leaderboard
     -   tests
-    -   call get /winners
-    -   display winners
     -   separate winners by gameId
     -   gameId tab for each game
 
