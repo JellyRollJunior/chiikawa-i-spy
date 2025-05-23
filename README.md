@@ -103,7 +103,6 @@ npm run dev
 
 -   Leaderboard
     -   tests
-    -   separate winners by gameId
     -   gameId tab for each game
 
 -   General
