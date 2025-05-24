@@ -101,9 +101,6 @@ npm run dev
 
     -   timer
 
--   Leaderboard
-    -   tests
-
 -   General
     -   error page, 404 page
     -   bug: target menu goes out of bounds

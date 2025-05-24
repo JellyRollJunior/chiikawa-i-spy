@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useWinners } from '../../hooks/useWinners';
+import { useWinners } from '../../hooks/useWinners.js';
 import { IconWrapper } from '../IconWrapper/IconWrapper.jsx';
 import styles from './Leaderboard.module.css';
 import shared from '../../styles/shared.module.css';

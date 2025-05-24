@@ -1,0 +1,62 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Leaderboard component > renders title, game buttons, and winners 1`] = `
+<div>
+  <section
+    class="_marginTopMedium_5890fc"
+  >
+    <h2
+      class="_card_5890fc _title_5890fc"
+    >
+      Leaderboard
+    </h2>
+    <ul
+      class="_leaderboard_acb05c _card_5890fc _marginTopSmall_5890fc"
+    >
+      <div
+        class="_leaderboardButtonWrapper_acb05c"
+      >
+        <button
+          class="_primaryButton_5890fc"
+        >
+          game 1
+        </button>
+        <button
+          class="_primaryButton_5890fc"
+        >
+          game 2
+        </button>
+      </div>
+      <li
+        class="_leaderboardLegend_acb05c"
+      >
+        <h3>
+          Place
+        </h3>
+        <h3>
+          Name
+        </h3>
+        <h3>
+          Time
+        </h3>
+      </li>
+      <li
+        class="_leaderboardItem_acb05c"
+      >
+        <h4>
+          0
+        </h4>
+        <h4>
+          Anonymous mob character
+        </h4>
+        <h4
+          class="_left_acb05c"
+        >
+          7.383
+          s
+        </h4>
+      </li>
+    </ul>
+  </section>
+</div>
+`;
