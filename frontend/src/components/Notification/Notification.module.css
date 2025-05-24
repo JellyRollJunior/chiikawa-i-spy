@@ -1,8 +1,6 @@
 .notification {
   position: absolute;
   top: 24px;
-  left: 0; 
-  right: 0; 
   width: fit-content;
   min-width: 100px;
   padding: 2px 24px;

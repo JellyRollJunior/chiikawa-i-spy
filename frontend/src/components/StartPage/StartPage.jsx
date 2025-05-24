@@ -6,14 +6,25 @@ import { Leaderboard } from '../Leaderboard/Leaderboard.jsx';
 import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './StartPage.module.css';
 import shared from '../../styles/shared.module.css';
+import { useState } from 'react';
+import { Notification } from '../Notification/Notification.jsx';
 
 const StartPage = () => {
   const { games, loading, error } = useGames();
+  const [notifications, setNotifications] = useState([]);
 
   return (
     <>
       <Header />
       <main>
+        <ul >
+          <div className={styles.notifications}>
+            <Notification message={'test'} positionStyling={{right: 0, marginRight: '24px'}} />
+          </div>
+          {Array.isArray(notifications) && notifications.map((notification) => (
+            <Notification message={notification.message} />
+          ))}
+        </ul>
         {loading && <h3 className={shared.messages}>Loading games</h3>}
         {error && <h3 className={shared.messages}>{error}</h3>}
         {games && !error && (

@@ -21,3 +21,9 @@
   display: block;
   padding: 8px 8px 10px 8px;
 }
+
+.notifications {
+  position: absolute;
+  width:100%;
+  left: 0;
+}

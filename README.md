@@ -98,15 +98,22 @@ npm run dev
 ## Frontend TODOS
 
 -   gamepage
-
     -   timer
 
 -   General
     -   error page, 404 page
+    -   footer
+    -   loading animation?
 
 ### Final plans
 
 -   Extract notification to main level -> show errors in notification
     -   revamp notification system on errors
+    -   StartPage
+        -   move basic notifications to start page
+        -   create state to store array of notifications
+        -   context and store add notification function
+        -   add a delete notification button to notification
+        -   create option to render disappearing notification & persistent notification
 -   image storage on supabase
 -   mobile view
