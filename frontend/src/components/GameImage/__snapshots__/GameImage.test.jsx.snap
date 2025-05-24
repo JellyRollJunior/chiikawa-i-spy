@@ -21,6 +21,7 @@ exports[`Game Image component > renders game image and target menu 1`] = `
         />
         <ul
           class="_optionWrapper_845c23"
+          style="transform: translateX(80px);"
         />
       </div>
     </div>

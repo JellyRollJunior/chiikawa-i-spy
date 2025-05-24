@@ -103,7 +103,6 @@ npm run dev
 
 -   General
     -   error page, 404 page
-    -   bug: target menu goes out of bounds
 
 ### Final plans
 

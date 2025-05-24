@@ -120,6 +120,7 @@ const GameImage = ({ url, targets, setTargets, showWinModal }) => {
         isVisible={showMenu}
         x={menuXY[0]}
         y={menuXY[1]}
+        xPercent={guess[0]}
         handleGuess={handleGuess}
         handleNotification={handleNotification}
       />
