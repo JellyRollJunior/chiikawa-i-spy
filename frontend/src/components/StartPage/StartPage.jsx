@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useGames } from '../../hooks/useGames.js';
 import { Header } from '../Header/Header.jsx';
@@ -6,8 +7,6 @@ import { Leaderboard } from '../Leaderboard/Leaderboard.jsx';
 import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './StartPage.module.css';
 import shared from '../../styles/shared.module.css';
-import { useState, useEffect } from 'react';
-import { Notification } from '../Notification/Notification.jsx';
 
 const StartPage = () => {
   const { games, loading, error } = useGames();
@@ -15,20 +14,23 @@ const StartPage = () => {
 
   useEffect(() => {
     if (error) {
-      addNotificationTimed(error, false);
+      addNotification(error, false);
+      addNotification('swag', false);
     }
   }, [error]);
 
   const addNotification = (message, successNotification) => {
     const id = crypto.randomUUID();
-    setNotifications([
-      ...notifications,
-      {
-        id,
-        message,
-        successNotification,
-      },
-    ]);
+    setNotifications((prevState) => (
+      [
+        ...prevState,
+        {
+          id,
+          message,
+          successNotification,
+        },
+      ]
+    ));
     return id;
   };
 
@@ -42,18 +44,12 @@ const StartPage = () => {
     <>
       <Header />
       <main>
-
         {/* make this notification holder absolute position -> not the notifications itself */}
-        <div>
+        <div className={styles.notificationWrapper}>
           {Array.isArray(notifications) &&
             notifications.length > 0 &&
             notifications.map((notification) => (
-              <Notification
-                key={notification.id}
-                message={notification.message}
-                style={{ right: 0, marginRight: '24px', zIndex: 2 }}
-                successNotification={notification.successNotification}
-              />
+              <h3>{notification.message}</h3>
             ))}
         </div>
         {loading && <h3 className={shared.messages}>Loading games</h3>}
