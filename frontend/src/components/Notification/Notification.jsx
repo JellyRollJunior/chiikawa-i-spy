@@ -1,10 +1,10 @@
 import styles from './Notification.module.css';
 import shared from '../../styles/shared.module.css';
 
-const Notification = ({ message, positionStyling = {left: 0, right: 0}, successNotification = true }) => {
+const Notification = ({ message, style = {left: 0, right: 0}, successNotification = true }) => {
   return (
     <h3
-      style={positionStyling}
+      style={style}
       className={`${styles.notification} ${styles.fadeInfadeOut} ${
         successNotification
           ? `${shared.card} ${styles.successNotification}`

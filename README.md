@@ -110,7 +110,6 @@ npm run dev
 -   Extract notification to main level -> show errors in notification
     -   revamp notification system on errors
     -   StartPage
-        -   move basic notifications to start page
         -   create state to store array of notifications
         -   context and store add notification function
         -   add a delete notification button to notification
