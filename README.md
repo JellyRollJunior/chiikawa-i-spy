@@ -103,7 +103,6 @@ npm run dev
 
 -   Leaderboard
     -   tests
-    -   gameId tab for each game
 
 -   General
     -   error page, 404 page

@@ -11,6 +11,13 @@
   text-align: center;
 }
 
+.leaderboardButtonWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
 .leaderboardItem {
   display: grid;
   grid-template-columns: 50px 1fr 80px;
@@ -18,8 +25,11 @@
 
 .leaderboardLegend {
   composes: leaderboardItem;
+  margin-top: 16px;
   margin-bottom: 8px;
+  padding-top: 12px;
   color: var(--dark-pink);
+  border-top: 3px solid var(--green);
 }
 
 .left {

@@ -37,7 +37,7 @@ const StartPage = () => {
             </ul>
           </section>
         )}
-        <Leaderboard gameIds={games && games.map((game) => game.id)} />
+        <Leaderboard games={games} />
       </main>
     </>
   );
