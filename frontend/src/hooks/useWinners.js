@@ -20,7 +20,7 @@ const useWinners = () => {
                 setWinner(data.winners);
             } catch (error) {
                 console.error(error);
-                setError('Unable to fetch winners');
+                setError('Unable to fetch winners. Please try again later.');
             } finally {
                 setLoading(false);
             }
