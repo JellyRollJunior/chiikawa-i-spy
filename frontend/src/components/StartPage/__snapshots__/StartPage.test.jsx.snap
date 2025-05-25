@@ -4,6 +4,9 @@ exports[`Start page > renders title and games 1`] = `
 <div>
   <header />
   <main>
+    <div
+      class="_notificationWrapper_eb2496"
+    />
     <section>
       <div
         class="_marginTopMedium_5890fc"

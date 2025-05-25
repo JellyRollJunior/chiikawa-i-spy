@@ -4,6 +4,7 @@ exports[`Notification component > renders header with message and success stylin
 <div>
   <h3
     class="_notification_dfd14c _fadeInfadeOut_dfd14c _card_5890fc _successNotification_dfd14c"
+    style="left: 0px; right: 0px;"
   >
     Hello
   </h3>
