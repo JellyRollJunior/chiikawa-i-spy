@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const useNotifications = () => {
     const [notifications, setNotifications] = useState([]);
-    
+
     const addNotification = (message, successNotification) => {
         const id = crypto.randomUUID();
         setNotifications((prevState) => [
@@ -16,7 +16,13 @@ const useNotifications = () => {
         return id;
     };
 
-    return { notifications, addNotification}
+    const removeNotification = (id) => {
+        setNotifications((prevState) =>
+            prevState.filter((notif) => notif.id != id)
+        );
+    };
+
+    return { notifications, addNotification, removeNotification };
 };
 
 export { useNotifications };

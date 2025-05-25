@@ -1,7 +1,6 @@
 .notificationWrapper {
   position: absolute;
   z-index: 2;
-
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -18,4 +17,11 @@
   border-width: 3px;
   border-radius: 8px;
   color: var(--dark-green);
+}
+
+.closeButton {
+  padding: 0 0 0 3px;
+  color: inherit;
+  background-color: inherit;
+  border: none;
 }
