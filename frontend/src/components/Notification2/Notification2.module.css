@@ -1,7 +1,5 @@
 .notificationWrapper {
   position: absolute;
-  top: 8px;
-  right: 6px;
   z-index: 2;
 
   display: flex;

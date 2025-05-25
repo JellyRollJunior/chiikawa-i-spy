@@ -110,9 +110,8 @@ npm run dev
 
 -   Extract notification to main level -> show errors in notification
     -   StartPage
-        -   style notification
-        -   extract notification and wrapper into component
         -   add a delete notification button to notification
         -   create option to render disappearing notification & persistent notification
+        -   move notifications to gameImage
 -   image storage on supabase
 -   mobile view
