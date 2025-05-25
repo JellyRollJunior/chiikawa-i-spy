@@ -20,7 +20,7 @@ const useGames = () => {
                 setError(null);
             } catch (error) {
                 console.log(error);
-                setError('Unable to retrieve games. Please try again.');
+                setError('Unable to retrieve games.');
             } finally {
                 setLoading(false);
             }

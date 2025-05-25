@@ -1,0 +1,23 @@
+.notificationWrapper {
+  position: absolute;
+  top: 8px;
+  right: 6px;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 6px;
+}
+
+.notificationWrapper h3 {
+  width: fit-content;
+}
+
+.successNotification {
+  min-width: 100px;
+  padding: 2px 12px;
+  border-width: 3px;
+  border-radius: 8px;
+  color: var(--dark-green);
+}

@@ -109,8 +109,9 @@ npm run dev
 ### Final plans
 
 -   Extract notification to main level -> show errors in notification
-    -   revamp notification system on errors
     -   StartPage
+        -   style notification
+        -   extract notification and wrapper into component
         -   add a delete notification button to notification
         -   create option to render disappearing notification & persistent notification
 -   image storage on supabase

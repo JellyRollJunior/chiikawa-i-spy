@@ -8,13 +8,15 @@ import { Leaderboard } from '../Leaderboard/Leaderboard.jsx';
 import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './StartPage.module.css';
 import shared from '../../styles/shared.module.css';
+import { Notification2 } from '../Notification2/Notification2.jsx';
 
 const StartPage = () => {
   const { games, loading, error } = useGames();
-  const { notifications, addNotification } = useContext(NotificationContext);
+  const { addNotification } = useContext(NotificationContext);
 
   useEffect(() => {
     if (error) {
+      addNotification(error, true);
       addNotification(error, false);
     }
   }, [error]);
@@ -23,13 +25,7 @@ const StartPage = () => {
     <>
       <Header />
       <main>
-        <div className={styles.notificationWrapper}>
-          {Array.isArray(notifications) &&
-            notifications.length > 0 &&
-            notifications.map((notification) => (
-              <h3>{notification.message}</h3>
-            ))}
-        </div>
+        <Notification2 />
         {loading && <h3 className={shared.messages}>Loading games</h3>}
         {games && !error && (
           <section>

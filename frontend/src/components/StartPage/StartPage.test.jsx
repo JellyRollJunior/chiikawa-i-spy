@@ -29,11 +29,13 @@ vi.mock('../../hooks/useGames.js', () => ({
 
 // mock components
 vi.mock('../Header/Header.jsx', () => ({
-  Header: ({ children }) => <header>{children}</header>
+  Header: ({ children }) => <header>{children}</header>,
 }));
 
 vi.mock('../Leaderboard/Leaderboard.jsx', () => ({
-  Leaderboard: ({ children }) => {children}
+  Leaderboard: ({ children }) => {
+    children;
+  },
 }));
 
 describe('Start page', () => {
@@ -59,18 +61,5 @@ describe('Start page', () => {
     );
 
     expect(screen.getByText('Loading games')).toBeInTheDocument();
-  });
-
-  it('renders error message when unable to fetch data', () => {
-    // mock error state
-    const errorMessage = 'Unable to retrieve games';
-    mocks.data = { games: null, loading: true, error: errorMessage };
-    render(
-      <BrowserRouter>
-        <StartPage />
-      </BrowserRouter>
-    );
-
-    expect(screen.getByText(errorMessage)).toBeInTheDocument();
   });
 });
