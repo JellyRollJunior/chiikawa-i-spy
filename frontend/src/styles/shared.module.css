@@ -71,9 +71,21 @@
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 100;
+  }
+}
+
+.fadeOut {
+  animation: fade-out 0.25s ease-in;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 100;
+  }
+  100% {
+    opacity: 0;
   }
 }
 

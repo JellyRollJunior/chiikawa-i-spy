@@ -12,7 +12,7 @@ const Leaderboard = ({ games }) => {
 
   useEffect(() => {
     if (error) {
-      addErrorNotification(error, false);
+      addErrorNotification(error);
     }
   }, [error]);
 

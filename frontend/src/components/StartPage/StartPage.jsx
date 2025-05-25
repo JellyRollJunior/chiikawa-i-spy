@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { useGames } from '../../hooks/useGames.js';
 import { NotificationContext } from '../../providers/notificationContext.jsx';
 import { Header } from '../Header/Header.jsx';
+import { Notifications } from '../Notifications/Notifications.jsx';
 import { IconWrapper } from '../IconWrapper/IconWrapper.jsx';
 import { Leaderboard } from '../Leaderboard/Leaderboard.jsx';
 import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './StartPage.module.css';
 import shared from '../../styles/shared.module.css';
-import { Notification2 } from '../Notification2/Notification2.jsx';
 
 const StartPage = () => {
   const { games, loading, error } = useGames();
@@ -25,7 +25,7 @@ const StartPage = () => {
     <>
       <Header />
       <main>
-        <Notification2 />
+        <Notifications />
         {loading && <h3 className={shared.messages}>Loading games</h3>}
         {games && !error && (
           <section>

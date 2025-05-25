@@ -74,16 +74,19 @@ npm run dev
     -   Normalizing image coordinates
 
 -   Frontend
+
+    -   Global notifications using context API
+        -   any component can trigger a notification by retrieving create notification functions using context API
     -   Relearning vitest (mocking hooks/components, user events, dynamic mocks, snapshot tests)
-    -   Animating react components
-    -
+    -   Animating react components (fade ins, fade outs)
 
 ### Retrospective aka yapping
 
 -   I really put my all into make this a project I can showcase on my portfolio. Hope you like it!
 -   I learned I prefer working on backend then frontend (else I get confused!)
 -   Designed API and API workflow myself (proud!)
--   Though of storing player session info in jsonwebtoken myself (proud!!)
+-   Thought of storing player session info in jsonwebtoken myself (proud!!)
+-   NOTIFICATIONS TOOK ME SO LONG BUT I DID IT I AM VERY PROUD OF MYSELF
 
 ### Acknowledgements
 
@@ -98,6 +101,7 @@ npm run dev
 ## Frontend TODOS
 
 -   gamepage
+
     -   timer
 
 -   General
@@ -105,16 +109,15 @@ npm run dev
     -   error fetching data image (replace the error message)
     -   footer
     -   loading animation?
+    -   notification on adding winner
 
 ### Final plans
 
 -   Extract notification to main level -> show errors in notification
+
     -   StartPage
-        -   notification fade on delete?
         -   move notifications to gameImage
 
-
-
--   maybe separate game notification and regular notification? just a thought :P then i wont have to reuse it 
+-   maybe separate game notification and regular notification? just a thought :P then i wont have to reuse it
 -   image storage on supabase
 -   mobile view

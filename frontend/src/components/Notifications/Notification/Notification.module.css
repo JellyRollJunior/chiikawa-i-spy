@@ -1,17 +1,3 @@
-.notificationWrapper {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  width: 100%;
-  gap: 6px;
-}
-
-.notificationWrapper h3 {
-  width: fit-content;
-}
-
 .timedNotification {
   min-width: 100px;
   padding: 2px 12px;
