@@ -22,7 +22,21 @@ const useNotifications = () => {
         );
     };
 
-    return { notifications, addNotification, removeNotification };
+    const addTimedNotification = async (message, successNotification) => {
+        const id = crypto.randomUUID();
+        setNotifications((prevState) => [
+            ...prevState,
+            {
+                id,
+                message,
+                successNotification,
+            },
+        ]);
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+        removeNotification(id);
+    }
+
+    return { notifications, addNotification, addTimedNotification, removeNotification };
 };
 
 export { useNotifications };

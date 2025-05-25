@@ -110,7 +110,11 @@ npm run dev
 
 -   Extract notification to main level -> show errors in notification
     -   StartPage
-        -   create option to render disappearing notification & persistent notification
+        -   notification fade on delete?
         -   move notifications to gameImage
+
+
+
+-   maybe separate game notification and regular notification? just a thought :P then i wont have to reuse it 
 -   image storage on supabase
 -   mobile view

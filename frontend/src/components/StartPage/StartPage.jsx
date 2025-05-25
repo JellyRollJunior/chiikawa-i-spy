@@ -12,12 +12,13 @@ import { Notification2 } from '../Notification2/Notification2.jsx';
 
 const StartPage = () => {
   const { games, loading, error } = useGames();
-  const { addNotification } = useContext(NotificationContext);
+  const { addNotification, addTimedNotification } = useContext(NotificationContext);
 
   useEffect(() => {
     if (error) {
       addNotification(error, true);
       addNotification(error, false);
+      addTimedNotification(error, true);
     }
   }, [error]);
 
