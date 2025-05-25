@@ -22,7 +22,7 @@ const useNotifications = () => {
         );
     };
 
-    const addTimedNotification = async (message) => {
+    const addTimedNotification = async (message, ms = 1500) => {
         const id = crypto.randomUUID();
         setNotifications((prevState) => [
             ...prevState,
@@ -32,7 +32,7 @@ const useNotifications = () => {
                 isError: false,
             },
         ]);
-        await new Promise((resolve) => setTimeout(resolve, 1500));
+        await new Promise((resolve) => setTimeout(resolve, ms));
         removeNotification(id);
     }
 

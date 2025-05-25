@@ -15,10 +15,10 @@ const Notification2 = ({
         notifications.map((notification) => (
           <h3
             key={notification.id}
-            className={`${shared.fadeIn} ${
+            className={`${
               notification.isError
-                ? shared.primaryButton
-                : `${shared.card} ${styles.timedNotification}`
+                ? `${shared.primaryButton} ${shared.fadeIn}`
+                : `${shared.card} ${styles.timedNotification} ${shared.fadeInFadeOut}`
             }
           `}
           >
