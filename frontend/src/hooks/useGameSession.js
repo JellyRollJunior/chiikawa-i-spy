@@ -25,7 +25,7 @@ const useGameSession = (gameId) => {
                 setError(null);
             } catch (error) {
                 console.log(error);
-                setError('Unable to retrieve game session data. Please try again.');
+                setError('Unable to retrieve game session data.');
             } finally {
                 setLoading(false);
             }
