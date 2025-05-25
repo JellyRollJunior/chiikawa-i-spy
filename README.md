@@ -117,7 +117,7 @@ npm run dev
 
     -   StartPage
         -   move notifications to gameImage
+        -   use notifcations in gamePage (fetching data)
 
--   maybe separate game notification and regular notification? just a thought :P then i wont have to reuse it
 -   image storage on supabase
 -   mobile view

@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { useParams } from 'react-router';
 import { getUrl } from '../../utils/serverUrl.js';
 import { makeRequest } from '../../utils/requests.js';
-import { Notification } from '../Notification/Notification.jsx';
+import { NotificationContext } from '../../providers/notificationContext.jsx';
+import { useNotifications } from '../../hooks/useNotifications.js';
+import { Notifications } from '../Notifications/Notifications.jsx';
 import { TargetMenu } from '../TargetMenu/TargetMenu.jsx';
 import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './GameImage.module.css';
@@ -12,11 +14,12 @@ const GameImage = ({ url, targets, setTargets, showWinModal }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [menuXY, setMenuXY] = useState([0, 0]);
   const [guess, setGuess] = useState([0, 0]);
-  const [notification, setNotification] = useState({
-    isShown: false,
-    message: '',
-    successNotification: false,
-  });
+  const {
+    notifications,
+    addErrorNotification,
+    addTimedNotification,
+    removeNotification,
+  } = useNotifications();
 
   const toggleMenu = (event) => {
     const imageXY = event.currentTarget.offsetParent.getBoundingClientRect();
@@ -55,14 +58,16 @@ const GameImage = ({ url, targets, setTargets, showWinModal }) => {
       if (data.guessSuccess) {
         localStorage.setItem('token', data.token);
         setTargets(data.targets);
-        handleNotification(`You found ${targets.find((target) => target.id == targetId).name}!`, true);
+        addTimedNotification(
+          `You found ${targets.find((target) => target.id == targetId).name}!`
+        );
         handleWin(data.targets);
       } else {
-        handleNotification(`No target found. Try again!`, false);
+        addTimedNotification(`No target found. Try again!`);
       }
     } catch (error) {
       console.error(error);
-      handleNotification(`Unable to verify target position. Please try again.`, false);
+      addErrorNotification(`Unable to verify target position`);
     } finally {
       setShowMenu(false);
     }
@@ -89,41 +94,38 @@ const GameImage = ({ url, targets, setTargets, showWinModal }) => {
         }
       } catch (error) {
         console.error(error);
-        handleNotification('Unable to verify win. Please try again.', false);
-      } 
+        addErrorNotification('Unable to verify win.');
+      }
     }
-  };
-
-  const handleNotification = async (message, successNotification) => {
-    setNotification({ isShown: true, message, successNotification });
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setNotification({ isShown: false, ...notification });
   };
 
   // replace once images uploaded to supabase
   url = chiikawaWoSagase;
   return (
     <div className={styles.imageWrapper}>
-      {notification.isShown && (
-        <Notification
-          message={notification.message}
-          successNotification={notification.successNotification}
+      <NotificationContext.Provider
+        value={{
+          notifications,
+          addErrorNotification,
+          addTimedNotification,
+          removeNotification,
+        }}
+      >
+        <Notifications style={{ top: '24px', alignItems: 'center' }} />
+        <img
+          src={url}
+          alt="Chiikawa Village"
+          onClick={(event) => toggleMenu(event)}
         />
-      )}
-      <img
-        src={url}
-        alt="Chiikawa Village"
-        onClick={(event) => toggleMenu(event)}
-      />
-      <TargetMenu
-        targets={targets}
-        isVisible={showMenu}
-        x={menuXY[0]}
-        y={menuXY[1]}
-        xPercent={guess[0]}
-        handleGuess={handleGuess}
-        handleNotification={handleNotification}
-      />
+        <TargetMenu
+          targets={targets}
+          isVisible={showMenu}
+          x={menuXY[0]}
+          y={menuXY[1]}
+          xPercent={guess[0]}
+          handleGuess={handleGuess}
+        />
+      </NotificationContext.Provider>
     </div>
   );
 };
