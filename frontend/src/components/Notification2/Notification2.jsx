@@ -16,14 +16,14 @@ const Notification2 = ({
           <h3
             key={notification.id}
             className={`${shared.fadeIn} ${
-              notification.successNotification
-                ? `${shared.card} ${styles.successNotification}`
-                : shared.primaryButton
+              notification.isError
+                ? shared.primaryButton
+                : `${shared.card} ${styles.timedNotification}`
             }
           `}
           >
             {notification.message}
-            {!notification.successNotification && (
+            {notification.isError && (
               <button
                 className={styles.closeButton}
                 onClick={() => removeNotification(notification.id)}

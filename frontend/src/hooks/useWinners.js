@@ -18,15 +18,18 @@ const useWinners = () => {
                     signal: controller.signal,
                 });
                 setWinner(data.winners);
+                setError(null);
             } catch (error) {
                 console.error(error);
-                setError('Unable to fetch winners. Please try again later.');
+                setError('Unable to fetch winners.');
             } finally {
                 setLoading(false);
             }
         };
 
         fetchWinners();
+
+        return () => controller.abort();
     }, []);
 
     return { winners, loading, error };

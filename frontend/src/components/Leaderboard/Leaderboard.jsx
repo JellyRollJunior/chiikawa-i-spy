@@ -8,19 +8,19 @@ import shared from '../../styles/shared.module.css';
 const Leaderboard = ({ games }) => {
   const { winners, loading, error } = useWinners();
   const [gameId, setGameId] = useState(null);
-  const { addNotification } = useContext(NotificationContext);
+  const { addErrorNotification } = useContext(NotificationContext);
+
+  useEffect(() => {
+    if (error) {
+      addErrorNotification(error, false);
+    }
+  }, [error]);
 
   useEffect(() => {
     if (games && games[0]) {
       setGameId(games[0].id);
     }
   }, [games]);
-
-  useEffect(() => {
-    if (error) {
-      addNotification(error, false);
-    }
-  }, [error]);
 
   return (
     <section className={`${shared.marginTopMedium}`}>

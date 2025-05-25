@@ -10,8 +10,8 @@ const useGames = () => {
     useEffect(() => {
         const controller = new AbortController();
         const fetchGames = async () => {
+            setLoading(true);
             try {
-                setLoading(true);
                 const data = await makeRequest(getUrl('/games'), {
                     mode: 'cors',
                     signal: controller.signal,

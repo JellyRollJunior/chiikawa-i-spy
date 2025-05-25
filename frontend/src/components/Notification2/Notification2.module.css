@@ -12,7 +12,7 @@
   width: fit-content;
 }
 
-.successNotification {
+.timedNotification {
   min-width: 100px;
   padding: 2px 12px;
   border-width: 3px;
