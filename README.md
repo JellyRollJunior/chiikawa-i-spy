@@ -109,15 +109,13 @@ npm run dev
     -   error fetching data image (replace the error message)
     -   footer
     -   loading animation?
-    -   notification on adding winner
+    -   Extract target section
+    -   make a pages folder
 
 ### Final plans
 
 -   Extract notification to main level -> show errors in notification
     -   tests
-    -   StartPage
-        -   use notifcations in gamePage (fetching data)
-        -   persistent error notif delete on click anywhere in notif
 
 -   image storage on supabase
 -   mobile view

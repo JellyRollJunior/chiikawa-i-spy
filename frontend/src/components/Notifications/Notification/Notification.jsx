@@ -7,6 +7,12 @@ const Notification = ({ id, message, isError, isTimed }) => {
   const { removeNotification } = useContext(NotificationContext);
   const [isFadingOut, setIsFadingOut] = useState(false);
 
+  const handleRemoveNotification = async (id) => {
+    setIsFadingOut(true);
+    await new Promise((resolve) => setTimeout(resolve, 250));
+    removeNotification(id);
+  };
+
   return (
     <h3
       key={id}
@@ -18,19 +24,13 @@ const Notification = ({ id, message, isError, isTimed }) => {
       ${isTimed && `${shared.fadeInFadeOut}`} 
       ${isFadingOut && `${shared.fadeOut}`}`}
     >
-      {message}
-      {isError && !isTimed && (
-        <button
-          className={styles.closeButton}
-          onClick={async () => {
-            setIsFadingOut(true);
-            await new Promise((resolve) => setTimeout(resolve, 250));
-            removeNotification(id);
-          }}
-        >
-          ×
-        </button>
-      )}
+      <button
+        className={styles.closeButton}
+        onClick={isError && !isTimed ? () => handleRemoveNotification(id) : ''}
+      >
+        {message}
+        {!isTimed && <span className={styles.closeButton}>×</span>}
+      </button>
     </h3>
   );
 };
