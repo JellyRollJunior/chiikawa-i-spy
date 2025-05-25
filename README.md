@@ -102,6 +102,7 @@ npm run dev
 
 -   General
     -   error page, 404 page
+    -   error fetching data image (replace the error message)
     -   footer
     -   loading animation?
 
@@ -110,8 +111,6 @@ npm run dev
 -   Extract notification to main level -> show errors in notification
     -   revamp notification system on errors
     -   StartPage
-        -   create state to store array of notifications
-        -   context and store add notification function
         -   add a delete notification button to notification
         -   create option to render disappearing notification & persistent notification
 -   image storage on supabase
