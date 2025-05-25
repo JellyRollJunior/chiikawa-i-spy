@@ -3,14 +3,15 @@ import { useState } from 'react';
 const useNotifications = () => {
     const [notifications, setNotifications] = useState([]);
 
-    const addErrorNotification = (message) => {
+    const addPersistentNotification = (message, isError = true) => {
         const id = crypto.randomUUID();
         setNotifications((prevState) => [
             ...prevState,
             {
                 id,
                 message,
-                isError: true,
+                isError,
+                isTimed: false,
             },
         ]);
         return id;
@@ -22,21 +23,22 @@ const useNotifications = () => {
         );
     };
 
-    const addTimedNotification = async (message, ms = 1500) => {
+    const addTimedNotification = async (message, isError = false, ms = 1500) => {
         const id = crypto.randomUUID();
         setNotifications((prevState) => [
             ...prevState,
             {
                 id,
                 message,
-                isError: false,
+                isError,
+                isTimed: true,
             },
         ]);
         await new Promise((resolve) => setTimeout(resolve, ms));
         removeNotification(id);
     }
 
-    return { notifications, addErrorNotification, addTimedNotification, removeNotification };
+    return { notifications, addPersistentNotification, addTimedNotification, removeNotification };
 };
 
 export { useNotifications };

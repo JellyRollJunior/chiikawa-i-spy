@@ -3,7 +3,7 @@ import { NotificationContext } from '../../../providers/notificationContext.jsx'
 import styles from './Notification.module.css';
 import shared from '../../../styles/shared.module.css';
 
-const Notification = ({ id, message, isError }) => {
+const Notification = ({ id, message, isError, isTimed }) => {
   const { removeNotification } = useContext(NotificationContext);
   const [isFadingOut, setIsFadingOut] = useState(false);
 
@@ -13,11 +13,13 @@ const Notification = ({ id, message, isError }) => {
       className={`${
         isError
           ? `${shared.primaryButton} ${shared.fadeIn}`
-          : `${shared.card} ${styles.timedNotification} ${shared.fadeInFadeOut}`
-      } ${isFadingOut && `${shared.fadeOut}`}`}
+          : `${shared.card} ${styles.timedNotification}`
+      } 
+      ${isTimed && `${shared.fadeInFadeOut}`} 
+      ${isFadingOut && `${shared.fadeOut}`}`}
     >
       {message}
-      {isError && (
+      {isError && !isTimed && (
         <button
           className={styles.closeButton}
           onClick={async () => {

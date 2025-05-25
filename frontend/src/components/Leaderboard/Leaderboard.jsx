@@ -8,11 +8,11 @@ import shared from '../../styles/shared.module.css';
 const Leaderboard = ({ games }) => {
   const { winners, loading, error } = useWinners();
   const [gameId, setGameId] = useState(null);
-  const { addErrorNotification } = useContext(NotificationContext);
+  const { addPersistentNotification } = useContext(NotificationContext);
 
   useEffect(() => {
     if (error) {
-      addErrorNotification(error);
+      addPersistentNotification(error);
     }
   }, [error]);
 

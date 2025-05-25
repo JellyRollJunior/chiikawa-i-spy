@@ -18,6 +18,7 @@ const Notifications = ({
             id={notification.id}
             message={notification.message}
             isError={notification.isError}
+            isTimed={notification.isTimed}
           />
         ))}
     </div>

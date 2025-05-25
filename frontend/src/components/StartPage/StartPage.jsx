@@ -12,11 +12,11 @@ import shared from '../../styles/shared.module.css';
 
 const StartPage = () => {
   const { games, loading, error } = useGames();
-  const { addErrorNotification } = useContext(NotificationContext);
+  const { addPersistentNotification } = useContext(NotificationContext);
 
   useEffect(() => {
     if (error) {
-      addErrorNotification(error, true);
+      addPersistentNotification(error);
     }
   }, [error]);
 

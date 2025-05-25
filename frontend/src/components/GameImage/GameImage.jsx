@@ -16,7 +16,7 @@ const GameImage = ({ url, targets, setTargets, showWinModal }) => {
   const [guess, setGuess] = useState([0, 0]);
   const {
     notifications,
-    addErrorNotification,
+    addPersistentNotification,
     addTimedNotification,
     removeNotification,
   } = useNotifications();
@@ -63,11 +63,11 @@ const GameImage = ({ url, targets, setTargets, showWinModal }) => {
         );
         handleWin(data.targets);
       } else {
-        addTimedNotification(`No target found. Try again!`);
+        addTimedNotification(`No target found. Try again!`, true);
       }
     } catch (error) {
       console.error(error);
-      addErrorNotification(`Unable to verify target position`);
+      addPersistentNotification(`Unable to verify target position`);
     } finally {
       setShowMenu(false);
     }
@@ -94,7 +94,7 @@ const GameImage = ({ url, targets, setTargets, showWinModal }) => {
         }
       } catch (error) {
         console.error(error);
-        addErrorNotification('Unable to verify win.');
+        addPersistentNotification('Unable to verify win.');
       }
     }
   };
@@ -106,7 +106,7 @@ const GameImage = ({ url, targets, setTargets, showWinModal }) => {
       <NotificationContext.Provider
         value={{
           notifications,
-          addErrorNotification,
+          addPersistentNotification,
           addTimedNotification,
           removeNotification,
         }}

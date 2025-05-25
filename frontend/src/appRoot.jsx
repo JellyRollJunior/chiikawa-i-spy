@@ -5,7 +5,7 @@ import { NotificationContext } from './providers/notificationContext.jsx';
 const AppRoot = () => {
   const {
     notifications,
-    addErrorNotification,
+    addPersistentNotification,
     addTimedNotification,
     removeNotification,
   } = useNotifications();
@@ -14,7 +14,7 @@ const AppRoot = () => {
     <NotificationContext.Provider
       value={{
         notifications,
-        addErrorNotification,
+        addPersistentNotification,
         addTimedNotification,
         removeNotification,
       }}

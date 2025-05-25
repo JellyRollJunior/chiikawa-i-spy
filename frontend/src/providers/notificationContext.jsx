@@ -2,7 +2,7 @@ import { createContext } from 'react';
 
 const NotificationContext = createContext({
   notifications: [],
-  addErrorNotification: () => {},
+  addPersistentNotification: () => {},
   addTimedNotification: () => {},
   removeNotification: () => {},
 });

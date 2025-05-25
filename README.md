@@ -116,7 +116,6 @@ npm run dev
 -   Extract notification to main level -> show errors in notification
 
     -   StartPage
-        -   move notifications to gameImage
         -   use notifcations in gamePage (fetching data)
 
 -   image storage on supabase
