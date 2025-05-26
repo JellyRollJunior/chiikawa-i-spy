@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router';
 import { useNotifications } from './hooks/useNotifications.js';
 import { NotificationContext } from './providers/notificationContext.jsx';
+import { Footer } from './components/Footer/Footer.jsx';
 
 const AppRoot = () => {
   const {
@@ -19,7 +20,10 @@ const AppRoot = () => {
         removeNotification,
       }}
     >
-      <Outlet />
+      <div>
+        <Outlet />
+      </div>
+      <Footer />
     </NotificationContext.Provider>
   );
 };

@@ -1,0 +1,49 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  padding: 12px 12px 5px 12px;
+  background-color: var(--yellow);
+
+  border-top: 3px solid var(--green);
+  border-bottom: 2px solid var(--green);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+  text-align: center;
+  color: var(--dark-green)
+}
+
+.iconHolder {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 3px;
+}
+
+.iconLink {
+  --link-button-size: 32px;
+  display: block;
+  width: var(--link-button-size);
+  height: var(--link-button-size);
+  padding: 0;
+  background-size: cover;
+}
+
+.github {
+  composes: iconLink;
+  background-image: url(../../assets/icons/github-60.png);
+}
+
+.linkedin {
+  composes: iconLink;
+  background-image: url(../../assets/icons/linkedin-60.png);
+}
+
+.instagram {
+  composes: iconLink;
+  background-image: url(../../assets/icons/instagram-60.png);
+}
