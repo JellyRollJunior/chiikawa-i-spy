@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Notification component > renders message 1`] = `
+<div>
+  <h3
+    class="_card_5890fc _timedNotification_5a012d 
+      false 
+      false"
+  >
+    <button
+      class="_closeButton_5a012d"
+    >
+      hello
+      <span
+        class="_closeButton_5a012d"
+      >
+        ×
+      </span>
+    </button>
+  </h3>
+</div>
+`;

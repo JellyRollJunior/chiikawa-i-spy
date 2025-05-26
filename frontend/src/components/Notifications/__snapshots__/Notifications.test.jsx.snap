@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Notifications component > renders notification wrapper and notification 1`] = `
+<div>
+  <div
+    class="_notificationWrapper_22a3b0"
+    style="top: 8px; right: 6px; align-items: end;"
+  >
+    <h3
+      class="_card_5890fc _timedNotification_5a012d 
+      false 
+      false"
+    >
+      <button
+        class="_closeButton_5a012d"
+      >
+        hello!
+        <span
+          class="_closeButton_5a012d"
+        >
+          ×
+        </span>
+      </button>
+    </h3>
+  </div>
+</div>
+`;
