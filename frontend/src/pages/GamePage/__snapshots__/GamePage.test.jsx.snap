@@ -25,70 +25,9 @@ exports[`Game Page > render page with header, game name, GameImage component, an
           src="www.chiikawa.com"
         />
       </section>
-      <section
-        class="_targetSection_bd5f7a"
-      >
-        <ul
-          class="_horizontalWrapper_5890fc"
-        >
-          <li
-            class="_target_bd5f7a"
-          >
-            <img
-              alt=""
-              class="_targetImage_bd5f7a false"
-              src="/src/assets/temp/usagi.jpg"
-            />
-            <h4
-              class=""
-            >
-              Floppy-Eared Usagi
-            </h4>
-          </li>
-          <li
-            class="_target_bd5f7a"
-          >
-            <img
-              alt=""
-              class="_targetImage_bd5f7a false"
-              src="/src/assets/temp/shisa.jpg"
-            />
-            <h4
-              class=""
-            >
-              Satapanbin Shisa
-            </h4>
-          </li>
-          <li
-            class="_target_bd5f7a"
-          >
-            <img
-              alt=""
-              class="_targetImage_bd5f7a false"
-              src="/src/assets/temp/hachiware.jpg"
-            />
-            <h4
-              class=""
-            >
-              Guitar Hachiware
-            </h4>
-          </li>
-          <li
-            class="_target_bd5f7a"
-          >
-            <img
-              alt=""
-              class="_targetImage_bd5f7a false"
-              src="/src/assets/temp/chiikawa.jpg"
-            />
-            <h4
-              class=""
-            >
-              Aura Chiikawa
-            </h4>
-          </li>
-        </ul>
-      </section>
+      <div>
+        Targets Gallery!
+      </div>
     </div>
   </main>
 </div>

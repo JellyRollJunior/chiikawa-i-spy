@@ -56,6 +56,10 @@ vi.mock('../../components/GameImage/GameImage.jsx', () => ({
   GameImage: ({ url }) => <img src={url} />,
 }));
 
+vi.mock('../../components/TargetsGallery/TargetsGallery.jsx', () => ({
+  TargetsGallery: () => <div>Targets Gallery!</div>,
+}));
+
 describe('Game Page', () => {
   it('render page with header, game name, GameImage component, and targets', () => {
     mocks.data = {

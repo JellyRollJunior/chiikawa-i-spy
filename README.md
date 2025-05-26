@@ -110,6 +110,8 @@ npm run dev
     -   footer
     -   loading animation?
 
+- TARGETS GALLERY TESTS!!!!
+
 ### Final plans
 
 -   image storage on supabase
