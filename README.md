@@ -109,7 +109,6 @@ npm run dev
     -   error fetching data image (replace the error message)
     -   footer
     -   loading animation?
-    -   Extract target section
 
 ### Final plans
 

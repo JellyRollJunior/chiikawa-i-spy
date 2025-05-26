@@ -10,12 +10,7 @@ import { GameImage } from '../../components/GameImage/GameImage.jsx';
 import { WinModal } from '../../components/WinModal/WinModal.jsx';
 import styles from './GamePage.module.css';
 import shared from '../../styles/shared.module.css';
-import usagi from '../../assets/temp/usagi.jpg';
-import shisa from '../../assets/temp/shisa.jpg';
-import hachiware from '../../assets/temp/hachiware.jpg';
-import chiikawa from '../../assets/temp/chiikawa.jpg';
-
-const tempImages = [usagi, shisa, hachiware, chiikawa];
+import { TargetsGallery } from '../../components/TargetsGallery/TargetsGallery.jsx';
 
 const GamePage = () => {
   const gameId = useParams().gameId;
@@ -54,7 +49,7 @@ const GamePage = () => {
         <main>
           <Notifications />
           {loading && <h3 className={shared.messages}>Loading</h3>}
-          {assets && targets && !error && (
+          {assets && targets && (
             <div className={`${styles.wrapper} ${shared.marginTopMedium}`}>
               <section className={`${shared.card} ${styles.gameContent}`}>
                 <IconWrapper size={46} margin={12} leftIcon={0} rightIcon={5}>
@@ -67,27 +62,7 @@ const GamePage = () => {
                   showWinModal={showWinModal}
                 />
               </section>
-              <section className={styles.targetSection}>
-                <ul className={shared.horizontalWrapper}>
-                  {targets.map((target, index) => (
-                    <li className={styles.target} key={target.id}>
-                      <img
-                        src={tempImages[index]}
-                        alt=""
-                        className={`${styles.targetImage} ${
-                          target.isFound && styles.foundImage
-                        }`}
-                      />
-                      <h4
-                        className={target.isFound ? `${styles.foundTitle}` : ''}
-                      >
-                        {target.name}
-                        {target.isFound && ' ✓'}
-                      </h4>
-                    </li>
-                  ))}
-                </ul>
-              </section>
+              <TargetsGallery targets={targets} />
             </div>
           )}
         </main>
