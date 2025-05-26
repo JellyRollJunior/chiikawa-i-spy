@@ -107,7 +107,6 @@ npm run dev
 -   General
     -   error page, 404 page
     -   error fetching data image (replace the error message)
-    -   footer
     -   loading animation?
 
 ### Final plans
