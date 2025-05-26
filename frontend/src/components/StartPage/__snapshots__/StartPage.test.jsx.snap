@@ -5,7 +5,8 @@ exports[`Start page > renders title and games 1`] = `
   <header />
   <main>
     <div
-      class="_notificationWrapper_eb2496"
+      class="_notificationWrapper_22a3b0"
+      style="top: 8px; right: 6px; align-items: end;"
     />
     <section>
       <div

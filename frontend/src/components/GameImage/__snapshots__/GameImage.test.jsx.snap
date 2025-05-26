@@ -5,6 +5,10 @@ exports[`Game Image component > renders game image and target menu 1`] = `
   <div
     class="_imageWrapper_d05160"
   >
+    <div
+      class="_notificationWrapper_22a3b0"
+      style="top: 24px; align-items: center;"
+    />
     <img
       alt="Chiikawa Village"
       src="/src/assets/temp/chiikawa-wo-sagase.jpg"

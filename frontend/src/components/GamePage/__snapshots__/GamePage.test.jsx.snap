@@ -5,6 +5,10 @@ exports[`Game Page > render page with header, game name, GameImage component, an
   <header />
   <main>
     <div
+      class="_notificationWrapper_22a3b0"
+      style="top: 8px; right: 6px; align-items: end;"
+    />
+    <div
       class="_wrapper_ded547 _marginTopMedium_5890fc"
     >
       <section
