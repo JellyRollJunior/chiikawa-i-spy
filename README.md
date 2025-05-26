@@ -110,12 +110,8 @@ npm run dev
     -   footer
     -   loading animation?
     -   Extract target section
-    -   make a pages folder
 
 ### Final plans
-
--   Extract notification to main level -> show errors in notification
-    -   tests
 
 -   image storage on supabase
 -   mobile view

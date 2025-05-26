@@ -44,15 +44,15 @@ vi.mock('../../hooks/useGameSession.js', () => ({
   useGameSession: () => mocks.data,
 }));
 
-vi.mock('../Header/Header.jsx', () => ({
+vi.mock('../../components/Header/Header.jsx', () => ({
   Header: ({ children }) => <header>{children}</header>
 }));
 
-vi.mock('../IconWrapper/IconWrapper.jsx', () => ({
+vi.mock('../../components/IconWrapper/IconWrapper.jsx', () => ({
   IconWrapper: ({ children }) => <div>{children}</div>,
 }));
 
-vi.mock('../GameImage/GameImage.jsx', () => ({
+vi.mock('../../components/GameImage/GameImage.jsx', () => ({
   GameImage: ({ url }) => <img src={url} />,
 }));
 

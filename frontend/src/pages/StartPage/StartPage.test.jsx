@@ -28,11 +28,11 @@ vi.mock('../../hooks/useGames.js', () => ({
 }));
 
 // mock components
-vi.mock('../Header/Header.jsx', () => ({
+vi.mock('../../components/Header/Header.jsx', () => ({
   Header: ({ children }) => <header>{children}</header>,
 }));
 
-vi.mock('../Leaderboard/Leaderboard.jsx', () => ({
+vi.mock('../../components/Leaderboard/Leaderboard.jsx', () => ({
   Leaderboard: ({ children }) => {
     children;
   },

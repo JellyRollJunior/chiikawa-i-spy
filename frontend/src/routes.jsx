@@ -1,5 +1,5 @@
-import { StartPage } from './components/StartPage/StartPage.jsx';
-import { GamePage } from './components/GamePage/GamePage.jsx';
+import { StartPage } from './pages/StartPage/StartPage.jsx';
+import { GamePage } from './pages/GamePage/GamePage.jsx';
 import { AppRoot } from './AppRoot.jsx';
 
 const routes = [

@@ -33,7 +33,7 @@ exports[`Start page > renders title and games 1`] = `
         </div>
       </div>
       <h3
-        class="_marginTopSmall_5890fc _tutorial_eb2496"
+        class="_marginTopSmall_5890fc _tutorial_b0f89f"
       >
         Play a rousing game of I Spy with Chiikawa and friends! 
         <br />
@@ -43,10 +43,10 @@ exports[`Start page > renders title and games 1`] = `
         class="_horizontalWrapper_5890fc _marginTopSmall_5890fc"
       >
         <li
-          class="_card_5890fc _gameLink_eb2496"
+          class="_card_5890fc _gameLink_b0f89f"
         >
           <a
-            class="_gameLinkContent_eb2496"
+            class="_gameLinkContent_b0f89f"
             data-discover="true"
             href="/games/1"
           >
@@ -65,10 +65,10 @@ exports[`Start page > renders title and games 1`] = `
           </a>
         </li>
         <li
-          class="_card_5890fc _gameLink_eb2496"
+          class="_card_5890fc _gameLink_b0f89f"
         >
           <a
-            class="_gameLinkContent_eb2496"
+            class="_gameLinkContent_b0f89f"
             data-discover="true"
             href="/games/3"
           >
