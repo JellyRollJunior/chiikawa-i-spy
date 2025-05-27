@@ -1,0 +1,10 @@
+.errorUsagi {
+  height: 175px;
+}
+
+.errorWrapper {
+  width: fit-content;
+  padding: 12px 24px;
+  color: var(--dark-green);
+  text-align: center;
+}

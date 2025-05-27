@@ -9,6 +9,7 @@ import { Leaderboard } from '../../components/Leaderboard/Leaderboard.jsx';
 import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './StartPage.module.css';
 import shared from '../../styles/shared.module.css';
+import { ErrorElement } from '../../components/ErrorElement/ErrorElement.jsx';
 
 const StartPage = () => {
   const { games, loading, error } = useGames();
@@ -26,6 +27,7 @@ const StartPage = () => {
       <main>
         <Notifications />
         {loading && <h3 className={shared.messages}>Loading games</h3>}
+        {error && <ErrorElement />}
         {games && !error && (
           <section>
             <div className={shared.marginTopMedium}>
