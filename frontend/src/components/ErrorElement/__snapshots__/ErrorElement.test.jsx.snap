@@ -1,0 +1,41 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Error element component > renders title, character image, quote, and children 1`] = `
+<div>
+  <section
+    class="_card_5890fc _errorWrapper_ef92cb _marginTopMedium_5890fc"
+  >
+    <div
+      class="_iconWrapper_5d4a96"
+    >
+      <img
+        alt="Chiikawa character icon"
+        src="/src/assets/characterIcons/kurimanju-icon.png"
+        style="height: 36px; width: 36px; margin-right: 12px;"
+      />
+      <h2>
+        error!
+      </h2>
+      <img
+        alt="Chiikawa character icon"
+        src="/src/assets/characterIcons/kurimanju-icon.png"
+        style="height: 36px; width: 36px; margin-left: 12px;"
+      />
+    </div>
+    <img
+      alt="Ancient wise badger thing"
+      class="_errorUsagi_ef92cb _marginTopSmall_5890fc"
+      src="/src/assets/error/kurimanju.png"
+    />
+    <p>
+      Ancient wise badger thing
+       once said:
+      <br />
+      I need a beer
+    </p>
+    <button>
+      I am a child
+    </button>
+  </section>
+</div>
+`;

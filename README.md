@@ -98,8 +98,6 @@ npm run dev
 ## Frontend TODOS
 
 -   General
-    -   error fetching data image (replace the error message)
-        - tests
     -   loading animation?
 
 ### Final plans

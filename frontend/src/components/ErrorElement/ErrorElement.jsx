@@ -43,7 +43,7 @@ const ErrorElement = ({ error, msgId = 0, children }) => {
       </IconWrapper>
       <img
         src={messages[msgId].src}
-        alt="kurimanju looking at you"
+        alt={messages[msgId].author}
         className={`${styles.errorUsagi} ${shared.marginTopSmall}`}
       />
       <p>

@@ -10,17 +10,18 @@ exports[`Error 404 page > renders header, footer, error message, return home but
       class="_marginTopMedium_5890fc"
     >
       <section
-        class="_card_5890fc _errorWrapper_c8888d _marginTopMedium_5890fc"
+        class="_card_5890fc _errorWrapper_ef92cb _marginTopMedium_5890fc"
       >
         <img
-          alt="usagi the ancient wise rabbit looking at you"
-          class="_errorUsagi_c8888d _marginTopSmall_5890fc"
-          src="/src/assets/error/3-usagi.png"
+          alt="Ancient wise rabbit"
+          class="_errorUsagi_ef92cb _marginTopSmall_5890fc"
+          src="/src/assets/error/usagi.png"
         />
         <p>
-          Ancient wise rabbit once said: 
+          Ancient wise rabbit
+           once said:
           <br />
-           Yaha Yaha unma unma Yaha
+          Yaha Yaha unma unma Yaha
         </p>
         <a
           class="_marginTopSmall_5890fc"
