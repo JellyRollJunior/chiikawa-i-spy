@@ -6,10 +6,10 @@ import { Header } from '../../components/Header/Header.jsx';
 import { Notifications } from '../../components/Notifications/Notifications.jsx';
 import { IconWrapper } from '../../components/IconWrapper/IconWrapper.jsx';
 import { Leaderboard } from '../../components/Leaderboard/Leaderboard.jsx';
+import { ErrorElement } from '../../components/ErrorElement/ErrorElement.jsx';
 import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './StartPage.module.css';
 import shared from '../../styles/shared.module.css';
-import { ErrorElement } from '../../components/ErrorElement/ErrorElement.jsx';
 
 const StartPage = () => {
   const { games, loading, error } = useGames();
@@ -28,11 +28,13 @@ const StartPage = () => {
         <Notifications />
         {loading && <h3 className={shared.messages}>Loading games</h3>}
         {error && (
-          <ErrorElement error={error} >
-            {/* TODO MAKE THIS ACTUALLY A REFRESH BUTTON */}
-            <Link to="/" className={shared.marginTopSmall}>
-              <button className={shared.primaryButton}>Refresh page</button>
-            </Link>
+          <ErrorElement error={error}>
+            <button
+              onClick={() => window.location.reload()}
+              className={`${shared.primaryButton} ${shared.marginTopSmall}`}
+            >
+              Refresh page
+            </button>
           </ErrorElement>
         )}
         {games && !error && (
