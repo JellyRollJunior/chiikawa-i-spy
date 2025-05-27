@@ -95,15 +95,7 @@ npm run dev
 | ----- | --------------------------------------------------------------------------------------------------- |
 | Specs | [The Odin Project](https://www.theodinproject.com/lessons/nodejs-where-s-waldo-a-photo-tagging-app) |
 
-### Backend TODOS
-
--   query params
-
 ## Frontend TODOS
-
--   gamepage
-
-    -   timer
 
 -   General
     -   error page, 404 page
