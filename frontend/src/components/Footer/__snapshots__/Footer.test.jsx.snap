@@ -1,0 +1,44 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Footer component > renders author message and button links 1`] = `
+<div>
+  <footer
+    class="_bold_5890fc _marginTopMedium_5890fc _footer_eb428f"
+  >
+    <div
+      class="_iconWrapper_5d4a96"
+    >
+      <img
+        alt="Chiikawa character icon"
+        src="/src/assets/characterIcons/kurimanju-icon.png"
+        style="height: 32px; width: 32px; margin-right: 42px;"
+      />
+      <div
+        class="_iconHolder_eb428f"
+      >
+        <a
+          class="_github_eb428f"
+          href="https://github.com/jellyrolljunior"
+          target="”_blank”"
+        />
+        <a
+          class="_linkedin_eb428f"
+          href="https://www.linkedin.com/in/jellyrolljunior/"
+          target="”_blank”"
+        />
+        <a
+          class="_instagram_eb428f"
+          href="https://www.instagram.com/river.flows__"
+          target="”_blank”"
+        />
+      </div>
+      <img
+        alt="Chiikawa character icon"
+        src="/src/assets/characterIcons/kurimanju-icon.png"
+        style="height: 32px; width: 32px; margin-left: 42px;"
+      />
+    </div>
+    Created by JellyRollJunior (Brandon Lin)
+  </footer>
+</div>
+`;
