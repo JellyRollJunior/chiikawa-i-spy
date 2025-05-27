@@ -5,7 +5,7 @@
 
 .gameLink {
   min-height: 200px;
-  width: 300px;
+  max-width: 450px;
 }
 
 .gameLink h3 {
