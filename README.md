@@ -99,6 +99,8 @@ npm run dev
 
 -   General
     -   error fetching data image (replace the error message)
+        -   create multiple error tempaltes
+        -   make error page use error element!
     -   loading animation?
 
 ### Final plans

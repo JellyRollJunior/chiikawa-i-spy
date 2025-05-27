@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import { Footer } from '../../components/Footer/Footer.jsx';
 import styles from './Error404Page.module.css';
 import shared from '../../styles/shared.module.css';
-import usagi from '../../assets/error/3-usagi.png';
+import usagi from '../../assets/error/usagi.png';
 
 const Error404Page = () => {
   return (

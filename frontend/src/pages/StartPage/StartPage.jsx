@@ -27,7 +27,14 @@ const StartPage = () => {
       <main>
         <Notifications />
         {loading && <h3 className={shared.messages}>Loading games</h3>}
-        {error && <ErrorElement />}
+        {error && (
+          <ErrorElement error={error} >
+            {/* TODO MAKE THIS ACTUALLY A REFRESH BUTTON */}
+            <Link to="/" className={shared.marginTopSmall}>
+              <button className={shared.primaryButton}>Refresh page</button>
+            </Link>
+          </ErrorElement>
+        )}
         {games && !error && (
           <section>
             <div className={shared.marginTopMedium}>
