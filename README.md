@@ -98,7 +98,6 @@ npm run dev
 ## Frontend TODOS
 
 -   General
-    -   error page, 404 page
     -   error fetching data image (replace the error message)
     -   loading animation?
 

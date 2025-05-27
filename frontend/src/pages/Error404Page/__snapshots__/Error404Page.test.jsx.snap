@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Error 404 page > renders header, footer, error message, return home button 1`] = `
+<div>
+  <div>
+    <header>
+      I am a header
+    </header>
+    <main
+      class="_marginTopMedium_5890fc"
+    >
+      <section
+        class="_card_5890fc _errorWrapper_c8888d _marginTopMedium_5890fc"
+      >
+        <img
+          alt="usagi the ancient wise rabbit looking at you"
+          class="_errorUsagi_c8888d _marginTopSmall_5890fc"
+          src="/src/assets/error/3-usagi.png"
+        />
+        <p>
+          Ancient wise rabbit once said: 
+          <br />
+           Yaha Yaha unma unma Yaha
+        </p>
+        <a
+          class="_marginTopSmall_5890fc"
+          data-discover="true"
+          href="/"
+        >
+          <button
+            class="_primaryButton_5890fc"
+          >
+            Return to homepage
+          </button>
+        </a>
+      </section>
+    </main>
+  </div>
+  <footer>
+    I am a footer
+  </footer>
+</div>
+`;
