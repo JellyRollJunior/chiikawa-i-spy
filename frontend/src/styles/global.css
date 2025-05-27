@@ -60,3 +60,7 @@ input:focus {
   outline: var(--dark-pink);
   border-color: var(--dark-pink);
 }
+
+button:hover {
+  cursor: pointer;
+}

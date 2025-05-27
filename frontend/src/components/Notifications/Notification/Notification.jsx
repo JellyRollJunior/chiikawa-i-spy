@@ -26,7 +26,7 @@ const Notification = ({ id, message, isError, isTimed }) => {
     >
       <button
         className={styles.closeButton}
-        onClick={isError && !isTimed ? () => handleRemoveNotification(id) : ''}
+        onClick={isError && !isTimed ? () => handleRemoveNotification(id) : () => {}}
       >
         {message}
         {!isTimed && <span className={styles.closeButton}>×</span>}

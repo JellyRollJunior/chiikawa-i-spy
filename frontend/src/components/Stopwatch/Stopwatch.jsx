@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import styles from './Stopwatch.module.css';
+import shared from '../../styles/shared.module.css';
 
-const Stopwatch = ({ startTime }) => {
+const Stopwatch = ({ startTime, isRunning }) => {
   const [stopwatch, setStopwatch] = useState({
     minutes: 0,
     seconds: 0,
@@ -9,8 +9,10 @@ const Stopwatch = ({ startTime }) => {
   });
 
   useEffect(() => {
-    setInterval(() => {
-      if (startTime) {
+    if (!startTime || !isRunning) return;
+
+    const intervalId = setInterval(() => {
+      if (startTime && isRunning) {
         const start = new Date(startTime);
         const duration = new Date() - start;
 
@@ -24,12 +26,14 @@ const Stopwatch = ({ startTime }) => {
         setStopwatch({ minutes, seconds, centiseconds });
       }
     }, 10);
-  }, [startTime]);
+
+    return () => clearInterval(intervalId)
+  }, [startTime, isRunning]);
 
   return (
-    <div>
+    <h3 className={shared.primaryButton}>
       {stopwatch.minutes}:{stopwatch.seconds}:{stopwatch.centiseconds}
-    </div>
+    </h3>
   );
 };
 

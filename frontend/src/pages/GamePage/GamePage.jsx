@@ -16,8 +16,7 @@ import { Stopwatch } from '../../components/Stopwatch/Stopwatch.jsx';
 const GamePage = () => {
   const gameId = useParams().gameId;
   const { assets, targets, setTargets, error, loading } = useGameSession(gameId);
-  const [isWinModalVisible, setIsWinModalVisible] = useState(false);
-  const [winTime, setWinTime] = useState(false);
+  const [winTime, setWinTime] = useState(null);
   const {
     notifications,
     addPersistentNotification,
@@ -32,15 +31,13 @@ const GamePage = () => {
   }, [error])
 
   const showWinModal = (winTime) => {
-    setIsWinModalVisible(true);
     setWinTime(winTime);
   };
 
-  console.log(assets);
   return (
     <>
       <Header>
-        {assets && <Stopwatch startTime={assets.startTime} />}
+        {assets && <Stopwatch startTime={assets.startTime} isRunning={winTime == null} />}
       </Header>
       <NotificationContext.Provider
         value={{
@@ -70,7 +67,7 @@ const GamePage = () => {
             </div>
           )}
         </main>
-        {isWinModalVisible && <WinModal time={winTime} />}
+        {winTime && <WinModal time={winTime} />}
       </NotificationContext.Provider>
     </>
   );
