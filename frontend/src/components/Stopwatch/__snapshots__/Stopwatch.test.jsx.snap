@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Stopwatch component > Renders time in format mm:ss:cs 1`] = `
+<div>
+  <h3
+    class="_primaryButton_5890fc"
+  >
+    0
+    :
+    0
+    :
+    0
+  </h3>
+</div>
+`;
