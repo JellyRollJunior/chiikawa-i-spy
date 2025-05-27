@@ -11,6 +11,7 @@ import { WinModal } from '../../components/WinModal/WinModal.jsx';
 import styles from './GamePage.module.css';
 import shared from '../../styles/shared.module.css';
 import { TargetsGallery } from '../../components/TargetsGallery/TargetsGallery.jsx';
+import { Stopwatch } from '../../components/Stopwatch/Stopwatch.jsx';
 
 const GamePage = () => {
   const gameId = useParams().gameId;
@@ -35,9 +36,12 @@ const GamePage = () => {
     setWinTime(winTime);
   };
 
+  console.log(assets);
   return (
     <>
-      <Header />
+      <Header>
+        {assets && <Stopwatch startTime={assets.startTime} />}
+      </Header>
       <NotificationContext.Provider
         value={{
           notifications,
