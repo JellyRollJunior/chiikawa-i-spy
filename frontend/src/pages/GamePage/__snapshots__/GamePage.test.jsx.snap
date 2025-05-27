@@ -2,7 +2,11 @@
 
 exports[`Game Page > render page with header, game name, GameImage component, and targets 1`] = `
 <div>
-  <header />
+  <header>
+    <h3>
+      00:00:00
+    </h3>
+  </header>
   <main>
     <div
       class="_notificationWrapper_22a3b0"

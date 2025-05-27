@@ -87,6 +87,7 @@ npm run dev
 -   Designed API and API workflow myself (proud!)
 -   Thought of storing player session info in jsonwebtoken myself (proud!!)
 -   NOTIFICATIONS TOOK ME SO LONG BUT I DID IT I AM VERY PROUD OF MYSELF
+-   I created a timer using intervals! first time using intervals
 
 ### Acknowledgements
 

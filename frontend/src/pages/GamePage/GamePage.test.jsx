@@ -48,6 +48,10 @@ vi.mock('../../components/Header/Header.jsx', () => ({
   Header: ({ children }) => <header>{children}</header>
 }));
 
+vi.mock('../../components/Stopwatch/Stopwatch.jsx', () => ({
+  Stopwatch: () => <h3>00:00:00</h3>
+}));
+
 vi.mock('../../components/IconWrapper/IconWrapper.jsx', () => ({
   IconWrapper: ({ children }) => <div>{children}</div>,
 }));
