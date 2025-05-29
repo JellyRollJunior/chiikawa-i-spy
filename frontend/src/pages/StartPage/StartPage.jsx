@@ -5,12 +5,12 @@ import { NotificationContext } from '../../providers/notificationContext.jsx';
 import { Header } from '../../components/Header/Header.jsx';
 import { Notifications } from '../../components/Notifications/Notifications.jsx';
 import { IconWrapper } from '../../components/IconWrapper/IconWrapper.jsx';
+import { LoadingElement } from '../../components/LoadingElement/LoadingElement.jsx';
 import { Leaderboard } from '../../components/Leaderboard/Leaderboard.jsx';
 import { ErrorElement } from '../../components/ErrorElement/ErrorElement.jsx';
 import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './StartPage.module.css';
 import shared from '../../styles/shared.module.css';
-import { LoadingElement } from '../../components/LoadingElement/LoadingElement.jsx';
 
 const StartPage = () => {
   const { games, loading, error } = useGames();

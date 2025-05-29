@@ -1,10 +1,12 @@
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useNotifications } from '../../hooks/useNotifications.js';
 import { NotificationContext } from '../../providers/notificationContext.jsx';
 import { Header } from '../../components/Header/Header.jsx';
 import { Stopwatch } from '../../components/Stopwatch/Stopwatch.jsx';
 import { Notifications } from '../../components/Notifications/Notifications.jsx';
+import { ErrorElement } from '../../components/ErrorElement/ErrorElement.jsx';
 import { LoadingElement } from '../../components/LoadingElement/LoadingElement.jsx';
 import { IconWrapper } from '../../components/IconWrapper/IconWrapper.jsx';
 import { useGameSession } from '../../hooks/useGameSession.js';
@@ -16,7 +18,8 @@ import shared from '../../styles/shared.module.css';
 
 const GamePage = () => {
   const gameId = useParams().gameId;
-  const { assets, targets, setTargets, error, loading } = useGameSession(gameId);
+  const { assets, targets, setTargets, error, loading } =
+    useGameSession(gameId);
   const [winTime, setWinTime] = useState(null);
   const {
     notifications,
@@ -52,6 +55,15 @@ const GamePage = () => {
       >
         <main>
           <Notifications />
+          {error && (
+            <ErrorElement error={error} msgId={1}>
+              <Link to="/" className={shared.marginTopSmall}>
+                <button className={shared.primaryButton}>
+                  Return to homepage
+                </button>
+              </Link>
+            </ErrorElement>
+          )}
           {loading && <LoadingElement message={'Loading game'} />}
           {assets && targets && !loading && (
             <div className={`${styles.wrapper} ${shared.marginTopMedium}`}>
