@@ -70,7 +70,7 @@ npm run dev
 
     -   Practice designing API and API workflow to play game
     -   First time using SuperTest to test route responses
-    -   Practicing Jest and Test Driven Development
+    -   Using a test database & production database!
     -   Normalizing image coordinates
 
 -   Frontend
