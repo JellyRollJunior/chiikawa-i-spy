@@ -27,29 +27,30 @@ const StartPage = () => {
       <Header />
       <main>
         <Notifications />
-        {loading && <LoadingElement />}
-        {!loading && error && (
-          <ErrorElement error={error}>
-            <button
-              onClick={() => window.location.reload()}
-              className={`${shared.primaryButton} ${shared.marginTopSmall}`}
-            >
-              Refresh page
-            </button>
-          </ErrorElement>
-        )}
-        {!loading && games && !error && (
-          <>
-          <section>
-            <div className={shared.marginTopMedium}>
-              <IconWrapper size={46} margin={12}>
-                <h2 className={`${shared.card} ${shared.title}`}>Games</h2>
-              </IconWrapper>
-            </div>
+        <section>
+          <div className={shared.marginTopMedium}>
+            <IconWrapper size={46} margin={12}>
+              <h2 className={`${shared.card} ${shared.title}`}>Games</h2>
+            </IconWrapper>
+          </div>
+          {!loading && error && (
+            <ErrorElement error={error}>
+              <button
+                onClick={() => window.location.reload()}
+                className={`${shared.primaryButton} ${shared.marginTopSmall}`}
+              >
+                Refresh page
+              </button>
+            </ErrorElement>
+          )}
+          {!error && (
             <h3 className={`${shared.marginTopSmall} ${styles.tutorial}`}>
               Play a rousing game of I Spy with Chiikawa and friends! <br />
               Can you spot all the cute critters?
             </h3>
+          )}
+          {loading && <LoadingElement />}
+          {!loading && games && !error && (
             <ul
               className={`${shared.horizontalWrapper} ${shared.marginTopSmall}`}
             >
@@ -71,9 +72,8 @@ const StartPage = () => {
                 </li>
               ))}
             </ul>
-          </section>
-          </>
-        )}
+          )}
+        </section>
         <Leaderboard games={games} />
       </main>
     </>

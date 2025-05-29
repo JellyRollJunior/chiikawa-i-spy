@@ -36,14 +36,12 @@ const Leaderboard = ({ games }) => {
           </button>
         </ErrorElement>
       )}
-      {loading && <LoadingElement message={'Loading leaderboard'} />}
-      {!loading && games && (
-        <section className={`${shared.marginTopMedium}`}>
-          {loading && <h3 className={shared.messages}>Loading winners</h3>}
-
-          <IconWrapper size={46} margin={12}>
-            <h2 className={`${shared.card} ${shared.title}`}>Leaderboard</h2>
-          </IconWrapper>
+      <section className={`${shared.marginTopMedium}`}>
+        <IconWrapper size={46} margin={12}>
+          <h2 className={`${shared.card} ${shared.title}`}>Leaderboard</h2>
+        </IconWrapper>
+        {loading && <LoadingElement message={'Loading leaderboard'} />}
+        {!loading && games && (
           <ul
             className={`${styles.leaderboard} ${shared.card} ${shared.marginTopSmall}`}
           >
@@ -76,8 +74,8 @@ const Leaderboard = ({ games }) => {
                   )
               )}
           </ul>
-        </section>
-      )}
+        )}
+      </section>
     </>
   );
 };

@@ -97,7 +97,8 @@ npm run dev
 
 ## Frontend TODOS
 
--   extract leaderboard fetching to startPage?
+-   show headings while loading 
+-   tests
 
 ### Final plans
 
