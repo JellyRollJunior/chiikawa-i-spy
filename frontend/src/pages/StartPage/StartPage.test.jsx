@@ -38,6 +38,10 @@ vi.mock('../../components/Leaderboard/Leaderboard.jsx', () => ({
   },
 }));
 
+vi.mock('../../components/LoadingElement/LoadingElement.jsx', () => ({
+  LoadingElement: () => <h3>Loading games</h3>,
+}))
+
 describe('Start page', () => {
   it('renders title and games', () => {
     // mock game data

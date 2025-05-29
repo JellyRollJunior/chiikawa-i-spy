@@ -97,8 +97,6 @@ npm run dev
 
 ## Frontend TODOS
 
--   show headings while loading 
--   tests
 
 ### Final plans
 
