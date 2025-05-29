@@ -108,6 +108,22 @@
   }
 }
 
+.fadeLoop {
+  animation: fade-loop 2.5s ease-in-out infinite;
+}
+
+@keyframes fade-loop {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 100;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /* font */
 .bold {
   font-family: 'Sen-Bold', sans-serif;

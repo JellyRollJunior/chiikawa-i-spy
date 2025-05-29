@@ -10,6 +10,7 @@ import { ErrorElement } from '../../components/ErrorElement/ErrorElement.jsx';
 import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './StartPage.module.css';
 import shared from '../../styles/shared.module.css';
+import { LoadingElement } from '../../components/LoadingElement/LoadingElement.jsx';
 
 const StartPage = () => {
   const { games, loading, error } = useGames();
@@ -26,8 +27,8 @@ const StartPage = () => {
       <Header />
       <main>
         <Notifications />
-        {loading && <h3 className={shared.messages}>Loading games</h3>}
-        {error && (
+        {loading && <LoadingElement />}
+        {!loading && error && (
           <ErrorElement error={error}>
             <button
               onClick={() => window.location.reload()}
@@ -37,7 +38,8 @@ const StartPage = () => {
             </button>
           </ErrorElement>
         )}
-        {games && !error && (
+        {!loading && games && !error && (
+          <>
           <section>
             <div className={shared.marginTopMedium}>
               <IconWrapper size={46} margin={12}>
@@ -70,6 +72,7 @@ const StartPage = () => {
               ))}
             </ul>
           </section>
+          </>
         )}
         <Leaderboard games={games} />
       </main>

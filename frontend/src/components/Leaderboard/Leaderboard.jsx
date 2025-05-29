@@ -3,6 +3,7 @@ import { useWinners } from '../../hooks/useWinners.js';
 import { NotificationContext } from '../../providers/notificationContext.jsx';
 import { ErrorElement } from '../ErrorElement/ErrorElement.jsx';
 import { IconWrapper } from '../IconWrapper/IconWrapper.jsx';
+import { LoadingElement } from '../LoadingElement/LoadingElement.jsx';
 import styles from './Leaderboard.module.css';
 import shared from '../../styles/shared.module.css';
 
@@ -25,7 +26,7 @@ const Leaderboard = ({ games }) => {
 
   return (
     <>
-      {error && (
+      {!loading && error && (
         <ErrorElement error={error} msgId={2}>
           <button
             onClick={() => window.location.reload()}
@@ -35,7 +36,8 @@ const Leaderboard = ({ games }) => {
           </button>
         </ErrorElement>
       )}
-      {games && (
+      {loading && <LoadingElement message={'Loading leaderboard'} />}
+      {!loading && games && (
         <section className={`${shared.marginTopMedium}`}>
           {loading && <h3 className={shared.messages}>Loading winners</h3>}
 

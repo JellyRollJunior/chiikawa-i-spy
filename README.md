@@ -97,8 +97,7 @@ npm run dev
 
 ## Frontend TODOS
 
--   General
-    -   loading animation?
+-   extract leaderboard fetching to startPage?
 
 ### Final plans
 

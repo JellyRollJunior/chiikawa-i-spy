@@ -1,0 +1,8 @@
+.img {
+  width: 125px;
+}
+
+.loadingText {
+  text-align: center;
+  color: var(--dark-green);
+}
