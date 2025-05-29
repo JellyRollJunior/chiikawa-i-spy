@@ -25,7 +25,10 @@ const Leaderboard = ({ games }) => {
   }, [games]);
 
   return (
-    <>
+    <section className={`${shared.marginTopMedium}`}>
+      <IconWrapper size={46} margin={12}>
+        <h2 className={`${shared.card} ${shared.title}`}>Leaderboard</h2>
+      </IconWrapper>
       {!loading && error && (
         <ErrorElement error={error} msgId={2}>
           <button
@@ -36,47 +39,42 @@ const Leaderboard = ({ games }) => {
           </button>
         </ErrorElement>
       )}
-      <section className={`${shared.marginTopMedium}`}>
-        <IconWrapper size={46} margin={12}>
-          <h2 className={`${shared.card} ${shared.title}`}>Leaderboard</h2>
-        </IconWrapper>
-        {loading && <LoadingElement message={'Loading leaderboard'} />}
-        {!loading && games && (
-          <ul
-            className={`${styles.leaderboard} ${shared.card} ${shared.marginTopSmall}`}
-          >
-            <div className={styles.leaderboardButtonWrapper}>
-              {games.map((game) => (
-                <button
-                  className={shared.primaryButton}
-                  onClick={() => setGameId(game.id)}
-                  key={game.id}
-                >
-                  {game.name}
-                </button>
-              ))}
-            </div>
-            <li className={styles.leaderboardLegend} key={'he was number one!'}>
-              <h3>Place</h3>
-              <h3>Name</h3>
-              <h3>Time</h3>
-            </li>
-            {winners &&
-              gameId &&
-              winners.map(
-                (winner, index) =>
-                  winner.gameId == gameId && (
-                    <li className={styles.leaderboardItem} key={winner.id}>
-                      <h4>{index}</h4>
-                      <h4>{winner.name}</h4>
-                      <h4 className={styles.left}>{winner.seconds}s</h4>
-                    </li>
-                  )
-              )}
-          </ul>
-        )}
-      </section>
-    </>
+      {loading && <LoadingElement message={'Loading leaderboard'} />}
+      {!loading && games && !error && (
+        <ul
+          className={`${styles.leaderboard} ${shared.card} ${shared.marginTopSmall}`}
+        >
+          <div className={styles.leaderboardButtonWrapper}>
+            {games.map((game) => (
+              <button
+                className={shared.primaryButton}
+                onClick={() => setGameId(game.id)}
+                key={game.id}
+              >
+                {game.name}
+              </button>
+            ))}
+          </div>
+          <li className={styles.leaderboardLegend} key={'he was number one!'}>
+            <h3>Place</h3>
+            <h3>Name</h3>
+            <h3>Time</h3>
+          </li>
+          {winners &&
+            gameId &&
+            winners.map(
+              (winner, index) =>
+                winner.gameId == gameId && (
+                  <li className={styles.leaderboardItem} key={winner.id}>
+                    <h4>{index}</h4>
+                    <h4>{winner.name}</h4>
+                    <h4 className={styles.left}>{winner.seconds}s</h4>
+                  </li>
+                )
+            )}
+        </ul>
+      )}
+    </section>
   );
 };
 
