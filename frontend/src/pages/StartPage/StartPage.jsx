@@ -52,7 +52,7 @@ const StartPage = () => {
           {loading && <LoadingElement />}
           {!loading && games && !error && (
             <ul
-              className={`${shared.horizontalWrapper} ${shared.marginTopSmall}`}
+              className={`${shared.horizontalWrapper} ${shared.marginTopSmall} ${styles.gameWrapper}`}
             >
               {games.map((game) => (
                 <li

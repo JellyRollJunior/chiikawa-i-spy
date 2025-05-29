@@ -20,6 +20,7 @@ body {
     var(--pale-green) 50px,
     var(--pale-green) 100px
   );
+  background-attachment: fixed;
 }
 
 /* Force footer to bottom of page */

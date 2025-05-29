@@ -18,8 +18,7 @@ import shared from '../../styles/shared.module.css';
 
 const GamePage = () => {
   const gameId = useParams().gameId;
-  const { assets, targets, setTargets, error, loading } =
-    useGameSession(gameId);
+  const { assets, targets, setTargets, error, loading } = useGameSession(gameId);
   const [winTime, setWinTime] = useState(null);
   const {
     notifications,
@@ -66,7 +65,7 @@ const GamePage = () => {
           )}
           {loading && <LoadingElement message={'Loading game'} />}
           {assets && targets && !loading && (
-            <div className={`${styles.wrapper} ${shared.marginTopMedium}`}>
+            <div className={`${styles.gameWrapper} ${shared.marginTopMedium}`}>
               <section className={`${shared.card} ${styles.gameContent}`}>
                 <IconWrapper size={46} margin={12} leftIcon={0} rightIcon={5}>
                   <h2 className={shared.title}>{assets.name}</h2>

@@ -128,10 +128,3 @@
 .bold {
   font-family: 'Sen-Bold', sans-serif;
 }
-
-/* Mobile */
-@media screen and (max-width: 700px) {
-  .horizontalWrapper {
-    flex-direction: column;
-  }
-}
