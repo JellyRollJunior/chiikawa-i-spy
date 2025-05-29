@@ -97,7 +97,6 @@ npm run dev
 
 ## Frontend TODOS
 
-
 ### Final plans
 
 -   image storage on supabase

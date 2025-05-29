@@ -2,6 +2,7 @@
   --target-radius: 60px;
   display: none;
   position: absolute;
+  z-index: 2;
 }
 
 .menu {
