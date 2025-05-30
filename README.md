@@ -84,6 +84,7 @@ npm run dev
 
 -   I really put my all into make this a project I can showcase on my portfolio. Hope you like it!
 -   I learned I prefer working on backend then frontend (else I get confused!)
+    -   Next time implement all backend features (image storage) before working on the frontend
 -   Designed API and API workflow myself (proud!)
 -   Thought of storing player session info in jsonwebtoken myself (proud!!)
 -   NOTIFICATIONS TOOK ME SO LONG BUT I DID IT I AM VERY PROUD OF MYSELF
