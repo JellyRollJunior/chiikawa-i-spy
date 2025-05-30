@@ -42,6 +42,10 @@ vi.mock('../../components/LoadingElement/LoadingElement.jsx', () => ({
   LoadingElement: () => <h3>Loading games</h3>,
 }))
 
+vi.mock('../../components/Footer/Footer.jsx', () => ({
+  Footer: () => <></>,
+}));
+
 describe('Start page', () => {
   it('renders title and games', () => {
     // mock game data

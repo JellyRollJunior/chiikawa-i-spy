@@ -2,37 +2,43 @@
 
 exports[`Game Page > render page with header, game name, GameImage component, and targets 1`] = `
 <div>
-  <header>
-    <h3>
-      00:00:00
-    </h3>
-  </header>
-  <main>
-    <div
-      class="_notificationWrapper_22a3b0"
-      style="top: 8px; right: 6px; align-items: end;"
-    />
-    <div
-      class="_wrapper_bd5f7a _marginTopMedium_5890fc"
-    >
-      <section
-        class="_card_5890fc _gameContent_bd5f7a"
-      >
-        <div>
-          <h2
-            class="_title_5890fc"
-          >
-            Chiikawa Village
-          </h2>
-        </div>
-        <img
-          src="www.chiikawa.com"
+  <div
+    class="_pageWrapper_bd5f7a"
+  >
+    <div>
+      <header>
+        <h3>
+          00:00:00
+        </h3>
+      </header>
+      <main>
+        <div
+          class="_notificationWrapper_22a3b0"
+          style="top: 8px; right: 6px; align-items: end;"
         />
-      </section>
-      <div>
-        Targets Gallery!
-      </div>
+        <div
+          class="_gameWrapper_bd5f7a _marginTopMedium_5890fc"
+        >
+          <section
+            class="_card_5890fc _gameContent_bd5f7a"
+          >
+            <div>
+              <h2
+                class="_title_5890fc"
+              >
+                Chiikawa Village
+              </h2>
+            </div>
+            <img
+              src="www.chiikawa.com"
+            />
+          </section>
+          <div>
+            Targets Gallery!
+          </div>
+        </div>
+      </main>
     </div>
-  </main>
+  </div>
 </div>
 `;

@@ -64,6 +64,10 @@ vi.mock('../../components/TargetsGallery/TargetsGallery.jsx', () => ({
   TargetsGallery: () => <div>Targets Gallery!</div>,
 }));
 
+vi.mock('../../components/Footer/Footer.jsx', () => ({
+  Footer: () => <></>,
+}));
+
 describe('Game Page', () => {
   it('render page with header, game name, GameImage component, and targets', () => {
     mocks.data = {
