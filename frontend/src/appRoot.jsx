@@ -20,10 +20,7 @@ const AppRoot = () => {
         removeNotification,
       }}
     >
-      <div>
-        <Outlet />
-      </div>
-      <Footer />
+      <Outlet />
     </NotificationContext.Provider>
   );
 };

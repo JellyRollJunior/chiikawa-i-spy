@@ -26,3 +26,9 @@
 .headerButton:hover {
   background-color: var(--light-green);
 }
+
+@media screen and (max-width: 750px) {
+  .header {
+    flex-direction: column;
+  }
+}
