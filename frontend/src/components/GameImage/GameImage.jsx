@@ -6,10 +6,9 @@ import { NotificationContext } from '../../providers/notificationContext.jsx';
 import { useNotifications } from '../../hooks/useNotifications.js';
 import { Notifications } from '../Notifications/Notifications.jsx';
 import { TargetMenu } from '../TargetMenu/TargetMenu.jsx';
-import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './GameImage.module.css';
 
-const GameImage = ({ url, targets, setTargets, showWinModal }) => {
+const GameImage = ({ src, targets, setTargets, showWinModal }) => {
   const gameId = useParams().gameId;
   const [showMenu, setShowMenu] = useState(false);
   const [menuXY, setMenuXY] = useState([0, 0]);
@@ -99,8 +98,6 @@ const GameImage = ({ url, targets, setTargets, showWinModal }) => {
     }
   };
 
-  // replace once images uploaded to supabase
-  url = chiikawaWoSagase;
   return (
     <div className={styles.imageWrapper}>
       <NotificationContext.Provider
@@ -113,7 +110,7 @@ const GameImage = ({ url, targets, setTargets, showWinModal }) => {
       >
         <Notifications style={{ top: '24px', alignItems: 'center' }} />
         <img
-          src={url}
+          src={src}
           alt="Chiikawa Village"
           onClick={(event) => toggleMenu(event)}
         />

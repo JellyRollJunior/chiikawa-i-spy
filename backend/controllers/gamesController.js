@@ -37,7 +37,7 @@ const getGameAssets = async (req, res, next) => {
         res.json({
             gameId: gameData.id,
             name: gameData.name,
-            url: gameData.url,
+            src: gameData.src,
             targets: newPlayer.targets,
             startTime: newPlayer.startTime,
             token,

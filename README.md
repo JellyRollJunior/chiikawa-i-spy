@@ -99,10 +99,3 @@ npm run dev
 ## Frontend TODOS
 
 ### Final plans
-
--   local image store
-    -   add src to target and game
-    -   insert src data to target and game
-    -   make frontend use this data
-        -   image importer for targets images
-        -   error if image does not exist? :o

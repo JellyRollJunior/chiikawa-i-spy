@@ -78,7 +78,7 @@ const GamePage = () => {
                     <h2 className={shared.title}>{assets.name}</h2>
                   </IconWrapper>
                   <GameImage
-                    url={assets.url}
+                    src={assets.src}
                     targets={targets}
                     setTargets={setTargets}
                     showWinModal={showWinModal}

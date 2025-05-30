@@ -39,6 +39,7 @@ const getGame = async (id) => {
                     select: {
                         id: true,
                         name: true,
+                        src: true,
                     },
                     orderBy: {
                         id: 'asc',

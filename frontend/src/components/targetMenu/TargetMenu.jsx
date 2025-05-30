@@ -22,31 +22,29 @@ const TargetMenu = ({
       : '';
 
   return (
-    <>
-      <div
-        className={`${shared.fadeIn} ${styles.menuWrapper}`}
-        style={menuPosition}
-      >
-        <div className={styles.menu}>
-          <div className={styles.targetBox}></div>
-          <ul className={styles.optionWrapper} style={optionOffset}>
-            {targets &&
-              targets
-                .filter((target) => !target.isFound)
-                .map((target) => (
-                  <li key={target.id}>
-                    <button
-                      onClick={() => handleGuess(target.id)}
-                      className={`${styles.menuOption} ${shared.primaryButton}`}
-                    >
-                      {target.name}
-                    </button>
-                  </li>
-                ))}
-          </ul>
-        </div>
+    <div
+      className={`${shared.fadeIn} ${styles.menuWrapper}`}
+      style={menuPosition}
+    >
+      <div className={styles.menu}>
+        <div className={styles.targetBox}></div>
+        <ul className={styles.optionWrapper} style={optionOffset}>
+          {targets &&
+            targets
+              .filter((target) => !target.isFound)
+              .map((target) => (
+                <li key={target.id}>
+                  <button
+                    onClick={() => handleGuess(target.id)}
+                    className={`${styles.menuOption} ${shared.primaryButton}`}
+                  >
+                    {target.name}
+                  </button>
+                </li>
+              ))}
+        </ul>
       </div>
-    </>
+    </div>
   );
 };
 

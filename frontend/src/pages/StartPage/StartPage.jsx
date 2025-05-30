@@ -8,7 +8,6 @@ import { IconWrapper } from '../../components/IconWrapper/IconWrapper.jsx';
 import { LoadingElement } from '../../components/LoadingElement/LoadingElement.jsx';
 import { Leaderboard } from '../../components/Leaderboard/Leaderboard.jsx';
 import { ErrorElement } from '../../components/ErrorElement/ErrorElement.jsx';
-import chiikawaWoSagase from '../../assets/temp/chiikawa-wo-sagase.jpg';
 import styles from './StartPage.module.css';
 import shared from '../../styles/shared.module.css';
 import { Footer } from '../../components/Footer/Footer.jsx';
@@ -64,7 +63,7 @@ const StartPage = () => {
                     to={`/games/${game.id}`}
                     className={styles.gameLinkContent}
                   >
-                    <img src={chiikawaWoSagase} alt="" />
+                    <img src={game.src} alt="" />
                     <h3>{game.name}</h3>
                     <button className={shared.primaryButton}>
                       Start Game!
