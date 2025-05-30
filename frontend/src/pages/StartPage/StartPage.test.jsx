@@ -40,10 +40,10 @@ vi.mock('../../components/Leaderboard/Leaderboard.jsx', () => ({
 
 vi.mock('../../components/LoadingElement/LoadingElement.jsx', () => ({
   LoadingElement: () => <h3>Loading games</h3>,
-}))
+}));
 
 vi.mock('../../components/Footer/Footer.jsx', () => ({
-  Footer: () => <></>,
+  Footer: ({ children }) => children
 }));
 
 describe('Start page', () => {

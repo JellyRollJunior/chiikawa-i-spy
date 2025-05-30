@@ -40,10 +40,13 @@ const GamePage = () => {
 
   return (
     <div className={styles.pageWrapper}>
-      <div>
+      <Footer>
         <Header>
           {assets && (
-            <Stopwatch startTime={assets.startTime} isRunning={winTime == null} />
+            <Stopwatch
+              startTime={assets.startTime}
+              isRunning={winTime == null}
+            />
           )}
         </Header>
         <NotificationContext.Provider
@@ -67,7 +70,9 @@ const GamePage = () => {
             )}
             {loading && <LoadingElement message={'Loading game'} />}
             {assets && targets && !loading && (
-              <div className={`${styles.gameWrapper} ${shared.marginTopMedium}`}>
+              <div
+                className={`${styles.gameWrapper} ${shared.marginTopMedium}`}
+              >
                 <section className={`${shared.card} ${styles.gameContent}`}>
                   <IconWrapper size={46} margin={12} leftIcon={0} rightIcon={5}>
                     <h2 className={shared.title}>{assets.name}</h2>
@@ -85,8 +90,7 @@ const GamePage = () => {
           </main>
           {winTime && <WinModal time={winTime} />}
         </NotificationContext.Provider>
-      </div>
-      <Footer />
+      </Footer>
     </div>
   );
 };

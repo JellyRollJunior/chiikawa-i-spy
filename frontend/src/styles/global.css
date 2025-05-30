@@ -23,14 +23,6 @@ body {
   background-attachment: fixed;
 }
 
-/* Force footer to bottom of page */
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 main {
   padding: 0 12px;
 }

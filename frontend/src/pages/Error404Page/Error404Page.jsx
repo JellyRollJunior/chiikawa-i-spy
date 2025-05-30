@@ -6,21 +6,16 @@ import shared from '../../styles/shared.module.css';
 
 const Error404Page = () => {
   return (
-    <>
-      <div>
-        <Header />
-        <main className={shared.marginTopMedium}>
-          <ErrorElement error={'404: Page not found.'} msgId={1}>
-            <Link to="/" className={shared.marginTopSmall}>
-              <button className={shared.primaryButton}>
-                Return to homepage
-              </button>
-            </Link>
-          </ErrorElement>
-        </main>
-      </div>
-      <Footer />
-    </>
+    <Footer>
+      <Header />
+      <main className={shared.marginTopMedium}>
+        <ErrorElement error={'404: Page not found.'} msgId={1}>
+          <Link to="/" className={shared.marginTopSmall}>
+            <button className={shared.primaryButton}>Return to homepage</button>
+          </Link>
+        </ErrorElement>
+      </main>
+    </Footer>
   );
 };
 

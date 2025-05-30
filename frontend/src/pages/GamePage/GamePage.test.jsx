@@ -65,7 +65,7 @@ vi.mock('../../components/TargetsGallery/TargetsGallery.jsx', () => ({
 }));
 
 vi.mock('../../components/Footer/Footer.jsx', () => ({
-  Footer: () => <></>,
+  Footer: ({ children }) => children
 }));
 
 describe('Game Page', () => {

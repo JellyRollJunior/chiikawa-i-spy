@@ -1,3 +1,10 @@
+.forceFooterToBottom {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .footer {
   display: flex;
   flex-direction: column;

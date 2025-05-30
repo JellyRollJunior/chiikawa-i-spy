@@ -8,7 +8,7 @@ vi.mock('../../components/Header/Header.jsx', () => ({
 }));
 
 vi.mock('../../components/Footer/Footer.jsx', () => ({
-  Footer: () => <footer>I am a footer</footer>,
+  Footer: ({ children }) => children
 }));
 
 vi.mock('../../components/IconWrapper/IconWrapper.jsx', () => ({

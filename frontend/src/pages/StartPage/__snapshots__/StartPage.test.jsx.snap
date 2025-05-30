@@ -2,94 +2,92 @@
 
 exports[`Start page > renders title and games 1`] = `
 <div>
-  <div>
-    <header />
-    <main>
+  <header />
+  <main>
+    <div
+      class="_notificationWrapper_22a3b0"
+      style="top: 8px; right: 6px; align-items: end;"
+    />
+    <section>
       <div
-        class="_notificationWrapper_22a3b0"
-        style="top: 8px; right: 6px; align-items: end;"
-      />
-      <section>
+        class="_marginTopMedium_5890fc"
+      >
         <div
-          class="_marginTopMedium_5890fc"
+          class="_iconWrapper_5d4a96"
         >
-          <div
-            class="_iconWrapper_5d4a96"
+          <img
+            alt="Chiikawa character icon"
+            src="/src/assets/characterIcons/chiikawa-icon.png"
+            style="height: 46px; width: 46px; margin-right: 12px;"
+          />
+          <h2
+            class="_card_5890fc _title_5890fc"
           >
-            <img
-              alt="Chiikawa character icon"
-              src="/src/assets/characterIcons/chiikawa-icon.png"
-              style="height: 46px; width: 46px; margin-right: 12px;"
-            />
-            <h2
-              class="_card_5890fc _title_5890fc"
-            >
-              Games
-            </h2>
-            <img
-              alt="Chiikawa character icon"
-              src="/src/assets/characterIcons/hachiware-icon.png"
-              style="height: 46px; width: 46px; margin-left: 12px;"
-            />
-          </div>
+            Games
+          </h2>
+          <img
+            alt="Chiikawa character icon"
+            src="/src/assets/characterIcons/hachiware-icon.png"
+            style="height: 46px; width: 46px; margin-left: 12px;"
+          />
         </div>
-        <h3
-          class="_marginTopSmall_5890fc _tutorial_b0f89f"
+      </div>
+      <h3
+        class="_marginTopSmall_5890fc _tutorial_b0f89f"
+      >
+        Play a rousing game of I Spy with Chiikawa and friends! 
+        <br />
+        Can you spot all the cute critters?
+      </h3>
+      <ul
+        class="_horizontalWrapper_5890fc _marginTopSmall_5890fc _gameWrapper_b0f89f"
+      >
+        <li
+          class="_card_5890fc _gameLink_b0f89f"
         >
-          Play a rousing game of I Spy with Chiikawa and friends! 
-          <br />
-          Can you spot all the cute critters?
-        </h3>
-        <ul
-          class="_horizontalWrapper_5890fc _marginTopSmall_5890fc _gameWrapper_b0f89f"
+          <a
+            class="_gameLinkContent_b0f89f"
+            data-discover="true"
+            href="/games/1"
+          >
+            <img
+              alt=""
+              src="/src/assets/temp/chiikawa-wo-sagase.jpg"
+            />
+            <h3>
+              Chiikawa Village
+            </h3>
+            <button
+              class="_primaryButton_5890fc"
+            >
+              Start Game!
+            </button>
+          </a>
+        </li>
+        <li
+          class="_card_5890fc _gameLink_b0f89f"
         >
-          <li
-            class="_card_5890fc _gameLink_b0f89f"
+          <a
+            class="_gameLinkContent_b0f89f"
+            data-discover="true"
+            href="/games/3"
           >
-            <a
-              class="_gameLinkContent_b0f89f"
-              data-discover="true"
-              href="/games/1"
+            <img
+              alt=""
+              src="/src/assets/temp/chiikawa-wo-sagase.jpg"
+            />
+            <h3>
+              Chiikawa Village - Hard
+            </h3>
+            <button
+              class="_primaryButton_5890fc"
             >
-              <img
-                alt=""
-                src="/src/assets/temp/chiikawa-wo-sagase.jpg"
-              />
-              <h3>
-                Chiikawa Village
-              </h3>
-              <button
-                class="_primaryButton_5890fc"
-              >
-                Start Game!
-              </button>
-            </a>
-          </li>
-          <li
-            class="_card_5890fc _gameLink_b0f89f"
-          >
-            <a
-              class="_gameLinkContent_b0f89f"
-              data-discover="true"
-              href="/games/3"
-            >
-              <img
-                alt=""
-                src="/src/assets/temp/chiikawa-wo-sagase.jpg"
-              />
-              <h3>
-                Chiikawa Village - Hard
-              </h3>
-              <button
-                class="_primaryButton_5890fc"
-              >
-                Start Game!
-              </button>
-            </a>
-          </li>
-        </ul>
-      </section>
-    </main>
-  </div>
+              Start Game!
+            </button>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
 </div>
 `;

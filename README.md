@@ -100,8 +100,3 @@ npm run dev
 ### Final plans
 
 -   image storage on supabase
-
--   mobile view
-    -   header / footer stretch off screen (fixed)
-    -   game image left side goes out of bounds
-        -   allow overflow?

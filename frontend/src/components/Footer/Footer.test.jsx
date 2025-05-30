@@ -6,6 +6,6 @@ describe('Footer component', () => {
   it('renders author message and button links', () => {
     const { container } = render(<Footer />);
 
-    expect(container).toMatchSnapshot();``
+    expect(container).toMatchSnapshot();
   });
 });
