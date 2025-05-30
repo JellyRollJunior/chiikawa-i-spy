@@ -11,7 +11,7 @@ datasource db {
 model Game {
   id      Int      @id @default(autoincrement())
   name    String
-  url     String
+  src     String
   targets Target[]
   winners Winner[]
 }
@@ -21,6 +21,7 @@ model Target {
   name   String
   x      Int
   y      Int
+  src    String
   games  Game   @relation(fields: [gameId], references: [id])
   gameId Int
 }

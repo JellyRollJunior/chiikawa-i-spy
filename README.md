@@ -100,4 +100,9 @@ npm run dev
 
 ### Final plans
 
--   image storage on supabase
+-   local image store
+    -   add src to target and game
+    -   insert src data to target and game
+    -   make frontend use this data
+        -   image importer for targets images
+        -   error if image does not exist? :o

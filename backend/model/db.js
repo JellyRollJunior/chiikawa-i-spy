@@ -52,12 +52,12 @@ const getGame = async (id) => {
     }
 };
 
-const insertGame = async (name, url) => {
+const insertGame = async (name, src) => {
     try {
         const game = await prisma.game.create({
             data: {
                 name,
-                url,
+                src,
             },
         });
         return game;
@@ -79,7 +79,7 @@ const getTarget = async (targetId) => {
     }
 };
 
-const insertTarget = async (gameId, name, positionX, positionY) => {
+const insertTarget = async (gameId, name, positionX, positionY, src) => {
     try {
         const target = await prisma.target.create({
             data: {
@@ -87,6 +87,7 @@ const insertTarget = async (gameId, name, positionX, positionY) => {
                 x: Number(positionX),
                 y: Number(positionY),
                 gameId,
+                src,
             },
         });
         return target;
