@@ -1,36 +1,27 @@
-# chiikawa-i-spy
-
 <h1 align="center">Chiikawa I-Spy</h1>
-<h3 align="center"></h3>
+<h3 align="center">Play a rousing game of I Spy with Chiikawa and friends! <br>
+Can you spot all the cute critters?</h3>
 <p align="center">
-    <img align="center" width="500px" >
+    <img align="center" width="500px" src="./readme/gameplay.gif" >
 </p>
-
-### Start commands
-
-```bash
-# Start backend server
-cd backend
-npm install
-node app.js
-
-# Run tests
-cd backend
-npm run test
-```
-
-```bash
-# Start frontend react
-cd frontend
-npm install
-npm run dev
-```
 
 ### App Showcase
 
-| showcase            |
-| ------------------- |
-| <img width="400px"> |
+| Start Page                                         |
+| -------------------------------------------------- |
+| <img width="400px" src="./readme/start-page.png" > |
+
+| Winning Game (gif)                          |
+| ------------------------------------------- |
+| <img width="400px" src="./readme/win.gif" > |
+
+| Loading animation (gif)                        |
+| ---------------------------------------------- |
+| <img width="400px" src="./readme/loading.gif"> |
+
+| Network error notifications (gif)                     | 404 error page                              |
+| ----------------------------------------------------- | ------------------------------------------- |
+| <img width="400px" src="./readme/network-errors.gif"> | <img width="400px" src="./readme/404.png" > |
 
 ### Server Stack
 
@@ -63,6 +54,26 @@ npm run dev
     - Updated token will be returned to use on future /guesses requests (if guess is successful)
 4. call POST /winners once all targets founds to record win time
 5. call PUT /winners to let user name the winner
+
+### Start commands
+
+```bash
+# Start backend server
+cd backend
+npm install
+node app.js
+
+# Run tests
+cd backend
+npm run test
+```
+
+```bash
+# Start frontend react
+cd frontend
+npm install
+npm run dev
+```
 
 ### Learning Outcomes
 
@@ -99,19 +110,6 @@ npm run dev
 | Specs  | [The Odin Project](https://www.theodinproject.com/lessons/nodejs-where-s-waldo-a-photo-tagging-app) |
 
 ### Todos
-
--   app images
-    -   gameplay
-    -   Start page
-        -   normal view
-        -   switching leaderboards
-        -   error view
-        -   loading vid
-    -   Game page
-        -   guessing false and correct
-        -   normal vs hard
-        -   winning video
-    -   404 page
 
 -   readme
     -   Summary explaining the architecture of the site backend + frontend interactions
