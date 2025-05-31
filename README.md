@@ -92,10 +92,26 @@ npm run dev
 
 ### Acknowledgements
 
-| Usage | Source                                                                                              |
-| ----- | --------------------------------------------------------------------------------------------------- |
-| Specs | [The Odin Project](https://www.theodinproject.com/lessons/nodejs-where-s-waldo-a-photo-tagging-app) |
+| Usage  | Source                                                                                              |
+| ------ | --------------------------------------------------------------------------------------------------- |
+| Images | Chiikawa                                                                                            |
+| Icons  | icons8.com                                                                                          |
+| Specs  | [The Odin Project](https://www.theodinproject.com/lessons/nodejs-where-s-waldo-a-photo-tagging-app) |
 
-## Frontend TODOS
+### Todos
 
-### Final plans
+-   app images
+    -   gameplay
+    -   Start page
+        -   normal view
+        -   switching leaderboards
+        -   error view
+        -   loading vid
+    -   Game page
+        -   guessing false and correct
+        -   normal vs hard
+        -   winning video
+    -   404 page
+
+-   readme
+    -   Summary explaining the architecture of the site backend + frontend interactions

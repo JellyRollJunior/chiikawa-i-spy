@@ -62,16 +62,15 @@ const Leaderboard = ({ games }) => {
           </li>
           {winners &&
             gameId &&
-            winners.map(
-              (winner, index) =>
-                winner.gameId == gameId && (
-                  <li className={styles.leaderboardItem} key={winner.id}>
-                    <h4>{index}</h4>
-                    <h4>{winner.name}</h4>
-                    <h4 className={styles.left}>{winner.seconds}s</h4>
-                  </li>
-                )
-            )}
+            winners
+              .filter((winner) => winner.gameId == gameId)
+              .map((winner, index) => (
+                <li className={styles.leaderboardItem} key={winner.id}>
+                  <h4>{index + 1}</h4>
+                  <h4>{winner.name}</h4>
+                  <h4 className={styles.left}>{winner.seconds}s</h4>
+                </li>
+              ))}
         </ul>
       )}
     </section>
