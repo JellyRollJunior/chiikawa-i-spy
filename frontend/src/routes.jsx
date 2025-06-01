@@ -1,6 +1,6 @@
 import { StartPage } from './pages/StartPage/StartPage.jsx';
 import { GamePage } from './pages/GamePage/GamePage.jsx';
-import { AppRoot } from './AppRoot.jsx';
+import { AppRoot } from './appRoot.jsx';
 import { Error404Page } from './pages/Error404Page/Error404Page.jsx';
 
 const routes = [
