@@ -1,4 +1,4 @@
-const SERVER_URL = 'http://localhost:3000';
+const SERVER_URL = 'http://i-spy-chiikawa.koyeb.app';
 
 const getUrl = (endpoint) => {
     return `${SERVER_URL}${endpoint}`;
