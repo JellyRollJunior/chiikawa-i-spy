@@ -33,11 +33,12 @@ const GameImage = ({ src, targets, setTargets, showWinModal }) => {
   };
 
   const handleGuess = async (targetId) => {
+    setShowMenu(false);
     // if no token, refresh to get new token
     const token = localStorage.getItem('token');
     if (!token) window.location.reload();
 
-    // veriy if guess is correct
+    // verify if guess is correct
     try {
       const data = await makeRequest(getUrl(`/games/${gameId}/guesses`), {
         mode: 'cors',
@@ -67,8 +68,6 @@ const GameImage = ({ src, targets, setTargets, showWinModal }) => {
     } catch (error) {
       console.error(error);
       addPersistentNotification(`Unable to verify target position`);
-    } finally {
-      setShowMenu(false);
     }
   };
 
